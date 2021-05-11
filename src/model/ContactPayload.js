@@ -18,7 +18,7 @@ import ContactStatus from './ContactStatus';
 /**
  * The ContactPayload model module.
  * @module model/ContactPayload
- * @version 4.0.0
+ * @version 4.0.1
  */
 class ContactPayload {
     /**

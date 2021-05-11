@@ -18,7 +18,7 @@ import VerificationStatus from './VerificationStatus';
 /**
  * The VerificationFileResult model module.
  * @module model/VerificationFileResult
- * @version 4.0.0
+ * @version 4.0.1
  */
 class VerificationFileResult {
     /**
