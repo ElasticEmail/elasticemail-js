@@ -20,7 +20,7 @@ import ContactStatus from './ContactStatus';
 /**
  * The Contact model module.
  * @module model/Contact
- * @version 4.0.1
+ * @version 4.0.11
  */
 class Contact {
     /**

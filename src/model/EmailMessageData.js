@@ -19,7 +19,7 @@ import Options from './Options';
 /**
  * The EmailMessageData model module.
  * @module model/EmailMessageData
- * @version 4.0.1
+ * @version 4.0.11
  */
 class EmailMessageData {
     /**

@@ -23,7 +23,7 @@ import SmtpCredentialsPayload from '../model/SmtpCredentialsPayload';
 /**
 * Security service.
 * @module api/SecurityApi
-* @version 4.0.1
+* @version 4.0.11
 */
 export default class SecurityApi {
 

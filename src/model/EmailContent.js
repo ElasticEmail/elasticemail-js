@@ -19,7 +19,7 @@ import Utm from './Utm';
 /**
  * The EmailContent model module.
  * @module model/EmailContent
- * @version 4.0.1
+ * @version 4.0.11
  */
 class EmailContent {
     /**
@@ -65,6 +65,9 @@ class EmailContent {
             }
             if (data.hasOwnProperty('Postback')) {
                 obj['Postback'] = ApiClient.convertToType(data['Postback'], 'String');
+            }
+            if (data.hasOwnProperty('EnvelopeFrom')) {
+                obj['EnvelopeFrom'] = ApiClient.convertToType(data['EnvelopeFrom'], 'String');
             }
             if (data.hasOwnProperty('From')) {
                 obj['From'] = ApiClient.convertToType(data['From'], 'String');
@@ -120,6 +123,12 @@ EmailContent.prototype['Headers'] = undefined;
  * @member {String} Postback
  */
 EmailContent.prototype['Postback'] = undefined;
+
+/**
+ * E-mail with an optional name to be used as the envelope from address (e.g.: John Doe <email@domain.com>)
+ * @member {String} EnvelopeFrom
+ */
+EmailContent.prototype['EnvelopeFrom'] = undefined;
 
 /**
  * Your e-mail with an optional name (e.g.: John Doe <email@domain.com>)

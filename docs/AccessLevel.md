@@ -91,4 +91,8 @@
 
 * `ViewEmailVerifications` (value: `"ViewEmailVerifications"`)
 
+* `ViewMarketing` (value: `"ViewMarketing"`)
+
+* `ViewEmailApi` (value: `"ViewEmailApi"`)
+
 

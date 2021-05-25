@@ -13,12 +13,12 @@
 
 import ApiClient from '../ApiClient';
 import BodyPart from './BodyPart';
-import TemplateScopeType from './TemplateScopeType';
+import TemplateScope from './TemplateScope';
 
 /**
  * The TemplatePayload model module.
  * @module model/TemplatePayload
- * @version 4.0.1
+ * @version 4.0.11
  */
 class TemplatePayload {
     /**
@@ -60,7 +60,7 @@ class TemplatePayload {
                 obj['Body'] = ApiClient.convertToType(data['Body'], [BodyPart]);
             }
             if (data.hasOwnProperty('TemplateScope')) {
-                obj['TemplateScope'] = ApiClient.convertToType(data['TemplateScope'], TemplateScopeType);
+                obj['TemplateScope'] = ApiClient.convertToType(data['TemplateScope'], TemplateScope);
             }
         }
         return obj;
@@ -89,7 +89,7 @@ TemplatePayload.prototype['Body'] = undefined;
 
 /**
  * Visibility of a template
- * @member {module:model/TemplateScopeType} TemplateScope
+ * @member {module:model/TemplateScope} TemplateScope
  */
 TemplatePayload.prototype['TemplateScope'] = undefined;
 

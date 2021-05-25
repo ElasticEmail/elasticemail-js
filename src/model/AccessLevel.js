@@ -327,6 +327,20 @@ export default class AccessLevel {
         "ViewEmailVerifications" = "ViewEmailVerifications";
 
     
+        /**
+         * value: "ViewMarketing"
+         * @const
+         */
+        "ViewMarketing" = "ViewMarketing";
+
+    
+        /**
+         * value: "ViewEmailApi"
+         * @const
+         */
+        "ViewEmailApi" = "ViewEmailApi";
+
+    
 
     /**
     * Returns a <code>AccessLevel</code> enum value from a Javascript object name.

@@ -90,7 +90,7 @@ import SubaccountSettingsInfoPayload from './model/SubaccountSettingsInfoPayload
 import Suppression from './model/Suppression';
 import Template from './model/Template';
 import TemplatePayload from './model/TemplatePayload';
-import TemplateScopeType from './model/TemplateScopeType';
+import TemplateScope from './model/TemplateScope';
 import TemplateType from './model/TemplateType';
 import TransactionalRecipient from './model/TransactionalRecipient';
 import Utm from './model/Utm';
@@ -142,7 +142,7 @@ import VerificationsApi from './api/VerificationsApi';
 * </pre>
 * </p>
 * @module index
-* @version 4.0.1
+* @version 4.0.11
 */
 export {
     /**
@@ -614,10 +614,10 @@ export {
     TemplatePayload,
 
     /**
-     * The TemplateScopeType model constructor.
-     * @property {module:model/TemplateScopeType}
+     * The TemplateScope model constructor.
+     * @property {module:model/TemplateScope}
      */
-    TemplateScopeType,
+    TemplateScope,
 
     /**
      * The TemplateType model constructor.

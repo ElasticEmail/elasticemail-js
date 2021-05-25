@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EmailSend model module.
  * @module model/EmailSend
- * @version 4.0.1
+ * @version 4.0.11
  */
 class EmailSend {
     /**

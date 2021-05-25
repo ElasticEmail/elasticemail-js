@@ -17,7 +17,7 @@ import LogJobStatus from './LogJobStatus';
 /**
  * The EmailStatus model module.
  * @module model/EmailStatus
- * @version 4.0.1
+ * @version 4.0.11
  */
 class EmailStatus {
     /**

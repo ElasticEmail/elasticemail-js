@@ -187,7 +187,7 @@ apikey.apiKey = 'YOUR API KEY';
 //apikey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ElasticEmail.TemplatesApi();
-let scopeType = [new ElasticEmail.TemplateScopeType()]; // [TemplateScopeType] | Return templates with specified scope only
+let scopeType = [new ElasticEmail.TemplateScope()]; // [TemplateScope] | Return templates with specified scope only
 let opts = {
   'templateTypes': [new ElasticEmail.TemplateType()], // [TemplateType] | Return templates with specified type only
   'limit': 100, // Number | Maximum number of returned items.
@@ -207,7 +207,7 @@ apiInstance.templatesGet(scopeType, opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **scopeType** | [**[TemplateScopeType]**](TemplateScopeType.md)| Return templates with specified scope only | 
+ **scopeType** | [**[TemplateScope]**](TemplateScope.md)| Return templates with specified scope only | 
  **templateTypes** | [**[TemplateType]**](TemplateType.md)| Return templates with specified type only | [optional] 
  **limit** | **Number**| Maximum number of returned items. | [optional] 
  **offset** | **Number**| How many items should be returned ahead. | [optional] 

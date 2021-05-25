@@ -15,13 +15,13 @@
 import ApiClient from "../ApiClient";
 import Template from '../model/Template';
 import TemplatePayload from '../model/TemplatePayload';
-import TemplateScopeType from '../model/TemplateScopeType';
+import TemplateScope from '../model/TemplateScope';
 import TemplateType from '../model/TemplateType';
 
 /**
 * Templates service.
 * @module api/TemplatesApi
-* @version 4.0.1
+* @version 4.0.11
 */
 export default class TemplatesApi {
 
@@ -181,7 +181,7 @@ export default class TemplatesApi {
     /**
      * Load Templates
      * Returns a list of templates for the specified type. Required Access Level: ViewTemplates
-     * @param {Array.<module:model/TemplateScopeType>} scopeType Return templates with specified scope only
+     * @param {Array.<module:model/TemplateScope>} scopeType Return templates with specified scope only
      * @param {Object} opts Optional parameters
      * @param {Array.<module:model/TemplateType>} opts.templateTypes Return templates with specified type only
      * @param {Number} opts.limit Maximum number of returned items.
