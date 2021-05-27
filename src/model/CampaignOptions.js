@@ -18,7 +18,7 @@ import SplitOptions from './SplitOptions';
 /**
  * The CampaignOptions model module.
  * @module model/CampaignOptions
- * @version 4.0.11
+ * @version 4.0.12
  */
 class CampaignOptions {
     /**

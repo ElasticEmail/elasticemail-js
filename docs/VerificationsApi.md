@@ -10,8 +10,9 @@ Method | HTTP request | Description
 [**verificationsFilesByIdDelete**](VerificationsApi.md#verificationsFilesByIdDelete) | **DELETE** /verifications/files/{id} | Delete File Verification Result
 [**verificationsFilesByIdResultDownloadGet**](VerificationsApi.md#verificationsFilesByIdResultDownloadGet) | **GET** /verifications/files/{id}/result/download | Download File Verification Result
 [**verificationsFilesByIdResultGet**](VerificationsApi.md#verificationsFilesByIdResultGet) | **GET** /verifications/files/{id}/result | Get Detailed File Verification Result
-[**verificationsFilesPost**](VerificationsApi.md#verificationsFilesPost) | **POST** /verifications/files | Verify From File
-[**verificationsFilesResultGet**](VerificationsApi.md#verificationsFilesResultGet) | **GET** /verifications/files/result | Get Simple Files Verification Results
+[**verificationsFilesByIdVerificationPost**](VerificationsApi.md#verificationsFilesByIdVerificationPost) | **POST** /verifications/files/{id}/verification | Start verification
+[**verificationsFilesPost**](VerificationsApi.md#verificationsFilesPost) | **POST** /verifications/files | Upload File with Emails
+[**verificationsFilesResultGet**](VerificationsApi.md#verificationsFilesResultGet) | **GET** /verifications/files/result | Get Files Verification Results
 [**verificationsGet**](VerificationsApi.md#verificationsGet) | **GET** /verifications | Get Emails Verification Results
 
 
@@ -328,13 +329,64 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## verificationsFilesByIdVerificationPost
+
+> verificationsFilesByIdVerificationPost(id)
+
+Start verification
+
+Start a verification of the previously uploaded file with emails. Required Access Level: VerifyEmails
+
+### Example
+
+```javascript
+import ElasticEmail from '@elasticemail/elasticemail-client';
+let defaultClient = ElasticEmail.ApiClient.instance;
+// Configure API key authorization: apikey
+let apikey = defaultClient.authentications['apikey'];
+apikey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apikey.apiKeyPrefix = 'Token';
+
+let apiInstance = new ElasticEmail.VerificationsApi();
+let id = "id_example"; // String | File ID to start verification
+apiInstance.verificationsFilesByIdVerificationPost(id, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| File ID to start verification | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[apikey](../README.md#apikey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+
 ## verificationsFilesPost
 
 > VerificationFileResult verificationsFilesPost(opts)
 
-Verify From File
+Upload File with Emails
 
-Uploads a CSV file with list of emails to verify. An &#39;email&#39; column is required. Required Access Level: VerifyEmails
+Uploads a CSV file with list of emails that can then be triggered for verification. An &#39;email&#39; column is required. Required Access Level: VerifyEmails
 
 ### Example
 
@@ -385,7 +437,7 @@ Name | Type | Description  | Notes
 
 > [VerificationFileResult] verificationsFilesResultGet()
 
-Get Simple Files Verification Results
+Get Files Verification Results
 
 Returns a list of uploaded files, their statuses and results. Required Access Level: ViewEmailVerifications
 

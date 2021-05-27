@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MessageAttachment model module.
  * @module model/MessageAttachment
- * @version 4.0.11
+ * @version 4.0.12
  */
 class MessageAttachment {
     /**
@@ -64,17 +64,19 @@ class MessageAttachment {
 }
 
 /**
+ * File's content as byte array (or a Base64 string)
  * @member {Blob} BinaryContent
  */
 MessageAttachment.prototype['BinaryContent'] = undefined;
 
 /**
- * Filename
+ * Display name of the file
  * @member {String} Name
  */
 MessageAttachment.prototype['Name'] = undefined;
 
 /**
+ * MIME content type
  * @member {String} ContentType
  */
 MessageAttachment.prototype['ContentType'] = undefined;

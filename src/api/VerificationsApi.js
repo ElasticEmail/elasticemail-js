@@ -20,7 +20,7 @@ import VerificationFileResultDetails from '../model/VerificationFileResultDetail
 /**
 * Verifications service.
 * @module api/VerificationsApi
-* @version 4.0.11
+* @version 4.0.12
 */
 export default class VerificationsApi {
 
@@ -299,6 +299,48 @@ export default class VerificationsApi {
     }
 
     /**
+     * Callback function to receive the result of the verificationsFilesByIdVerificationPost operation.
+     * @callback module:api/VerificationsApi~verificationsFilesByIdVerificationPostCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Start verification
+     * Start a verification of the previously uploaded file with emails. Required Access Level: VerifyEmails
+     * @param {String} id File ID to start verification
+     * @param {module:api/VerificationsApi~verificationsFilesByIdVerificationPostCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    verificationsFilesByIdVerificationPost(id, callback) {
+      let postBody = null;
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling verificationsFilesByIdVerificationPost");
+      }
+
+      let pathParams = {
+        'id': id
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apikey'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/verifications/files/{id}/verification', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the verificationsFilesPost operation.
      * @callback module:api/VerificationsApi~verificationsFilesPostCallback
      * @param {String} error Error message, if any.
@@ -307,8 +349,8 @@ export default class VerificationsApi {
      */
 
     /**
-     * Verify From File
-     * Uploads a CSV file with list of emails to verify. An 'email' column is required. Required Access Level: VerifyEmails
+     * Upload File with Emails
+     * Uploads a CSV file with list of emails that can then be triggered for verification. An 'email' column is required. Required Access Level: VerifyEmails
      * @param {Object} opts Optional parameters
      * @param {File} opts.file 
      * @param {module:api/VerificationsApi~verificationsFilesPostCallback} callback The callback function, accepting three arguments: error, data, response
@@ -348,7 +390,7 @@ export default class VerificationsApi {
      */
 
     /**
-     * Get Simple Files Verification Results
+     * Get Files Verification Results
      * Returns a list of uploaded files, their statuses and results. Required Access Level: ViewEmailVerifications
      * @param {module:api/VerificationsApi~verificationsFilesResultGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/VerificationFileResult>}

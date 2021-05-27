@@ -17,7 +17,7 @@ import ContactHistEventType from './ContactHistEventType';
 /**
  * The ContactHistory model module.
  * @module model/ContactHistory
- * @version 4.0.11
+ * @version 4.0.12
  */
 class ContactHistory {
     /**

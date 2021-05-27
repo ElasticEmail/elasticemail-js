@@ -26,7 +26,7 @@ import ExportStatus from '../model/ExportStatus';
 /**
 * Contacts service.
 * @module api/ContactsApi
-* @version 4.0.11
+* @version 4.0.12
 */
 export default class ContactsApi {
 
