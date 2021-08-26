@@ -354,7 +354,7 @@ let apiInstance = new ElasticEmail.ContactsApi();
 let opts = {
   'fileFormat': new ElasticEmail.ExportFileFormats(), // ExportFileFormats | Format of the exported file
   'rule': Status%20=%20Engaged, // String | Query used for filtering.
-  'emails': ["null"], // [String] | Comma delimited list of contact emails
+  'emails': mail@contact.com,mail1@contact.com,mail2@contact.com, // [String] | Comma delimited list of contact emails
   'compressionFormat': new ElasticEmail.CompressionFormat(), // CompressionFormat | FileResponse compression format. None or Zip.
   'fileName': filename.txt // String | Name of your file including extension.
 };

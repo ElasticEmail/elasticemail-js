@@ -95,4 +95,6 @@
 
 * `ViewEmailApi` (value: `"ViewEmailApi"`)
 
+* `ViewInbound` (value: `"ViewInbound"`)
+
 
