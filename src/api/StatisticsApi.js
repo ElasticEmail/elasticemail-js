@@ -19,7 +19,7 @@ import LogStatusSummary from '../model/LogStatusSummary';
 /**
 * Statistics service.
 * @module api/StatisticsApi
-* @version 4.0.14
+* @version 4.0.15
 */
 export default class StatisticsApi {
 

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EmailView model module.
  * @module model/EmailView
- * @version 4.0.14
+ * @version 4.0.15
  */
 class EmailView {
     /**

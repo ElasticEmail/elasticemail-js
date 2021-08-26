@@ -17,7 +17,7 @@ import EncodingType from './EncodingType';
 /**
  * The Options model module.
  * @module model/Options
- * @version 4.0.14
+ * @version 4.0.15
  */
 class Options {
     /**

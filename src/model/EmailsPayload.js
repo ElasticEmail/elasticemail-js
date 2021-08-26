@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EmailsPayload model module.
  * @module model/EmailsPayload
- * @version 4.0.14
+ * @version 4.0.15
  */
 class EmailsPayload {
     /**

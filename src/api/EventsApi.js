@@ -24,7 +24,7 @@ import RecipientEvent from '../model/RecipientEvent';
 /**
 * Events service.
 * @module api/EventsApi
-* @version 4.0.14
+* @version 4.0.15
 */
 export default class EventsApi {
 
