@@ -17,7 +17,7 @@ import EmailValidationStatus from './EmailValidationStatus';
 /**
  * The EmailValidationResult model module.
  * @module model/EmailValidationResult
- * @version 4.0.13
+ * @version 4.0.14
  */
 class EmailValidationResult {
     /**

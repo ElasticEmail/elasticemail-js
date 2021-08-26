@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ContactActivity model module.
  * @module model/ContactActivity
- * @version 4.0.13
+ * @version 4.0.14
  */
 class ContactActivity {
     /**
