@@ -18,7 +18,7 @@ import SplitOptions from './SplitOptions';
 /**
  * The CampaignOptions model module.
  * @module model/CampaignOptions
- * @version 4.0.15
+ * @version 4.0.16
  */
 class CampaignOptions {
     /**
@@ -51,7 +51,7 @@ class CampaignOptions {
             obj = obj || new CampaignOptions();
 
             if (data.hasOwnProperty('DeliveryOptimization')) {
-                obj['DeliveryOptimization'] = ApiClient.convertToType(data['DeliveryOptimization'], DeliveryOptimizationType);
+                obj['DeliveryOptimization'] = DeliveryOptimizationType.constructFromObject(data['DeliveryOptimization']);
             }
             if (data.hasOwnProperty('TrackOpens')) {
                 obj['TrackOpens'] = ApiClient.convertToType(data['TrackOpens'], 'Boolean');
@@ -63,7 +63,7 @@ class CampaignOptions {
                 obj['ScheduleFor'] = ApiClient.convertToType(data['ScheduleFor'], 'Date');
             }
             if (data.hasOwnProperty('SplitOptions')) {
-                obj['SplitOptions'] = ApiClient.convertToType(data['SplitOptions'], SplitOptions);
+                obj['SplitOptions'] = SplitOptions.constructFromObject(data['SplitOptions']);
             }
         }
         return obj;
@@ -73,7 +73,6 @@ class CampaignOptions {
 }
 
 /**
- * How to order email delivery - by recipients' engagement score or by the time they open the most of the emails that were sent to them
  * @member {module:model/DeliveryOptimizationType} DeliveryOptimization
  */
 CampaignOptions.prototype['DeliveryOptimization'] = undefined;
@@ -97,7 +96,6 @@ CampaignOptions.prototype['TrackClicks'] = undefined;
 CampaignOptions.prototype['ScheduleFor'] = undefined;
 
 /**
- * Optional options for A/X split campaigns. Will be ignored if only one template content was provided
  * @member {module:model/SplitOptions} SplitOptions
  */
 CampaignOptions.prototype['SplitOptions'] = undefined;

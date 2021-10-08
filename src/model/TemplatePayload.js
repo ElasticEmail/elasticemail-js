@@ -18,7 +18,7 @@ import TemplateScope from './TemplateScope';
 /**
  * The TemplatePayload model module.
  * @module model/TemplatePayload
- * @version 4.0.15
+ * @version 4.0.16
  */
 class TemplatePayload {
     /**
@@ -62,7 +62,7 @@ class TemplatePayload {
                 obj['Body'] = ApiClient.convertToType(data['Body'], [BodyPart]);
             }
             if (data.hasOwnProperty('TemplateScope')) {
-                obj['TemplateScope'] = ApiClient.convertToType(data['TemplateScope'], TemplateScope);
+                obj['TemplateScope'] = TemplateScope.constructFromObject(data['TemplateScope']);
             }
         }
         return obj;
@@ -90,7 +90,6 @@ TemplatePayload.prototype['Subject'] = undefined;
 TemplatePayload.prototype['Body'] = undefined;
 
 /**
- * Visibility of a template
  * @member {module:model/TemplateScope} TemplateScope
  */
 TemplatePayload.prototype['TemplateScope'] = undefined;

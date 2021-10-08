@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**recipients** | [**[EmailRecipient]**](EmailRecipient.md) | List of recipients (visible to others) | 
-**content** | [**EmailContent**](EmailContent.md) | Proper e-mail content | [optional] 
-**options** | [**Options**](Options.md) | E-mail configuration | [optional] 
+**recipients** | [**[EmailRecipient]**](EmailRecipient.md) | List of recipients | 
+**content** | [**EmailContent**](EmailContent.md) |  | [optional] 
+**options** | [**Options**](Options.md) |  | [optional] 
 
 

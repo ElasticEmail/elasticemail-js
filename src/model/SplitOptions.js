@@ -17,7 +17,7 @@ import SplitOptimizationType from './SplitOptimizationType';
 /**
  * The SplitOptions model module.
  * @module model/SplitOptions
- * @version 4.0.15
+ * @version 4.0.16
  */
 class SplitOptions {
     /**
@@ -50,7 +50,7 @@ class SplitOptions {
             obj = obj || new SplitOptions();
 
             if (data.hasOwnProperty('OptimizeFor')) {
-                obj['OptimizeFor'] = ApiClient.convertToType(data['OptimizeFor'], SplitOptimizationType);
+                obj['OptimizeFor'] = SplitOptimizationType.constructFromObject(data['OptimizeFor']);
             }
             if (data.hasOwnProperty('OptimizePeriodMinutes')) {
                 obj['OptimizePeriodMinutes'] = ApiClient.convertToType(data['OptimizePeriodMinutes'], 'Number');
@@ -63,7 +63,6 @@ class SplitOptions {
 }
 
 /**
- * Type of results by which to determine the winner template (content)
  * @member {module:model/SplitOptimizationType} OptimizeFor
  */
 SplitOptions.prototype['OptimizeFor'] = undefined;

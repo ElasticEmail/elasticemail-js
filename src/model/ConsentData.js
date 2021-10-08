@@ -17,7 +17,7 @@ import ConsentTracking from './ConsentTracking';
 /**
  * The ConsentData model module.
  * @module model/ConsentData
- * @version 4.0.15
+ * @version 4.0.16
  */
 class ConsentData {
     /**
@@ -55,7 +55,7 @@ class ConsentData {
                 obj['ConsentDate'] = ApiClient.convertToType(data['ConsentDate'], 'Date');
             }
             if (data.hasOwnProperty('ConsentTracking')) {
-                obj['ConsentTracking'] = ApiClient.convertToType(data['ConsentTracking'], ConsentTracking);
+                obj['ConsentTracking'] = ConsentTracking.constructFromObject(data['ConsentTracking']);
             }
         }
         return obj;
@@ -77,7 +77,6 @@ ConsentData.prototype['ConsentIP'] = undefined;
 ConsentData.prototype['ConsentDate'] = undefined;
 
 /**
- * Does the contant consent to have their tracking data stored.
  * @member {module:model/ConsentTracking} ConsentTracking
  */
 ConsentData.prototype['ConsentTracking'] = undefined;

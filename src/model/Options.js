@@ -17,7 +17,7 @@ import EncodingType from './EncodingType';
 /**
  * The Options model module.
  * @module model/Options
- * @version 4.0.15
+ * @version 4.0.16
  */
 class Options {
     /**
@@ -59,7 +59,7 @@ class Options {
                 obj['ChannelName'] = ApiClient.convertToType(data['ChannelName'], 'String');
             }
             if (data.hasOwnProperty('Encoding')) {
-                obj['Encoding'] = ApiClient.convertToType(data['Encoding'], EncodingType);
+                obj['Encoding'] = EncodingType.constructFromObject(data['Encoding']);
             }
             if (data.hasOwnProperty('TrackOpens')) {
                 obj['TrackOpens'] = ApiClient.convertToType(data['TrackOpens'], 'Boolean');
@@ -93,7 +93,6 @@ Options.prototype['PoolName'] = undefined;
 Options.prototype['ChannelName'] = undefined;
 
 /**
- * 0 for None, 1 for Raw7Bit, 2 for Raw8Bit, 3 for QuotedPrintable, 4 for Base64 (Default), 5 for Uue note that you can also provide the text version such as \"Raw7Bit\" for value 1. NOTE: Base64 or QuotedPrintable is recommended if you are validating your domain(s) with DKIM.
  * @member {module:model/EncodingType} Encoding
  */
 Options.prototype['Encoding'] = undefined;

@@ -18,7 +18,7 @@ import SubaccountSettingsInfo from './SubaccountSettingsInfo';
 /**
  * The SubAccountInfo model module.
  * @module model/SubAccountInfo
- * @version 4.0.15
+ * @version 4.0.16
  */
 class SubAccountInfo {
     /**
@@ -57,7 +57,7 @@ class SubAccountInfo {
                 obj['Email'] = ApiClient.convertToType(data['Email'], 'String');
             }
             if (data.hasOwnProperty('Settings')) {
-                obj['Settings'] = ApiClient.convertToType(data['Settings'], SubaccountSettingsInfo);
+                obj['Settings'] = SubaccountSettingsInfo.constructFromObject(data['Settings']);
             }
             if (data.hasOwnProperty('LastActivity')) {
                 obj['LastActivity'] = ApiClient.convertToType(data['LastActivity'], 'Date');
@@ -72,7 +72,7 @@ class SubAccountInfo {
                 obj['Reputation'] = ApiClient.convertToType(data['Reputation'], 'Number');
             }
             if (data.hasOwnProperty('Status')) {
-                obj['Status'] = ApiClient.convertToType(data['Status'], AccountStatusEnum);
+                obj['Status'] = AccountStatusEnum.constructFromObject(data['Status']);
             }
             if (data.hasOwnProperty('ContactsCount')) {
                 obj['ContactsCount'] = ApiClient.convertToType(data['ContactsCount'], 'Number');
@@ -97,7 +97,6 @@ SubAccountInfo.prototype['PublicAccountID'] = undefined;
 SubAccountInfo.prototype['Email'] = undefined;
 
 /**
- * SubAccount settings
  * @member {module:model/SubaccountSettingsInfo} Settings
  */
 SubAccountInfo.prototype['Settings'] = undefined;
@@ -127,7 +126,6 @@ SubAccountInfo.prototype['TotalEmailsSent'] = undefined;
 SubAccountInfo.prototype['Reputation'] = undefined;
 
 /**
- * Account's current status.
  * @member {module:model/AccountStatusEnum} Status
  */
 SubAccountInfo.prototype['Status'] = undefined;

@@ -16,12 +16,12 @@ import ApiClient from '../ApiClient';
 /**
  * The EmailRecipient model module.
  * @module model/EmailRecipient
- * @version 4.0.15
+ * @version 4.0.16
  */
 class EmailRecipient {
     /**
      * Constructs a new <code>EmailRecipient</code>.
-     * List of recipients (visible to others)
+     * List of recipients
      * @alias module:model/EmailRecipient
      * @param email {String} Proper email address.
      */

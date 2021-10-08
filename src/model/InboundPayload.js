@@ -18,7 +18,7 @@ import InboundRouteFilterType from './InboundRouteFilterType';
 /**
  * The InboundPayload model module.
  * @module model/InboundPayload
- * @version 4.0.15
+ * @version 4.0.16
  */
 class InboundPayload {
     /**
@@ -26,8 +26,8 @@ class InboundPayload {
      * @alias module:model/InboundPayload
      * @param filter {String} Filter of the inbound data
      * @param name {String} Name of this route
-     * @param filterType {module:model/InboundRouteFilterType} Type of the filter
-     * @param actionType {module:model/InboundRouteActionType} Type of action to take
+     * @param filterType {module:model/InboundRouteFilterType} 
+     * @param actionType {module:model/InboundRouteActionType} 
      */
     constructor(filter, name, filterType, actionType) { 
         
@@ -64,10 +64,10 @@ class InboundPayload {
                 obj['Name'] = ApiClient.convertToType(data['Name'], 'String');
             }
             if (data.hasOwnProperty('FilterType')) {
-                obj['FilterType'] = ApiClient.convertToType(data['FilterType'], InboundRouteFilterType);
+                obj['FilterType'] = InboundRouteFilterType.constructFromObject(data['FilterType']);
             }
             if (data.hasOwnProperty('ActionType')) {
-                obj['ActionType'] = ApiClient.convertToType(data['ActionType'], InboundRouteActionType);
+                obj['ActionType'] = InboundRouteActionType.constructFromObject(data['ActionType']);
             }
             if (data.hasOwnProperty('EmailAddress')) {
                 obj['EmailAddress'] = ApiClient.convertToType(data['EmailAddress'], 'String');
@@ -95,13 +95,11 @@ InboundPayload.prototype['Filter'] = undefined;
 InboundPayload.prototype['Name'] = undefined;
 
 /**
- * Type of the filter
  * @member {module:model/InboundRouteFilterType} FilterType
  */
 InboundPayload.prototype['FilterType'] = undefined;
 
 /**
- * Type of action to take
  * @member {module:model/InboundRouteActionType} ActionType
  */
 InboundPayload.prototype['ActionType'] = undefined;

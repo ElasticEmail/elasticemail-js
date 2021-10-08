@@ -17,14 +17,14 @@ import BodyContentType from './BodyContentType';
 /**
  * The BodyPart model module.
  * @module model/BodyPart
- * @version 4.0.15
+ * @version 4.0.16
  */
 class BodyPart {
     /**
      * Constructs a new <code>BodyPart</code>.
      * Email body part with user-provided MIME type (text/html, text/plain, etc)
      * @alias module:model/BodyPart
-     * @param contentType {module:model/BodyContentType} Type of the body part
+     * @param contentType {module:model/BodyContentType} 
      */
     constructor(contentType) { 
         
@@ -52,7 +52,7 @@ class BodyPart {
             obj = obj || new BodyPart();
 
             if (data.hasOwnProperty('ContentType')) {
-                obj['ContentType'] = ApiClient.convertToType(data['ContentType'], BodyContentType);
+                obj['ContentType'] = BodyContentType.constructFromObject(data['ContentType']);
             }
             if (data.hasOwnProperty('Content')) {
                 obj['Content'] = ApiClient.convertToType(data['Content'], 'String');
@@ -68,7 +68,6 @@ class BodyPart {
 }
 
 /**
- * Type of the body part
  * @member {module:model/BodyContentType} ContentType
  */
 BodyPart.prototype['ContentType'] = undefined;

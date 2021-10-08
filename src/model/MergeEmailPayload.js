@@ -19,13 +19,13 @@ import Options from './Options';
 /**
  * The MergeEmailPayload model module.
  * @module model/MergeEmailPayload
- * @version 4.0.15
+ * @version 4.0.16
  */
 class MergeEmailPayload {
     /**
      * Constructs a new <code>MergeEmailPayload</code>.
      * @alias module:model/MergeEmailPayload
-     * @param mergeFile {module:model/MessageAttachment} CSV file containing recipients with optional merge fields
+     * @param mergeFile {module:model/MessageAttachment} 
      */
     constructor(mergeFile) { 
         
@@ -53,13 +53,13 @@ class MergeEmailPayload {
             obj = obj || new MergeEmailPayload();
 
             if (data.hasOwnProperty('MergeFile')) {
-                obj['MergeFile'] = ApiClient.convertToType(data['MergeFile'], MessageAttachment);
+                obj['MergeFile'] = MessageAttachment.constructFromObject(data['MergeFile']);
             }
             if (data.hasOwnProperty('Content')) {
-                obj['Content'] = ApiClient.convertToType(data['Content'], EmailContent);
+                obj['Content'] = EmailContent.constructFromObject(data['Content']);
             }
             if (data.hasOwnProperty('Options')) {
-                obj['Options'] = ApiClient.convertToType(data['Options'], Options);
+                obj['Options'] = Options.constructFromObject(data['Options']);
             }
         }
         return obj;
@@ -69,19 +69,16 @@ class MergeEmailPayload {
 }
 
 /**
- * CSV file containing recipients with optional merge fields
  * @member {module:model/MessageAttachment} MergeFile
  */
 MergeEmailPayload.prototype['MergeFile'] = undefined;
 
 /**
- * Proper e-mail content
  * @member {module:model/EmailContent} Content
  */
 MergeEmailPayload.prototype['Content'] = undefined;
 
 /**
- * E-mail configuration
  * @member {module:model/Options} Options
  */
 MergeEmailPayload.prototype['Options'] = undefined;

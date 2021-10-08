@@ -17,7 +17,7 @@ import SubaccountEmailSettings from './SubaccountEmailSettings';
 /**
  * The SubaccountSettingsInfo model module.
  * @module model/SubaccountSettingsInfo
- * @version 4.0.15
+ * @version 4.0.16
  */
 class SubaccountSettingsInfo {
     /**
@@ -50,7 +50,7 @@ class SubaccountSettingsInfo {
             obj = obj || new SubaccountSettingsInfo();
 
             if (data.hasOwnProperty('Email')) {
-                obj['Email'] = ApiClient.convertToType(data['Email'], SubaccountEmailSettings);
+                obj['Email'] = SubaccountEmailSettings.constructFromObject(data['Email']);
             }
         }
         return obj;
@@ -60,7 +60,6 @@ class SubaccountSettingsInfo {
 }
 
 /**
- * Settings related to sending emails
  * @member {module:model/SubaccountEmailSettings} Email
  */
 SubaccountSettingsInfo.prototype['Email'] = undefined;

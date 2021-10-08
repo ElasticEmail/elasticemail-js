@@ -17,7 +17,7 @@ import LogJobStatus from './LogJobStatus';
 /**
  * The EmailStatus model module.
  * @module model/EmailStatus
- * @version 4.0.15
+ * @version 4.0.16
  */
 class EmailStatus {
     /**
@@ -59,7 +59,7 @@ class EmailStatus {
                 obj['Date'] = ApiClient.convertToType(data['Date'], 'Date');
             }
             if (data.hasOwnProperty('Status')) {
-                obj['Status'] = ApiClient.convertToType(data['Status'], LogJobStatus);
+                obj['Status'] = LogJobStatus.constructFromObject(data['Status']);
             }
             if (data.hasOwnProperty('StatusName')) {
                 obj['StatusName'] = ApiClient.convertToType(data['StatusName'], 'String');
@@ -111,7 +111,6 @@ EmailStatus.prototype['To'] = undefined;
 EmailStatus.prototype['Date'] = undefined;
 
 /**
- * Value of email's status
  * @member {module:model/LogJobStatus} Status
  */
 EmailStatus.prototype['Status'] = undefined;

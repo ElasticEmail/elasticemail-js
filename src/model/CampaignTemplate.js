@@ -17,7 +17,7 @@ import Utm from './Utm';
 /**
  * The CampaignTemplate model module.
  * @module model/CampaignTemplate
- * @version 4.0.15
+ * @version 4.0.16
  */
 class CampaignTemplate {
     /**
@@ -68,7 +68,7 @@ class CampaignTemplate {
                 obj['AttachFiles'] = ApiClient.convertToType(data['AttachFiles'], ['String']);
             }
             if (data.hasOwnProperty('Utm')) {
-                obj['Utm'] = ApiClient.convertToType(data['Utm'], Utm);
+                obj['Utm'] = Utm.constructFromObject(data['Utm']);
             }
         }
         return obj;
@@ -114,7 +114,6 @@ CampaignTemplate.prototype['TemplateName'] = undefined;
 CampaignTemplate.prototype['AttachFiles'] = undefined;
 
 /**
- * Utm marketing data to be attached to every link in this e-mail.
  * @member {module:model/Utm} Utm
  */
 CampaignTemplate.prototype['Utm'] = undefined;

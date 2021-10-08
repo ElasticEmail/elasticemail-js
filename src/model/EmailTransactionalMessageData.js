@@ -19,14 +19,14 @@ import TransactionalRecipient from './TransactionalRecipient';
 /**
  * The EmailTransactionalMessageData model module.
  * @module model/EmailTransactionalMessageData
- * @version 4.0.15
+ * @version 4.0.16
  */
 class EmailTransactionalMessageData {
     /**
      * Constructs a new <code>EmailTransactionalMessageData</code>.
      * Email data
      * @alias module:model/EmailTransactionalMessageData
-     * @param recipients {module:model/TransactionalRecipient} List of transactional recipients
+     * @param recipients {module:model/TransactionalRecipient} 
      */
     constructor(recipients) { 
         
@@ -54,13 +54,13 @@ class EmailTransactionalMessageData {
             obj = obj || new EmailTransactionalMessageData();
 
             if (data.hasOwnProperty('Recipients')) {
-                obj['Recipients'] = ApiClient.convertToType(data['Recipients'], TransactionalRecipient);
+                obj['Recipients'] = TransactionalRecipient.constructFromObject(data['Recipients']);
             }
             if (data.hasOwnProperty('Content')) {
-                obj['Content'] = ApiClient.convertToType(data['Content'], EmailContent);
+                obj['Content'] = EmailContent.constructFromObject(data['Content']);
             }
             if (data.hasOwnProperty('Options')) {
-                obj['Options'] = ApiClient.convertToType(data['Options'], Options);
+                obj['Options'] = Options.constructFromObject(data['Options']);
             }
         }
         return obj;
@@ -70,19 +70,16 @@ class EmailTransactionalMessageData {
 }
 
 /**
- * List of transactional recipients
  * @member {module:model/TransactionalRecipient} Recipients
  */
 EmailTransactionalMessageData.prototype['Recipients'] = undefined;
 
 /**
- * Proper e-mail content
  * @member {module:model/EmailContent} Content
  */
 EmailTransactionalMessageData.prototype['Content'] = undefined;
 
 /**
- * E-mail configuration
  * @member {module:model/Options} Options
  */
 EmailTransactionalMessageData.prototype['Options'] = undefined;

@@ -19,7 +19,7 @@ import FileInfo from './FileInfo';
 /**
  * The EmailData model module.
  * @module model/EmailData
- * @version 4.0.15
+ * @version 4.0.16
  */
 class EmailData {
     /**
@@ -51,13 +51,13 @@ class EmailData {
             obj = obj || new EmailData();
 
             if (data.hasOwnProperty('Preview')) {
-                obj['Preview'] = ApiClient.convertToType(data['Preview'], EmailView);
+                obj['Preview'] = EmailView.constructFromObject(data['Preview']);
             }
             if (data.hasOwnProperty('Attachments')) {
                 obj['Attachments'] = ApiClient.convertToType(data['Attachments'], [FileInfo]);
             }
             if (data.hasOwnProperty('Status')) {
-                obj['Status'] = ApiClient.convertToType(data['Status'], EmailStatus);
+                obj['Status'] = EmailStatus.constructFromObject(data['Status']);
             }
         }
         return obj;
@@ -67,7 +67,6 @@ class EmailData {
 }
 
 /**
- * Email details
  * @member {module:model/EmailView} Preview
  */
 EmailData.prototype['Preview'] = undefined;
@@ -79,7 +78,6 @@ EmailData.prototype['Preview'] = undefined;
 EmailData.prototype['Attachments'] = undefined;
 
 /**
- * Status of the given resource
  * @member {module:model/EmailStatus} Status
  */
 EmailData.prototype['Status'] = undefined;

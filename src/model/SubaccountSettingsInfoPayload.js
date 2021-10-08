@@ -17,7 +17,7 @@ import SubaccountEmailSettingsPayload from './SubaccountEmailSettingsPayload';
 /**
  * The SubaccountSettingsInfoPayload model module.
  * @module model/SubaccountSettingsInfoPayload
- * @version 4.0.15
+ * @version 4.0.16
  */
 class SubaccountSettingsInfoPayload {
     /**
@@ -50,7 +50,7 @@ class SubaccountSettingsInfoPayload {
             obj = obj || new SubaccountSettingsInfoPayload();
 
             if (data.hasOwnProperty('Email')) {
-                obj['Email'] = ApiClient.convertToType(data['Email'], SubaccountEmailSettingsPayload);
+                obj['Email'] = SubaccountEmailSettingsPayload.constructFromObject(data['Email']);
             }
         }
         return obj;
@@ -60,7 +60,6 @@ class SubaccountSettingsInfoPayload {
 }
 
 /**
- * Settings related to sending emails
  * @member {module:model/SubaccountEmailSettingsPayload} Email
  */
 SubaccountSettingsInfoPayload.prototype['Email'] = undefined;

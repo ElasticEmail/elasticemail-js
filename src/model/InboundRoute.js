@@ -18,7 +18,7 @@ import InboundRouteFilterType from './InboundRouteFilterType';
 /**
  * The InboundRoute model module.
  * @module model/InboundRoute
- * @version 4.0.15
+ * @version 4.0.16
  */
 class InboundRoute {
     /**
@@ -56,13 +56,13 @@ class InboundRoute {
                 obj['Name'] = ApiClient.convertToType(data['Name'], 'String');
             }
             if (data.hasOwnProperty('FilterType')) {
-                obj['FilterType'] = ApiClient.convertToType(data['FilterType'], InboundRouteFilterType);
+                obj['FilterType'] = InboundRouteFilterType.constructFromObject(data['FilterType']);
             }
             if (data.hasOwnProperty('Filter')) {
                 obj['Filter'] = ApiClient.convertToType(data['Filter'], 'String');
             }
             if (data.hasOwnProperty('ActionType')) {
-                obj['ActionType'] = ApiClient.convertToType(data['ActionType'], InboundRouteActionType);
+                obj['ActionType'] = InboundRouteActionType.constructFromObject(data['ActionType']);
             }
             if (data.hasOwnProperty('ActionParameter')) {
                 obj['ActionParameter'] = ApiClient.convertToType(data['ActionParameter'], 'String');
@@ -89,7 +89,6 @@ InboundRoute.prototype['PublicId'] = undefined;
 InboundRoute.prototype['Name'] = undefined;
 
 /**
- * Type of the filter
  * @member {module:model/InboundRouteFilterType} FilterType
  */
 InboundRoute.prototype['FilterType'] = undefined;
@@ -101,7 +100,6 @@ InboundRoute.prototype['FilterType'] = undefined;
 InboundRoute.prototype['Filter'] = undefined;
 
 /**
- * Type of action to take
  * @member {module:model/InboundRouteActionType} ActionType
  */
 InboundRoute.prototype['ActionType'] = undefined;

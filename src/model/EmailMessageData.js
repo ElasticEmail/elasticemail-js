@@ -19,14 +19,14 @@ import Options from './Options';
 /**
  * The EmailMessageData model module.
  * @module model/EmailMessageData
- * @version 4.0.15
+ * @version 4.0.16
  */
 class EmailMessageData {
     /**
      * Constructs a new <code>EmailMessageData</code>.
      * Email data
      * @alias module:model/EmailMessageData
-     * @param recipients {Array.<module:model/EmailRecipient>} List of recipients (visible to others)
+     * @param recipients {Array.<module:model/EmailRecipient>} List of recipients
      */
     constructor(recipients) { 
         
@@ -57,10 +57,10 @@ class EmailMessageData {
                 obj['Recipients'] = ApiClient.convertToType(data['Recipients'], [EmailRecipient]);
             }
             if (data.hasOwnProperty('Content')) {
-                obj['Content'] = ApiClient.convertToType(data['Content'], EmailContent);
+                obj['Content'] = EmailContent.constructFromObject(data['Content']);
             }
             if (data.hasOwnProperty('Options')) {
-                obj['Options'] = ApiClient.convertToType(data['Options'], Options);
+                obj['Options'] = Options.constructFromObject(data['Options']);
             }
         }
         return obj;
@@ -70,19 +70,17 @@ class EmailMessageData {
 }
 
 /**
- * List of recipients (visible to others)
+ * List of recipients
  * @member {Array.<module:model/EmailRecipient>} Recipients
  */
 EmailMessageData.prototype['Recipients'] = undefined;
 
 /**
- * Proper e-mail content
  * @member {module:model/EmailContent} Content
  */
 EmailMessageData.prototype['Content'] = undefined;
 
 /**
- * E-mail configuration
  * @member {module:model/Options} Options
  */
 EmailMessageData.prototype['Options'] = undefined;

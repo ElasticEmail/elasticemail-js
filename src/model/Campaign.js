@@ -20,14 +20,14 @@ import CampaignTemplate from './CampaignTemplate';
 /**
  * The Campaign model module.
  * @module model/Campaign
- * @version 4.0.15
+ * @version 4.0.16
  */
 class Campaign {
     /**
      * Constructs a new <code>Campaign</code>.
      * @alias module:model/Campaign
      * @param name {String} Campaign name
-     * @param recipients {module:model/CampaignRecipient} Recipients this campaign should be sent to
+     * @param recipients {module:model/CampaignRecipient} 
      */
     constructor(name, recipients) { 
         
@@ -62,13 +62,13 @@ class Campaign {
                 obj['Name'] = ApiClient.convertToType(data['Name'], 'String');
             }
             if (data.hasOwnProperty('Status')) {
-                obj['Status'] = ApiClient.convertToType(data['Status'], CampaignStatus);
+                obj['Status'] = CampaignStatus.constructFromObject(data['Status']);
             }
             if (data.hasOwnProperty('Recipients')) {
-                obj['Recipients'] = ApiClient.convertToType(data['Recipients'], CampaignRecipient);
+                obj['Recipients'] = CampaignRecipient.constructFromObject(data['Recipients']);
             }
             if (data.hasOwnProperty('Options')) {
-                obj['Options'] = ApiClient.convertToType(data['Options'], CampaignOptions);
+                obj['Options'] = CampaignOptions.constructFromObject(data['Options']);
             }
         }
         return obj;
@@ -90,19 +90,16 @@ Campaign.prototype['Content'] = undefined;
 Campaign.prototype['Name'] = undefined;
 
 /**
- * Campaign status
  * @member {module:model/CampaignStatus} Status
  */
 Campaign.prototype['Status'] = undefined;
 
 /**
- * Recipients this campaign should be sent to
  * @member {module:model/CampaignRecipient} Recipients
  */
 Campaign.prototype['Recipients'] = undefined;
 
 /**
- * Campaign sending options
  * @member {module:model/CampaignOptions} Options
  */
 Campaign.prototype['Options'] = undefined;

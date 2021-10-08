@@ -18,7 +18,7 @@ import ContactStatus from './ContactStatus';
 /**
  * The ContactPayload model module.
  * @module model/ContactPayload
- * @version 4.0.15
+ * @version 4.0.16
  */
 class ContactPayload {
     /**
@@ -55,7 +55,7 @@ class ContactPayload {
                 obj['Email'] = ApiClient.convertToType(data['Email'], 'String');
             }
             if (data.hasOwnProperty('Status')) {
-                obj['Status'] = ApiClient.convertToType(data['Status'], ContactStatus);
+                obj['Status'] = ContactStatus.constructFromObject(data['Status']);
             }
             if (data.hasOwnProperty('FirstName')) {
                 obj['FirstName'] = ApiClient.convertToType(data['FirstName'], 'String');
@@ -83,7 +83,6 @@ class ContactPayload {
 ContactPayload.prototype['Email'] = undefined;
 
 /**
- * Status of the given resource
  * @member {module:model/ContactStatus} Status
  */
 ContactPayload.prototype['Status'] = undefined;

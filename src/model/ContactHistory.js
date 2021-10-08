@@ -17,7 +17,7 @@ import ContactHistEventType from './ContactHistEventType';
 /**
  * The ContactHistory model module.
  * @module model/ContactHistory
- * @version 4.0.15
+ * @version 4.0.16
  */
 class ContactHistory {
     /**
@@ -49,7 +49,7 @@ class ContactHistory {
             obj = obj || new ContactHistory();
 
             if (data.hasOwnProperty('EventType')) {
-                obj['EventType'] = ApiClient.convertToType(data['EventType'], ContactHistEventType);
+                obj['EventType'] = ContactHistEventType.constructFromObject(data['EventType']);
             }
             if (data.hasOwnProperty('EventDate')) {
                 obj['EventDate'] = ApiClient.convertToType(data['EventDate'], 'Date');
@@ -77,7 +77,6 @@ class ContactHistory {
 }
 
 /**
- * Type of event occured on this Contact.
  * @member {module:model/ContactHistEventType} EventType
  */
 ContactHistory.prototype['EventType'] = undefined;

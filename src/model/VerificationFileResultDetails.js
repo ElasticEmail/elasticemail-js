@@ -19,7 +19,7 @@ import VerificationStatus from './VerificationStatus';
 /**
  * The VerificationFileResultDetails model module.
  * @module model/VerificationFileResultDetails
- * @version 4.0.15
+ * @version 4.0.16
  */
 class VerificationFileResultDetails {
     /**
@@ -61,10 +61,10 @@ class VerificationFileResultDetails {
                 obj['Filename'] = ApiClient.convertToType(data['Filename'], 'String');
             }
             if (data.hasOwnProperty('VerificationStatus')) {
-                obj['VerificationStatus'] = ApiClient.convertToType(data['VerificationStatus'], VerificationStatus);
+                obj['VerificationStatus'] = VerificationStatus.constructFromObject(data['VerificationStatus']);
             }
             if (data.hasOwnProperty('FileUploadResult')) {
-                obj['FileUploadResult'] = ApiClient.convertToType(data['FileUploadResult'], FileUploadResult);
+                obj['FileUploadResult'] = FileUploadResult.constructFromObject(data['FileUploadResult']);
             }
             if (data.hasOwnProperty('DateAdded')) {
                 obj['DateAdded'] = ApiClient.convertToType(data['DateAdded'], 'Date');
@@ -98,13 +98,11 @@ VerificationFileResultDetails.prototype['VerificationID'] = undefined;
 VerificationFileResultDetails.prototype['Filename'] = undefined;
 
 /**
- * In what state does this verification result currently is
  * @member {module:model/VerificationStatus} VerificationStatus
  */
 VerificationFileResultDetails.prototype['VerificationStatus'] = undefined;
 
 /**
- * How many emails were detected in the file for verification
  * @member {module:model/FileUploadResult} FileUploadResult
  */
 VerificationFileResultDetails.prototype['FileUploadResult'] = undefined;

@@ -19,7 +19,7 @@ import TemplateType from './TemplateType';
 /**
  * The Template model module.
  * @module model/Template
- * @version 4.0.15
+ * @version 4.0.16
  */
 class Template {
     /**
@@ -52,7 +52,7 @@ class Template {
             obj = obj || new Template();
 
             if (data.hasOwnProperty('TemplateType')) {
-                obj['TemplateType'] = ApiClient.convertToType(data['TemplateType'], TemplateType);
+                obj['TemplateType'] = TemplateType.constructFromObject(data['TemplateType']);
             }
             if (data.hasOwnProperty('Name')) {
                 obj['Name'] = ApiClient.convertToType(data['Name'], 'String');
@@ -67,7 +67,7 @@ class Template {
                 obj['Body'] = ApiClient.convertToType(data['Body'], [BodyPart]);
             }
             if (data.hasOwnProperty('TemplateScope')) {
-                obj['TemplateScope'] = ApiClient.convertToType(data['TemplateScope'], TemplateScope);
+                obj['TemplateScope'] = TemplateScope.constructFromObject(data['TemplateScope']);
             }
         }
         return obj;
@@ -77,7 +77,6 @@ class Template {
 }
 
 /**
- * How the template should be edited
  * @member {module:model/TemplateType} TemplateType
  */
 Template.prototype['TemplateType'] = undefined;
@@ -107,7 +106,6 @@ Template.prototype['Subject'] = undefined;
 Template.prototype['Body'] = undefined;
 
 /**
- * Visibility of a template
  * @member {module:model/TemplateScope} TemplateScope
  */
 Template.prototype['TemplateScope'] = undefined;

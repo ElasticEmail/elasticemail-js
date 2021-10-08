@@ -18,7 +18,7 @@ import MessageCategory from './MessageCategory';
 /**
  * The RecipientEvent model module.
  * @module model/RecipientEvent
- * @version 4.0.15
+ * @version 4.0.16
  */
 class RecipientEvent {
     /**
@@ -66,7 +66,7 @@ class RecipientEvent {
                 obj['Subject'] = ApiClient.convertToType(data['Subject'], 'String');
             }
             if (data.hasOwnProperty('EventType')) {
-                obj['EventType'] = ApiClient.convertToType(data['EventType'], EventType);
+                obj['EventType'] = EventType.constructFromObject(data['EventType']);
             }
             if (data.hasOwnProperty('EventDate')) {
                 obj['EventDate'] = ApiClient.convertToType(data['EventDate'], 'Date');
@@ -75,7 +75,7 @@ class RecipientEvent {
                 obj['ChannelName'] = ApiClient.convertToType(data['ChannelName'], 'String');
             }
             if (data.hasOwnProperty('MessageCategory')) {
-                obj['MessageCategory'] = ApiClient.convertToType(data['MessageCategory'], MessageCategory);
+                obj['MessageCategory'] = MessageCategory.constructFromObject(data['MessageCategory']);
             }
             if (data.hasOwnProperty('NextTryOn')) {
                 obj['NextTryOn'] = ApiClient.convertToType(data['NextTryOn'], 'Date');
@@ -127,7 +127,6 @@ RecipientEvent.prototype['To'] = undefined;
 RecipientEvent.prototype['Subject'] = undefined;
 
 /**
- * Type of an Event
  * @member {module:model/EventType} EventType
  */
 RecipientEvent.prototype['EventType'] = undefined;
@@ -145,7 +144,6 @@ RecipientEvent.prototype['EventDate'] = undefined;
 RecipientEvent.prototype['ChannelName'] = undefined;
 
 /**
- * Message category
  * @member {module:model/MessageCategory} MessageCategory
  */
 RecipientEvent.prototype['MessageCategory'] = undefined;

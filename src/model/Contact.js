@@ -20,7 +20,7 @@ import ContactStatus from './ContactStatus';
 /**
  * The Contact model module.
  * @module model/Contact
- * @version 4.0.15
+ * @version 4.0.16
  */
 class Contact {
     /**
@@ -56,7 +56,7 @@ class Contact {
                 obj['Email'] = ApiClient.convertToType(data['Email'], 'String');
             }
             if (data.hasOwnProperty('Status')) {
-                obj['Status'] = ApiClient.convertToType(data['Status'], ContactStatus);
+                obj['Status'] = ContactStatus.constructFromObject(data['Status']);
             }
             if (data.hasOwnProperty('FirstName')) {
                 obj['FirstName'] = ApiClient.convertToType(data['FirstName'], 'String');
@@ -71,7 +71,7 @@ class Contact {
                 obj['Consent'] = ConsentData.constructFromObject(data['Consent']);
             }
             if (data.hasOwnProperty('Source')) {
-                obj['Source'] = ApiClient.convertToType(data['Source'], ContactSource);
+                obj['Source'] = ContactSource.constructFromObject(data['Source']);
             }
             if (data.hasOwnProperty('DateAdded')) {
                 obj['DateAdded'] = ApiClient.convertToType(data['DateAdded'], 'Date');
@@ -83,7 +83,7 @@ class Contact {
                 obj['StatusChangeDate'] = ApiClient.convertToType(data['StatusChangeDate'], 'Date');
             }
             if (data.hasOwnProperty('Activity')) {
-                obj['Activity'] = ApiClient.convertToType(data['Activity'], ContactActivity);
+                obj['Activity'] = ContactActivity.constructFromObject(data['Activity']);
             }
         }
         return obj;
@@ -99,7 +99,6 @@ class Contact {
 Contact.prototype['Email'] = undefined;
 
 /**
- * Status of the given resource
  * @member {module:model/ContactStatus} Status
  */
 Contact.prototype['Status'] = undefined;
@@ -128,7 +127,6 @@ Contact.prototype['CustomFields'] = undefined;
 Contact.prototype['Consent'] = undefined;
 
 /**
- * From where was this contact added
  * @member {module:model/ContactSource} Source
  */
 Contact.prototype['Source'] = undefined;
@@ -152,7 +150,6 @@ Contact.prototype['DateUpdated'] = undefined;
 Contact.prototype['StatusChangeDate'] = undefined;
 
 /**
- * Contact's email statistics and activity
  * @member {module:model/ContactActivity} Activity
  */
 Contact.prototype['Activity'] = undefined;

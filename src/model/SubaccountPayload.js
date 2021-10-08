@@ -17,7 +17,7 @@ import SubaccountSettingsInfoPayload from './SubaccountSettingsInfoPayload';
 /**
  * The SubaccountPayload model module.
  * @module model/SubaccountPayload
- * @version 4.0.15
+ * @version 4.0.16
  */
 class SubaccountPayload {
     /**
@@ -63,7 +63,7 @@ class SubaccountPayload {
                 obj['SendActivation'] = ApiClient.convertToType(data['SendActivation'], 'Boolean');
             }
             if (data.hasOwnProperty('Settings')) {
-                obj['Settings'] = ApiClient.convertToType(data['Settings'], SubaccountSettingsInfoPayload);
+                obj['Settings'] = SubaccountSettingsInfoPayload.constructFromObject(data['Settings']);
             }
         }
         return obj;
@@ -91,7 +91,6 @@ SubaccountPayload.prototype['Password'] = undefined;
 SubaccountPayload.prototype['SendActivation'] = undefined;
 
 /**
- * SubAccount settings
  * @member {module:model/SubaccountSettingsInfoPayload} Settings
  */
 SubaccountPayload.prototype['Settings'] = undefined;

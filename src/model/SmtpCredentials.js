@@ -17,7 +17,7 @@ import AccessLevel from './AccessLevel';
 /**
  * The SmtpCredentials model module.
  * @module model/SmtpCredentials
- * @version 4.0.15
+ * @version 4.0.16
  */
 class SmtpCredentials {
     /**
@@ -50,7 +50,7 @@ class SmtpCredentials {
             obj = obj || new SmtpCredentials();
 
             if (data.hasOwnProperty('AccessLevel')) {
-                obj['AccessLevel'] = ApiClient.convertToType(data['AccessLevel'], AccessLevel);
+                obj['AccessLevel'] = AccessLevel.constructFromObject(data['AccessLevel']);
             }
             if (data.hasOwnProperty('Name')) {
                 obj['Name'] = ApiClient.convertToType(data['Name'], 'String');
@@ -75,7 +75,6 @@ class SmtpCredentials {
 }
 
 /**
- * Access level of this Smtp Credential.
  * @member {module:model/AccessLevel} AccessLevel
  */
 SmtpCredentials.prototype['AccessLevel'] = undefined;
