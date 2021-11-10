@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SmtpCredentialsPayload model module.
  * @module model/SmtpCredentialsPayload
- * @version 4.0.16
+ * @version 4.0.15
  */
 class SmtpCredentialsPayload {
     /**

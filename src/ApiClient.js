@@ -17,7 +17,7 @@ import querystring from "querystring";
 
 /**
 * @module ApiClient
-* @version 4.0.16
+* @version 4.0.15
 */
 
 /**
@@ -28,13 +28,18 @@ import querystring from "querystring";
 * @class
 */
 class ApiClient {
-    constructor() {
+    /**
+     * The base URL against which to resolve every API call's (relative) path.
+     * Overrides the default value set in spec file if present
+     * @param {String} basePath
+     */
+    constructor(basePath = 'https://api.elasticemail.com/v4') {
         /**
          * The base URL against which to resolve every API call's (relative) path.
          * @type {String}
          * @default https://api.elasticemail.com/v4
          */
-        this.basePath = 'https://api.elasticemail.com/v4'.replace(/\/+$/, '');
+        this.basePath = basePath.replace(/\/+$/, '');
 
         /**
          * The authentication methods to be included for all API calls.
@@ -50,7 +55,7 @@ class ApiClient {
          * @default {}
          */
         this.defaultHeaders = {
-            'User-Agent': 'OpenAPI-Generator/4.0.16/Javascript'
+            'User-Agent': 'OpenAPI-Generator/4.0.15/Javascript'
         };
 
         /**
