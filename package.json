@@ -1,6 +1,6 @@
 {
   "name": "@elasticemail/elasticemail-client",
-  "version": "4.0.15",
+  "version": "4.0.16",
   "description": "Official ElasticEmail SDK. This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.",
   "license": "MIT",
   "main": "dist/index.js",
