@@ -18,7 +18,7 @@ import MessageCategory from './MessageCategory';
 /**
  * The RecipientEvent model module.
  * @module model/RecipientEvent
- * @version 4.0.16
+ * @version 4.0.17
  */
 class RecipientEvent {
     /**

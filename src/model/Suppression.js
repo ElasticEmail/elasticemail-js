@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Suppression model module.
  * @module model/Suppression
- * @version 4.0.16
+ * @version 4.0.17
  */
 class Suppression {
     /**

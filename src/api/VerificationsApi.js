@@ -20,7 +20,7 @@ import VerificationFileResultDetails from '../model/VerificationFileResultDetail
 /**
 * Verifications service.
 * @module api/VerificationsApi
-* @version 4.0.16
+* @version 4.0.17
 */
 export default class VerificationsApi {
 

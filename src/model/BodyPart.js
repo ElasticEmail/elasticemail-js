@@ -17,7 +17,7 @@ import BodyContentType from './BodyContentType';
 /**
  * The BodyPart model module.
  * @module model/BodyPart
- * @version 4.0.16
+ * @version 4.0.17
  */
 class BodyPart {
     /**
