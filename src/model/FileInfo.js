@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The FileInfo model module.
  * @module model/FileInfo
- * @version 4.0.17
+ * @version 4.0.16
  */
 class FileInfo {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SubaccountEmailSettingsPayload model module.
  * @module model/SubaccountEmailSettingsPayload
- * @version 4.0.17
+ * @version 4.0.16
  */
 class SubaccountEmailSettingsPayload {
     /**
@@ -66,6 +66,9 @@ class SubaccountEmailSettingsPayload {
             if (data.hasOwnProperty('PoolName')) {
                 obj['PoolName'] = ApiClient.convertToType(data['PoolName'], 'String');
             }
+            if (data.hasOwnProperty('ValidSenderDomainOnly')) {
+                obj['ValidSenderDomainOnly'] = ApiClient.convertToType(data['ValidSenderDomainOnly'], 'Boolean');
+            }
         }
         return obj;
     }
@@ -108,6 +111,11 @@ SubaccountEmailSettingsPayload.prototype['EnablePrivateIPPurchase'] = undefined;
  * @member {String} PoolName
  */
 SubaccountEmailSettingsPayload.prototype['PoolName'] = undefined;
+
+/**
+ * @member {Boolean} ValidSenderDomainOnly
+ */
+SubaccountEmailSettingsPayload.prototype['ValidSenderDomainOnly'] = undefined;
 
 
 

@@ -18,7 +18,7 @@ import Suppression from '../model/Suppression';
 /**
 * Suppressions service.
 * @module api/SuppressionsApi
-* @version 4.0.17
+* @version 4.0.16
 */
 export default class SuppressionsApi {
 

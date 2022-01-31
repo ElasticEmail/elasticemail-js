@@ -10,5 +10,6 @@ Name | Type | Description | Notes
 **maxContacts** | **Number** | Maximum number of contacts the Account can have. 0 means that parent account&#39;s limit is used. | [optional] 
 **enablePrivateIPPurchase** | **Boolean** | Can the SubAccount purchase Private IP for themselves | [optional] 
 **poolName** | **String** | Name of your custom IP Pool to be used in the sending process | [optional] 
+**validSenderDomainOnly** | **Boolean** |  | [optional] 
 
 
