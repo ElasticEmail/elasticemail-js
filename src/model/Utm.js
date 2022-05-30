@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Utm model module.
  * @module model/Utm
- * @version 4.0.18
+ * @version 4.0.20
  */
 class Utm {
     /**

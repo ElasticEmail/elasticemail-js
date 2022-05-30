@@ -19,7 +19,7 @@ import TemplateType from './TemplateType';
 /**
  * The Template model module.
  * @module model/Template
- * @version 4.0.18
+ * @version 4.0.20
  */
 class Template {
     /**

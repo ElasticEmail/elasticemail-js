@@ -17,7 +17,7 @@ import SplitOptimizationType from './SplitOptimizationType';
 /**
  * The SplitOptions model module.
  * @module model/SplitOptions
- * @version 4.0.18
+ * @version 4.0.20
  */
 class SplitOptions {
     /**

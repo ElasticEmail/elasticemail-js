@@ -17,7 +17,7 @@ import ConsentTracking from './ConsentTracking';
 /**
  * The ConsentData model module.
  * @module model/ConsentData
- * @version 4.0.18
+ * @version 4.0.20
  */
 class ConsentData {
     /**

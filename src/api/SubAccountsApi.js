@@ -21,7 +21,7 @@ import SubaccountPayload from '../model/SubaccountPayload';
 /**
 * SubAccounts service.
 * @module api/SubAccountsApi
-* @version 4.0.18
+* @version 4.0.20
 */
 export default class SubAccountsApi {
 

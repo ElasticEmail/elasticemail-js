@@ -348,6 +348,34 @@ export default class AccessLevel {
         "ViewInbound" = "ViewInbound";
 
     
+        /**
+         * value: "ModifyLandingPages"
+         * @const
+         */
+        "ModifyLandingPages" = "ModifyLandingPages";
+
+    
+        /**
+         * value: "ViewLandingPages"
+         * @const
+         */
+        "ViewLandingPages" = "ViewLandingPages";
+
+    
+        /**
+         * value: "ModifySuppressions"
+         * @const
+         */
+        "ModifySuppressions" = "ModifySuppressions";
+
+    
+        /**
+         * value: "ViewSuppressions"
+         * @const
+         */
+        "ViewSuppressions" = "ViewSuppressions";
+
+    
 
     /**
     * Returns a <code>AccessLevel</code> enum value from a Javascript object name.

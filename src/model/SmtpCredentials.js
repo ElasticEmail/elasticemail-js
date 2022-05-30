@@ -17,7 +17,7 @@ import AccessLevel from './AccessLevel';
 /**
  * The SmtpCredentials model module.
  * @module model/SmtpCredentials
- * @version 4.0.18
+ * @version 4.0.20
  */
 class SmtpCredentials {
     /**

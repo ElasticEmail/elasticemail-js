@@ -25,7 +25,7 @@ Method | HTTP request | Description
 
 Get Bounce List
 
-Retrieve your list of bounced emails. Required Access Level: ViewContacts
+Retrieve your list of bounced emails. Required Access Level: ViewContacts, ViewSuppressions
 
 ### Example
 
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 Add Bounces Async
 
-Add Bounced. Required Access Level: ModifyContacts
+Add Bounced. Required Access Level: ModifyContacts, ModifySuppressions
 
 ### Example
 
@@ -135,7 +135,7 @@ null (empty response body)
 
 Add Bounces
 
-Add Bounced. Required Access Level: ModifyContacts
+Add Bounced. Required Access Level: ModifyContacts, ModifySuppressions
 
 ### Example
 
@@ -186,7 +186,7 @@ Name | Type | Description  | Notes
 
 Delete Suppression
 
-Delete Suppression. Required Access Level: ViewContacts
+Delete Suppression. Required Access Level: ViewContacts, ViewSuppressions
 
 ### Example
 
@@ -237,7 +237,7 @@ null (empty response body)
 
 Get Suppression
 
-Retrieve your suppression. Required Access Level: ViewContacts
+Retrieve your suppression. Required Access Level: ViewContacts, ViewSuppressions
 
 ### Example
 
@@ -288,7 +288,7 @@ Name | Type | Description  | Notes
 
 Get Complaints List
 
-Retrieve your list of complaints. Required Access Level: ViewContacts
+Retrieve your list of complaints. Required Access Level: ViewContacts, ViewSuppressions
 
 ### Example
 
@@ -345,7 +345,7 @@ Name | Type | Description  | Notes
 
 Add Complaints Async
 
-Add Complaints. Required Access Level: ModifyContacts
+Add Complaints. Required Access Level: ModifyContacts, ModifySuppressions
 
 ### Example
 
@@ -398,7 +398,7 @@ null (empty response body)
 
 Add Complaints
 
-Add Complaints. Required Access Level: ModifyContacts
+Add Complaints. Required Access Level: ModifyContacts, ModifySuppressions
 
 ### Example
 
@@ -449,7 +449,7 @@ Name | Type | Description  | Notes
 
 Get Suppressions
 
-Retrieve your suppressions. Required Access Level: ViewContacts
+Retrieve your suppressions. Required Access Level: ViewContacts, ViewSuppressions
 
 ### Example
 
@@ -504,7 +504,7 @@ Name | Type | Description  | Notes
 
 Get Unsubscribes List
 
-Retrieve your list of unsubscribes. Required Access Level: ViewContacts
+Retrieve your list of unsubscribes. Required Access Level: ViewContacts, ViewSuppressions
 
 ### Example
 
@@ -561,7 +561,7 @@ Name | Type | Description  | Notes
 
 Add Unsubscribes Async
 
-Add Unsubscribes. Required Access Level: ModifyContacts
+Add Unsubscribes. Required Access Level: ModifyContacts, ModifySuppressions
 
 ### Example
 
@@ -614,7 +614,7 @@ null (empty response body)
 
 Add Unsubscribes
 
-Add Unsubscribes. Required Access Level: ModifyContacts
+Add Unsubscribes. Required Access Level: ModifyContacts, ModifySuppressions
 
 ### Example
 

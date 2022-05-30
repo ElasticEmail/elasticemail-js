@@ -97,4 +97,12 @@
 
 * `ViewInbound` (value: `"ViewInbound"`)
 
+* `ModifyLandingPages` (value: `"ModifyLandingPages"`)
+
+* `ViewLandingPages` (value: `"ViewLandingPages"`)
+
+* `ModifySuppressions` (value: `"ModifySuppressions"`)
+
+* `ViewSuppressions` (value: `"ViewSuppressions"`)
+
 
