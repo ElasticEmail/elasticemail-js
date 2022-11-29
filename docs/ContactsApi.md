@@ -6,7 +6,6 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**contactsByEmailDelete**](ContactsApi.md#contactsByEmailDelete) | **DELETE** /contacts/{email} | Delete Contact
 [**contactsByEmailGet**](ContactsApi.md#contactsByEmailGet) | **GET** /contacts/{email} | Load Contact
-[**contactsByEmailHistoryGet**](ContactsApi.md#contactsByEmailHistoryGet) | **GET** /contacts/{email}/history | Load History
 [**contactsByEmailPut**](ContactsApi.md#contactsByEmailPut) | **PUT** /contacts/{email} | Update Contact
 [**contactsDeletePost**](ContactsApi.md#contactsDeletePost) | **POST** /contacts/delete | Delete Contacts Bulk
 [**contactsExportByIdStatusGet**](ContactsApi.md#contactsExportByIdStatusGet) | **GET** /contacts/export/{id}/status | Check Export Status
@@ -108,63 +107,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Contact**](Contact.md)
-
-### Authorization
-
-[apikey](../README.md#apikey)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## contactsByEmailHistoryGet
-
-> [ContactHistory] contactsByEmailHistoryGet(email, opts)
-
-Load History
-
-Returns detailed history of specified Contact. Required Access Level: ViewContacts
-
-### Example
-
-```javascript
-import ElasticEmail from '@elasticemail/elasticemail-client';
-let defaultClient = ElasticEmail.ApiClient.instance;
-// Configure API key authorization: apikey
-let apikey = defaultClient.authentications['apikey'];
-apikey.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//apikey.apiKeyPrefix = 'Token';
-
-let apiInstance = new ElasticEmail.ContactsApi();
-let email = mail@example.com; // String | Proper email address.
-let opts = {
-  'limit': 100, // Number | Maximum number of returned items.
-  'offset': 20 // Number | How many items should be returned ahead.
-};
-apiInstance.contactsByEmailHistoryGet(email, opts, (error, data, response) => {
-  if (error) {
-    console.error(error);
-  } else {
-    console.log('API called successfully. Returned data: ' + data);
-  }
-});
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **email** | **String**| Proper email address. | 
- **limit** | **Number**| Maximum number of returned items. | [optional] 
- **offset** | **Number**| How many items should be returned ahead. | [optional] 
-
-### Return type
-
-[**[ContactHistory]**](ContactHistory.md)
 
 ### Authorization
 
@@ -470,6 +412,7 @@ let apiInstance = new ElasticEmail.ContactsApi();
 let opts = {
   'listName': "listName_example", // String | Name of an existing list to add these contacts to
   'encodingName': "encodingName_example", // String | In what encoding the file is uploaded
+  'fileUrl': "fileUrl_example", // String | Optional url of csv to import
   'file': "/path/to/file" // File | 
 };
 apiInstance.contactsImportPost(opts, (error, data, response) => {
@@ -488,6 +431,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **listName** | **String**| Name of an existing list to add these contacts to | [optional] 
  **encodingName** | **String**| In what encoding the file is uploaded | [optional] 
+ **fileUrl** | **String**| Optional url of csv to import | [optional] 
  **file** | **File**|  | [optional] 
 
 ### Return type

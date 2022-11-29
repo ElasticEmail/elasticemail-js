@@ -1,6 +1,6 @@
 /**
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -18,7 +18,7 @@ import ContactStatus from './ContactStatus';
 /**
  * The ContactPayload model module.
  * @module model/ContactPayload
- * @version 4.0.20
+ * @version 4.0.21
  */
 class ContactPayload {
     /**
@@ -73,8 +73,42 @@ class ContactPayload {
         return obj;
     }
 
+    /**
+     * Validates the JSON data with respect to <code>ContactPayload</code>.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>ContactPayload</code>.
+     */
+    static validateJSON(data) {
+        // check to make sure all required properties are present in the JSON string
+        for (const property of ContactPayload.RequiredProperties) {
+            if (!data[property]) {
+                throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
+            }
+        }
+        // ensure the json data is a string
+        if (data['Email'] && !(typeof data['Email'] === 'string' || data['Email'] instanceof String)) {
+            throw new Error("Expected the field `Email` to be a primitive type in the JSON string but got " + data['Email']);
+        }
+        // ensure the json data is a string
+        if (data['FirstName'] && !(typeof data['FirstName'] === 'string' || data['FirstName'] instanceof String)) {
+            throw new Error("Expected the field `FirstName` to be a primitive type in the JSON string but got " + data['FirstName']);
+        }
+        // ensure the json data is a string
+        if (data['LastName'] && !(typeof data['LastName'] === 'string' || data['LastName'] instanceof String)) {
+            throw new Error("Expected the field `LastName` to be a primitive type in the JSON string but got " + data['LastName']);
+        }
+        // validate the optional field `Consent`
+        if (data['Consent']) { // data not null
+          ConsentData.validateJSON(data['Consent']);
+        }
+
+        return true;
+    }
+
 
 }
+
+ContactPayload.RequiredProperties = ["Email"];
 
 /**
  * Proper email address.

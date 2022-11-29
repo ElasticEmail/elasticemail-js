@@ -1,6 +1,6 @@
 /**
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -17,7 +17,7 @@ import LogJobStatus from './LogJobStatus';
 /**
  * The EmailStatus model module.
  * @module model/EmailStatus
- * @version 4.0.20
+ * @version 4.0.21
  */
 class EmailStatus {
     /**
@@ -89,8 +89,44 @@ class EmailStatus {
         return obj;
     }
 
+    /**
+     * Validates the JSON data with respect to <code>EmailStatus</code>.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>EmailStatus</code>.
+     */
+    static validateJSON(data) {
+        // ensure the json data is a string
+        if (data['From'] && !(typeof data['From'] === 'string' || data['From'] instanceof String)) {
+            throw new Error("Expected the field `From` to be a primitive type in the JSON string but got " + data['From']);
+        }
+        // ensure the json data is a string
+        if (data['To'] && !(typeof data['To'] === 'string' || data['To'] instanceof String)) {
+            throw new Error("Expected the field `To` to be a primitive type in the JSON string but got " + data['To']);
+        }
+        // ensure the json data is a string
+        if (data['StatusName'] && !(typeof data['StatusName'] === 'string' || data['StatusName'] instanceof String)) {
+            throw new Error("Expected the field `StatusName` to be a primitive type in the JSON string but got " + data['StatusName']);
+        }
+        // ensure the json data is a string
+        if (data['ErrorMessage'] && !(typeof data['ErrorMessage'] === 'string' || data['ErrorMessage'] instanceof String)) {
+            throw new Error("Expected the field `ErrorMessage` to be a primitive type in the JSON string but got " + data['ErrorMessage']);
+        }
+        // ensure the json data is a string
+        if (data['TransactionID'] && !(typeof data['TransactionID'] === 'string' || data['TransactionID'] instanceof String)) {
+            throw new Error("Expected the field `TransactionID` to be a primitive type in the JSON string but got " + data['TransactionID']);
+        }
+        // ensure the json data is a string
+        if (data['EnvelopeFrom'] && !(typeof data['EnvelopeFrom'] === 'string' || data['EnvelopeFrom'] instanceof String)) {
+            throw new Error("Expected the field `EnvelopeFrom` to be a primitive type in the JSON string but got " + data['EnvelopeFrom']);
+        }
+
+        return true;
+    }
+
 
 }
+
+
 
 /**
  * Email address this email was sent from.

@@ -1,6 +1,6 @@
 /**
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -18,7 +18,7 @@ import InboundRouteFilterType from './InboundRouteFilterType';
 /**
  * The InboundRoute model module.
  * @module model/InboundRoute
- * @version 4.0.20
+ * @version 4.0.21
  */
 class InboundRoute {
     /**
@@ -74,8 +74,36 @@ class InboundRoute {
         return obj;
     }
 
+    /**
+     * Validates the JSON data with respect to <code>InboundRoute</code>.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>InboundRoute</code>.
+     */
+    static validateJSON(data) {
+        // ensure the json data is a string
+        if (data['PublicId'] && !(typeof data['PublicId'] === 'string' || data['PublicId'] instanceof String)) {
+            throw new Error("Expected the field `PublicId` to be a primitive type in the JSON string but got " + data['PublicId']);
+        }
+        // ensure the json data is a string
+        if (data['Name'] && !(typeof data['Name'] === 'string' || data['Name'] instanceof String)) {
+            throw new Error("Expected the field `Name` to be a primitive type in the JSON string but got " + data['Name']);
+        }
+        // ensure the json data is a string
+        if (data['Filter'] && !(typeof data['Filter'] === 'string' || data['Filter'] instanceof String)) {
+            throw new Error("Expected the field `Filter` to be a primitive type in the JSON string but got " + data['Filter']);
+        }
+        // ensure the json data is a string
+        if (data['ActionParameter'] && !(typeof data['ActionParameter'] === 'string' || data['ActionParameter'] instanceof String)) {
+            throw new Error("Expected the field `ActionParameter` to be a primitive type in the JSON string but got " + data['ActionParameter']);
+        }
+
+        return true;
+    }
+
 
 }
+
+
 
 /**
  * @member {String} PublicId

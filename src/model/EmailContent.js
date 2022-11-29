@@ -1,6 +1,6 @@
 /**
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -19,7 +19,7 @@ import Utm from './Utm';
 /**
  * The EmailContent model module.
  * @module model/EmailContent
- * @version 4.0.20
+ * @version 4.0.21
  */
 class EmailContent {
     /**
@@ -91,8 +91,72 @@ class EmailContent {
         return obj;
     }
 
+    /**
+     * Validates the JSON data with respect to <code>EmailContent</code>.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>EmailContent</code>.
+     */
+    static validateJSON(data) {
+        if (data['Body']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['Body'])) {
+                throw new Error("Expected the field `Body` to be an array in the JSON data but got " + data['Body']);
+            }
+            // validate the optional field `Body` (array)
+            for (const item of data['Body']) {
+                BodyPart.validateJsonObject(item);
+            };
+        }
+        if (data['Attachments']) { // data not null
+            // ensure the json data is an array
+            if (!Array.isArray(data['Attachments'])) {
+                throw new Error("Expected the field `Attachments` to be an array in the JSON data but got " + data['Attachments']);
+            }
+            // validate the optional field `Attachments` (array)
+            for (const item of data['Attachments']) {
+                MessageAttachment.validateJsonObject(item);
+            };
+        }
+        // ensure the json data is a string
+        if (data['Postback'] && !(typeof data['Postback'] === 'string' || data['Postback'] instanceof String)) {
+            throw new Error("Expected the field `Postback` to be a primitive type in the JSON string but got " + data['Postback']);
+        }
+        // ensure the json data is a string
+        if (data['EnvelopeFrom'] && !(typeof data['EnvelopeFrom'] === 'string' || data['EnvelopeFrom'] instanceof String)) {
+            throw new Error("Expected the field `EnvelopeFrom` to be a primitive type in the JSON string but got " + data['EnvelopeFrom']);
+        }
+        // ensure the json data is a string
+        if (data['From'] && !(typeof data['From'] === 'string' || data['From'] instanceof String)) {
+            throw new Error("Expected the field `From` to be a primitive type in the JSON string but got " + data['From']);
+        }
+        // ensure the json data is a string
+        if (data['ReplyTo'] && !(typeof data['ReplyTo'] === 'string' || data['ReplyTo'] instanceof String)) {
+            throw new Error("Expected the field `ReplyTo` to be a primitive type in the JSON string but got " + data['ReplyTo']);
+        }
+        // ensure the json data is a string
+        if (data['Subject'] && !(typeof data['Subject'] === 'string' || data['Subject'] instanceof String)) {
+            throw new Error("Expected the field `Subject` to be a primitive type in the JSON string but got " + data['Subject']);
+        }
+        // ensure the json data is a string
+        if (data['TemplateName'] && !(typeof data['TemplateName'] === 'string' || data['TemplateName'] instanceof String)) {
+            throw new Error("Expected the field `TemplateName` to be a primitive type in the JSON string but got " + data['TemplateName']);
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['AttachFiles'])) {
+            throw new Error("Expected the field `AttachFiles` to be an array in the JSON data but got " + data['AttachFiles']);
+        }
+        // validate the optional field `Utm`
+        if (data['Utm']) { // data not null
+          Utm.validateJSON(data['Utm']);
+        }
+
+        return true;
+    }
+
 
 }
+
+
 
 /**
  * List of e-mail body parts, with user-provided MIME types (text/html, text/plain etc)

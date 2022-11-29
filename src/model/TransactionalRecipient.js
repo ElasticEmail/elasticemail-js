@@ -1,6 +1,6 @@
 /**
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TransactionalRecipient model module.
  * @module model/TransactionalRecipient
- * @version 4.0.20
+ * @version 4.0.21
  */
 class TransactionalRecipient {
     /**
@@ -63,8 +63,38 @@ class TransactionalRecipient {
         return obj;
     }
 
+    /**
+     * Validates the JSON data with respect to <code>TransactionalRecipient</code>.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>TransactionalRecipient</code>.
+     */
+    static validateJSON(data) {
+        // check to make sure all required properties are present in the JSON string
+        for (const property of TransactionalRecipient.RequiredProperties) {
+            if (!data[property]) {
+                throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
+            }
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['To'])) {
+            throw new Error("Expected the field `To` to be an array in the JSON data but got " + data['To']);
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['CC'])) {
+            throw new Error("Expected the field `CC` to be an array in the JSON data but got " + data['CC']);
+        }
+        // ensure the json data is an array
+        if (!Array.isArray(data['BCC'])) {
+            throw new Error("Expected the field `BCC` to be an array in the JSON data but got " + data['BCC']);
+        }
+
+        return true;
+    }
+
 
 }
+
+TransactionalRecipient.RequiredProperties = ["To"];
 
 /**
  * List of recipients (visible to others)

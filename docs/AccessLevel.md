@@ -91,11 +91,7 @@
 
 * `ViewEmailVerifications` (value: `"ViewEmailVerifications"`)
 
-* `ViewMarketing` (value: `"ViewMarketing"`)
-
-* `ViewEmailApi` (value: `"ViewEmailApi"`)
-
-* `ViewInbound` (value: `"ViewInbound"`)
+* `DisableContactsStore` (value: `"DisableContactsStore"`)
 
 * `ModifyLandingPages` (value: `"ModifyLandingPages"`)
 

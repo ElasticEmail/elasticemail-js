@@ -1,6 +1,6 @@
 /**
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -15,7 +15,6 @@
 import ApiClient from "../ApiClient";
 import CompressionFormat from '../model/CompressionFormat';
 import Contact from '../model/Contact';
-import ContactHistory from '../model/ContactHistory';
 import ContactPayload from '../model/ContactPayload';
 import ContactUpdatePayload from '../model/ContactUpdatePayload';
 import EmailsPayload from '../model/EmailsPayload';
@@ -26,7 +25,7 @@ import ExportStatus from '../model/ExportStatus';
 /**
 * Contacts service.
 * @module api/ContactsApi
-* @version 4.0.20
+* @version 4.0.21
 */
 export default class ContactsApi {
 
@@ -122,55 +121,6 @@ export default class ContactsApi {
       let returnType = Contact;
       return this.apiClient.callApi(
         '/contacts/{email}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the contactsByEmailHistoryGet operation.
-     * @callback module:api/ContactsApi~contactsByEmailHistoryGetCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/ContactHistory>} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * Load History
-     * Returns detailed history of specified Contact. Required Access Level: ViewContacts
-     * @param {String} email Proper email address.
-     * @param {Object} opts Optional parameters
-     * @param {Number} opts.limit Maximum number of returned items.
-     * @param {Number} opts.offset How many items should be returned ahead.
-     * @param {module:api/ContactsApi~contactsByEmailHistoryGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/ContactHistory>}
-     */
-    contactsByEmailHistoryGet(email, opts, callback) {
-      opts = opts || {};
-      let postBody = null;
-      // verify the required parameter 'email' is set
-      if (email === undefined || email === null) {
-        throw new Error("Missing the required parameter 'email' when calling contactsByEmailHistoryGet");
-      }
-
-      let pathParams = {
-        'email': email
-      };
-      let queryParams = {
-        'limit': opts['limit'],
-        'offset': opts['offset']
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['apikey'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = [ContactHistory];
-      return this.apiClient.callApi(
-        '/contacts/{email}/history', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -414,6 +364,7 @@ export default class ContactsApi {
      * @param {Object} opts Optional parameters
      * @param {String} opts.listName Name of an existing list to add these contacts to
      * @param {String} opts.encodingName In what encoding the file is uploaded
+     * @param {String} opts.fileUrl Optional url of csv to import
      * @param {File} opts.file 
      * @param {module:api/ContactsApi~contactsImportPostCallback} callback The callback function, accepting three arguments: error, data, response
      */
@@ -425,7 +376,8 @@ export default class ContactsApi {
       };
       let queryParams = {
         'listName': opts['listName'],
-        'encodingName': opts['encodingName']
+        'encodingName': opts['encodingName'],
+        'fileUrl': opts['fileUrl']
       };
       let headerParams = {
       };

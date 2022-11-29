@@ -1,6 +1,6 @@
 /**
  * Elastic Email REST API
- * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://elasticemail.com/account#/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
+ * This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.    Every API call is established on which specific request type (GET, POST, PUT, DELETE) will be used.    The API has a limit of 20 concurrent connections and a hard timeout of 600 seconds per request.    To start using this API, you will need your Access Token (available <a target=\"_blank\" href=\"https://app.elasticemail.com/marketing/settings/new/manage-api\">here</a>). Remember to keep it safe. Required access levels are listed in the given request’s description.    Downloadable library clients can be found in our Github repository <a target=\"_blank\" href=\"https://github.com/ElasticEmail?tab=repositories&q=%22rest+api%22+in%3Areadme\">here</a>
  *
  * The version of the OpenAPI document: 4.0.0
  * Contact: support@elasticemail.com
@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SortOrderItem model module.
  * @module model/SortOrderItem
- * @version 4.0.20
+ * @version 4.0.21
  */
 class SortOrderItem {
     /**
@@ -62,8 +62,30 @@ class SortOrderItem {
         return obj;
     }
 
+    /**
+     * Validates the JSON data with respect to <code>SortOrderItem</code>.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @return {boolean} to indicate whether the JSON data is valid with respect to <code>SortOrderItem</code>.
+     */
+    static validateJSON(data) {
+        // check to make sure all required properties are present in the JSON string
+        for (const property of SortOrderItem.RequiredProperties) {
+            if (!data[property]) {
+                throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
+            }
+        }
+        // ensure the json data is a string
+        if (data['PublicInboundId'] && !(typeof data['PublicInboundId'] === 'string' || data['PublicInboundId'] instanceof String)) {
+            throw new Error("Expected the field `PublicInboundId` to be a primitive type in the JSON string but got " + data['PublicInboundId']);
+        }
+
+        return true;
+    }
+
 
 }
+
+SortOrderItem.RequiredProperties = ["PublicInboundId", "SortOrder"];
 
 /**
  * ID of the route to change the order of
