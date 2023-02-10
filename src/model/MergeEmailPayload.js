@@ -19,7 +19,7 @@ import Options from './Options';
 /**
  * The MergeEmailPayload model module.
  * @module model/MergeEmailPayload
- * @version 4.0.21
+ * @version 4.0.23
  */
 class MergeEmailPayload {
     /**

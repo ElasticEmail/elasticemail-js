@@ -18,7 +18,7 @@ import InboundRouteFilterType from './InboundRouteFilterType';
 /**
  * The InboundPayload model module.
  * @module model/InboundPayload
- * @version 4.0.21
+ * @version 4.0.23
  */
 class InboundPayload {
     /**

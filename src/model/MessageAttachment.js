@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MessageAttachment model module.
  * @module model/MessageAttachment
- * @version 4.0.21
+ * @version 4.0.23
  */
 class MessageAttachment {
     /**
@@ -59,6 +59,9 @@ class MessageAttachment {
             }
             if (data.hasOwnProperty('ContentType')) {
                 obj['ContentType'] = ApiClient.convertToType(data['ContentType'], 'String');
+            }
+            if (data.hasOwnProperty('Size')) {
+                obj['Size'] = ApiClient.convertToType(data['Size'], 'Number');
             }
         }
         return obj;
@@ -110,6 +113,12 @@ MessageAttachment.prototype['Name'] = undefined;
  * @member {String} ContentType
  */
 MessageAttachment.prototype['ContentType'] = undefined;
+
+/**
+ * Size of your attachment (in bytes).
+ * @member {Number} Size
+ */
+MessageAttachment.prototype['Size'] = undefined;
 
 
 

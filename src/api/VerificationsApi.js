@@ -20,7 +20,7 @@ import VerificationFileResultDetails from '../model/VerificationFileResultDetail
 /**
 * Verifications service.
 * @module api/VerificationsApi
-* @version 4.0.21
+* @version 4.0.23
 */
 export default class VerificationsApi {
 
@@ -88,7 +88,7 @@ export default class VerificationsApi {
 
     /**
      * Get Email Verification Result
-     * Returns a result of verified email. Required Access Level: VerifyEmails, ViewEmailVerifications
+     * Returns a result of verified email. Required Access Level: VerifyEmails
      * @param {String} email Email address to view verification result of
      * @param {module:api/VerificationsApi~verificationsByEmailGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EmailValidationResult}
@@ -259,7 +259,7 @@ export default class VerificationsApi {
 
     /**
      * Get Detailed File Verification Result
-     * Returns status and results (if verified) of file with given ID. Required Access Level: VerifyEmails, ViewEmailVerifications
+     * Returns status and results (if verified) of file with given ID. Required Access Level: VerifyEmails
      * @param {String} id ID of the Verification to display status of
      * @param {Object} opts Optional parameters
      * @param {Number} opts.limit Maximum number of returned email verification results
@@ -391,7 +391,7 @@ export default class VerificationsApi {
 
     /**
      * Get Files Verification Results
-     * Returns a list of uploaded files, their statuses and results. Required Access Level: VerifyEmails, ViewEmailVerifications
+     * Returns a list of uploaded files, their statuses and results. Required Access Level: VerifyEmails
      * @param {module:api/VerificationsApi~verificationsFilesResultGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/VerificationFileResult>}
      */
@@ -428,7 +428,7 @@ export default class VerificationsApi {
 
     /**
      * Get Emails Verification Results
-     * Returns a results of all verified single emails. Required Access Level: VerifyEmails, ViewEmailVerifications
+     * Returns a results of all verified single emails. Required Access Level: VerifyEmails
      * @param {Object} opts Optional parameters
      * @param {Number} opts.limit Maximum number of returned items.
      * @param {Number} opts.offset How many items should be returned ahead.

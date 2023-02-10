@@ -89,8 +89,6 @@
 
 * `VerifyEmails` (value: `"VerifyEmails"`)
 
-* `ViewEmailVerifications` (value: `"ViewEmailVerifications"`)
-
 * `DisableContactsStore` (value: `"DisableContactsStore"`)
 
 * `ModifyLandingPages` (value: `"ModifyLandingPages"`)

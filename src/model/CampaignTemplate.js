@@ -17,7 +17,7 @@ import Utm from './Utm';
 /**
  * The CampaignTemplate model module.
  * @module model/CampaignTemplate
- * @version 4.0.21
+ * @version 4.0.23
  */
 class CampaignTemplate {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SegmentPayload model module.
  * @module model/SegmentPayload
- * @version 4.0.21
+ * @version 4.0.23
  */
 class SegmentPayload {
     /**

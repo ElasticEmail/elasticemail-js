@@ -321,13 +321,6 @@ export default class AccessLevel {
 
     
         /**
-         * value: "ViewEmailVerifications"
-         * @const
-         */
-        "ViewEmailVerifications" = "ViewEmailVerifications";
-
-    
-        /**
          * value: "DisableContactsStore"
          * @const
          */
