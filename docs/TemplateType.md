@@ -9,4 +9,6 @@
 
 * `LandingPageEditor` (value: `"LandingPageEditor"`)
 
+* `TemplateEditor` (value: `"TemplateEditor"`)
+
 

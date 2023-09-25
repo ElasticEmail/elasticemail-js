@@ -39,6 +39,7 @@ import DeliveryOptimizationType from './model/DeliveryOptimizationType';
 import EmailContent from './model/EmailContent';
 import EmailData from './model/EmailData';
 import EmailMessageData from './model/EmailMessageData';
+import EmailPredictedValidationStatus from './model/EmailPredictedValidationStatus';
 import EmailRecipient from './model/EmailRecipient';
 import EmailSend from './model/EmailSend';
 import EmailStatus from './model/EmailStatus';
@@ -140,7 +141,7 @@ import VerificationsApi from './api/VerificationsApi';
 * </pre>
 * </p>
 * @module index
-* @version 4.0.23
+* @version 4.0.22
 */
 export {
     /**
@@ -304,6 +305,12 @@ export {
      * @property {module:model/EmailMessageData}
      */
     EmailMessageData,
+
+    /**
+     * The EmailPredictedValidationStatus model constructor.
+     * @property {module:model/EmailPredictedValidationStatus}
+     */
+    EmailPredictedValidationStatus,
 
     /**
      * The EmailRecipient model constructor.

@@ -13,5 +13,7 @@ Name | Type | Description | Notes
 **reason** | **String** | All detected issues | [optional] 
 **dateAdded** | **Date** | Date of creation in YYYY-MM-DDThh:ii:ss format | [optional] 
 **result** | [**EmailValidationStatus**](EmailValidationStatus.md) |  | [optional] 
+**predictedScore** | **Number** |  | [optional] 
+**predictedStatus** | [**EmailPredictedValidationStatus**](EmailPredictedValidationStatus.md) |  | [optional] 
 
 

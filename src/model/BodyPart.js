@@ -17,7 +17,7 @@ import BodyContentType from './BodyContentType';
 /**
  * The BodyPart model module.
  * @module model/BodyPart
- * @version 4.0.23
+ * @version 4.0.22
  */
 class BodyPart {
     /**
@@ -105,7 +105,7 @@ BodyPart.prototype['ContentType'] = undefined;
 BodyPart.prototype['Content'] = undefined;
 
 /**
- * Text value of charset encoding for example: iso-8859-1, windows-1251, utf-8, us-ascii, windows-1250 and more…
+ * Text value of charset encoding for example: iso-8859-1, windows-1251, utf-8, us-ascii, windows-1250 and more...
  * @member {String} Charset
  */
 BodyPart.prototype['Charset'] = undefined;

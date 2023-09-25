@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LogStatusSummary model module.
  * @module model/LogStatusSummary
- * @version 4.0.23
+ * @version 4.0.22
  */
 class LogStatusSummary {
     /**

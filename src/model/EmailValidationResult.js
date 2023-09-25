@@ -12,12 +12,13 @@
  */
 
 import ApiClient from '../ApiClient';
+import EmailPredictedValidationStatus from './EmailPredictedValidationStatus';
 import EmailValidationStatus from './EmailValidationStatus';
 
 /**
  * The EmailValidationResult model module.
  * @module model/EmailValidationResult
- * @version 4.0.23
+ * @version 4.0.22
  */
 class EmailValidationResult {
     /**
@@ -74,6 +75,12 @@ class EmailValidationResult {
             }
             if (data.hasOwnProperty('Result')) {
                 obj['Result'] = EmailValidationStatus.constructFromObject(data['Result']);
+            }
+            if (data.hasOwnProperty('PredictedScore')) {
+                obj['PredictedScore'] = ApiClient.convertToType(data['PredictedScore'], 'Number');
+            }
+            if (data.hasOwnProperty('PredictedStatus')) {
+                obj['PredictedStatus'] = EmailPredictedValidationStatus.constructFromObject(data['PredictedStatus']);
             }
         }
         return obj;
@@ -166,6 +173,16 @@ EmailValidationResult.prototype['DateAdded'] = undefined;
  * @member {module:model/EmailValidationStatus} Result
  */
 EmailValidationResult.prototype['Result'] = undefined;
+
+/**
+ * @member {Number} PredictedScore
+ */
+EmailValidationResult.prototype['PredictedScore'] = undefined;
+
+/**
+ * @member {module:model/EmailPredictedValidationStatus} PredictedStatus
+ */
+EmailValidationResult.prototype['PredictedStatus'] = undefined;
 
 
 

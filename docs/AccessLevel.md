@@ -75,7 +75,7 @@
 
 * `SendHttp` (value: `"SendHttp"`)
 
-* `Modify2FA` (value: `"Modify2FA"`)
+* `Modify2FAEmail` (value: `"Modify2FAEmail"`)
 
 * `ModifySupport` (value: `"ModifySupport"`)
 
@@ -89,6 +89,8 @@
 
 * `VerifyEmails` (value: `"VerifyEmails"`)
 
+* `Modify2FASms` (value: `"Modify2FASms"`)
+
 * `DisableContactsStore` (value: `"DisableContactsStore"`)
 
 * `ModifyLandingPages` (value: `"ModifyLandingPages"`)
@@ -98,5 +100,9 @@
 * `ModifySuppressions` (value: `"ModifySuppressions"`)
 
 * `ViewSuppressions` (value: `"ViewSuppressions"`)
+
+* `ViewDragDropEditor` (value: `"ViewDragDropEditor"`)
+
+* `ViewTemplateEditor` (value: `"ViewTemplateEditor"`)
 
 

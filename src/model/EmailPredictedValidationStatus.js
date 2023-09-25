@@ -13,45 +13,52 @@
 
 import ApiClient from '../ApiClient';
 /**
-* Enum class TemplateType.
+* Enum class EmailPredictedValidationStatus.
 * @enum {}
 * @readonly
 */
-export default class TemplateType {
+export default class EmailPredictedValidationStatus {
     
         /**
-         * value: "RawHTML"
+         * value: "None"
          * @const
          */
-        "RawHTML" = "RawHTML";
+        "None" = "None";
 
     
         /**
-         * value: "DragDropEditor"
+         * value: "Valid"
          * @const
          */
-        "DragDropEditor" = "DragDropEditor";
+        "Valid" = "Valid";
 
     
         /**
-         * value: "LandingPageEditor"
+         * value: "LowRisk"
          * @const
          */
-        "LandingPageEditor" = "LandingPageEditor";
+        "LowRisk" = "LowRisk";
 
     
         /**
-         * value: "TemplateEditor"
+         * value: "HighRisk"
          * @const
          */
-        "TemplateEditor" = "TemplateEditor";
+        "HighRisk" = "HighRisk";
+
+    
+        /**
+         * value: "Invalid"
+         * @const
+         */
+        "Invalid" = "Invalid";
 
     
 
     /**
-    * Returns a <code>TemplateType</code> enum value from a Javascript object name.
+    * Returns a <code>EmailPredictedValidationStatus</code> enum value from a Javascript object name.
     * @param {Object} data The plain JavaScript object containing the name of the enum value.
-    * @return {module:model/TemplateType} The enum <code>TemplateType</code> value.
+    * @return {module:model/EmailPredictedValidationStatus} The enum <code>EmailPredictedValidationStatus</code> value.
     */
     static constructFromObject(object) {
         return object;

@@ -272,10 +272,10 @@ export default class AccessLevel {
 
     
         /**
-         * value: "Modify2FA"
+         * value: "Modify2FAEmail"
          * @const
          */
-        "Modify2FA" = "Modify2FA";
+        "Modify2FAEmail" = "Modify2FAEmail";
 
     
         /**
@@ -321,6 +321,13 @@ export default class AccessLevel {
 
     
         /**
+         * value: "Modify2FASms"
+         * @const
+         */
+        "Modify2FASms" = "Modify2FASms";
+
+    
+        /**
          * value: "DisableContactsStore"
          * @const
          */
@@ -353,6 +360,20 @@ export default class AccessLevel {
          * @const
          */
         "ViewSuppressions" = "ViewSuppressions";
+
+    
+        /**
+         * value: "ViewDragDropEditor"
+         * @const
+         */
+        "ViewDragDropEditor" = "ViewDragDropEditor";
+
+    
+        /**
+         * value: "ViewTemplateEditor"
+         * @const
+         */
+        "ViewTemplateEditor" = "ViewTemplateEditor";
 
     
 
