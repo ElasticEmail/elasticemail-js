@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SubaccountEmailSettingsPayload model module.
  * @module model/SubaccountEmailSettingsPayload
- * @version 4.0.23
+ * @version 4.0.24
  */
 class SubaccountEmailSettingsPayload {
     /**

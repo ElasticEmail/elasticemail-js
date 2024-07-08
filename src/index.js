@@ -143,7 +143,7 @@ import VerificationsApi from './api/VerificationsApi';
 * </pre>
 * </p>
 * @module index
-* @version 4.0.23
+* @version 4.0.24
 */
 export {
     /**
