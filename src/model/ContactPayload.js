@@ -18,7 +18,7 @@ import ContactStatus from './ContactStatus';
 /**
  * The ContactPayload model module.
  * @module model/ContactPayload
- * @version 4.0.22
+ * @version 4.0.23
  */
 class ContactPayload {
     /**
@@ -81,7 +81,7 @@ class ContactPayload {
     static validateJSON(data) {
         // check to make sure all required properties are present in the JSON string
         for (const property of ContactPayload.RequiredProperties) {
-            if (!data[property]) {
+            if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }

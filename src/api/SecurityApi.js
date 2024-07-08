@@ -23,7 +23,7 @@ import SmtpCredentialsPayload from '../model/SmtpCredentialsPayload';
 /**
 * Security service.
 * @module api/SecurityApi
-* @version 4.0.22
+* @version 4.0.23
 */
 export default class SecurityApi {
 
@@ -52,7 +52,7 @@ export default class SecurityApi {
      * Delete your existing ApiKey. Required Access Level: Security
      * @param {String} name Name of the ApiKey
      * @param {Object} opts Optional parameters
-     * @param {String} opts.subaccount Email of the subaccount of which ApiKey should be deleted
+     * @param {String} [subaccount] Email of the subaccount of which ApiKey should be deleted
      * @param {module:api/SecurityApi~securityApikeysByNameDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
     securityApikeysByNameDelete(name, opts, callback) {
@@ -98,7 +98,7 @@ export default class SecurityApi {
      * Load your existing ApiKey info. Required Access Level: Security
      * @param {String} name Name of the ApiKey
      * @param {Object} opts Optional parameters
-     * @param {String} opts.subaccount Email of the subaccount of which ApiKey should be loaded
+     * @param {String} [subaccount] Email of the subaccount of which ApiKey should be loaded
      * @param {module:api/SecurityApi~securityApikeysByNameGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiKey}
      */
@@ -192,7 +192,7 @@ export default class SecurityApi {
      * List ApiKeys
      * List all your existing ApiKeys. Required Access Level: Security
      * @param {Object} opts Optional parameters
-     * @param {String} opts.subaccount Email of the subaccount of which ApiKeys should be loaded
+     * @param {String} [subaccount] Email of the subaccount of which ApiKeys should be loaded
      * @param {module:api/SecurityApi~securityApikeysGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/ApiKey>}
      */
@@ -276,7 +276,7 @@ export default class SecurityApi {
      * Delete your existing SMTP Credentials. Required Access Level: Security
      * @param {String} name Name of the SMTP Credential
      * @param {Object} opts Optional parameters
-     * @param {String} opts.subaccount Email of the subaccount of which credential should be deleted
+     * @param {String} [subaccount] Email of the subaccount of which credential should be deleted
      * @param {module:api/SecurityApi~securitySmtpByNameDeleteCallback} callback The callback function, accepting three arguments: error, data, response
      */
     securitySmtpByNameDelete(name, opts, callback) {
@@ -322,7 +322,7 @@ export default class SecurityApi {
      * Load your existing SMTP Credential info. Required Access Level: Security
      * @param {String} name Name of the SMTP Credential
      * @param {Object} opts Optional parameters
-     * @param {String} opts.subaccount Email of the subaccount of which credential should be loaded
+     * @param {String} [subaccount] Email of the subaccount of which credential should be loaded
      * @param {module:api/SecurityApi~securitySmtpByNameGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/SmtpCredentials}
      */
@@ -416,7 +416,7 @@ export default class SecurityApi {
      * List SMTP Credentials
      * List all your existing SMTP Credentials. Required Access Level: Security
      * @param {Object} opts Optional parameters
-     * @param {String} opts.subaccount Email of the subaccount of which credentials should be listed
+     * @param {String} [subaccount] Email of the subaccount of which credentials should be listed
      * @param {module:api/SecurityApi~securitySmtpGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/SmtpCredentials>}
      */

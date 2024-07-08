@@ -18,7 +18,7 @@ import Suppression from '../model/Suppression';
 /**
 * Suppressions service.
 * @module api/SuppressionsApi
-* @version 4.0.22
+* @version 4.0.23
 */
 export default class SuppressionsApi {
 
@@ -46,9 +46,9 @@ export default class SuppressionsApi {
      * Get Bounce List
      * Retrieve your list of bounced emails. Required Access Level: ViewContacts, ViewSuppressions
      * @param {Object} opts Optional parameters
-     * @param {String} opts.search Text fragment used for searching.
-     * @param {Number} opts.limit Maximum number of returned items.
-     * @param {Number} opts.offset How many items should be returned ahead.
+     * @param {String} [search] Text fragment used for searching.
+     * @param {Number} [limit] Maximum number of returned items.
+     * @param {Number} [offset] How many items should be returned ahead.
      * @param {module:api/SuppressionsApi~suppressionsBouncesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Suppression>}
      */
@@ -91,7 +91,7 @@ export default class SuppressionsApi {
      * Add Bounces Async
      * Add Bounced. Required Access Level: ModifyContacts, ModifySuppressions
      * @param {Object} opts Optional parameters
-     * @param {File} opts.file 
+     * @param {File} [file] 
      * @param {module:api/SuppressionsApi~suppressionsBouncesImportPostCallback} callback The callback function, accepting three arguments: error, data, response
      */
     suppressionsBouncesImportPost(opts, callback) {
@@ -258,9 +258,9 @@ export default class SuppressionsApi {
      * Get Complaints List
      * Retrieve your list of complaints. Required Access Level: ViewContacts, ViewSuppressions
      * @param {Object} opts Optional parameters
-     * @param {String} opts.search Text fragment used for searching.
-     * @param {Number} opts.limit Maximum number of returned items.
-     * @param {Number} opts.offset How many items should be returned ahead.
+     * @param {String} [search] Text fragment used for searching.
+     * @param {Number} [limit] Maximum number of returned items.
+     * @param {Number} [offset] How many items should be returned ahead.
      * @param {module:api/SuppressionsApi~suppressionsComplaintsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Suppression>}
      */
@@ -303,7 +303,7 @@ export default class SuppressionsApi {
      * Add Complaints Async
      * Add Complaints. Required Access Level: ModifyContacts, ModifySuppressions
      * @param {Object} opts Optional parameters
-     * @param {File} opts.file 
+     * @param {File} [file] 
      * @param {module:api/SuppressionsApi~suppressionsComplaintsImportPostCallback} callback The callback function, accepting three arguments: error, data, response
      */
     suppressionsComplaintsImportPost(opts, callback) {
@@ -385,8 +385,8 @@ export default class SuppressionsApi {
      * Get Suppressions
      * Retrieve your suppressions. Required Access Level: ViewContacts, ViewSuppressions
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.limit Maximum number of returned items.
-     * @param {Number} opts.offset How many items should be returned ahead.
+     * @param {Number} [limit] Maximum number of returned items.
+     * @param {Number} [offset] How many items should be returned ahead.
      * @param {module:api/SuppressionsApi~suppressionsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Suppression>}
      */
@@ -428,9 +428,9 @@ export default class SuppressionsApi {
      * Get Unsubscribes List
      * Retrieve your list of unsubscribes. Required Access Level: ViewContacts, ViewSuppressions
      * @param {Object} opts Optional parameters
-     * @param {String} opts.search Text fragment used for searching.
-     * @param {Number} opts.limit Maximum number of returned items.
-     * @param {Number} opts.offset How many items should be returned ahead.
+     * @param {String} [search] Text fragment used for searching.
+     * @param {Number} [limit] Maximum number of returned items.
+     * @param {Number} [offset] How many items should be returned ahead.
      * @param {module:api/SuppressionsApi~suppressionsUnsubscribesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Suppression>}
      */
@@ -473,7 +473,7 @@ export default class SuppressionsApi {
      * Add Unsubscribes Async
      * Add Unsubscribes. Required Access Level: ModifyContacts, ModifySuppressions
      * @param {Object} opts Optional parameters
-     * @param {File} opts.file 
+     * @param {File} [file] 
      * @param {module:api/SuppressionsApi~suppressionsUnsubscribesImportPostCallback} callback The callback function, accepting three arguments: error, data, response
      */
     suppressionsUnsubscribesImportPost(opts, callback) {

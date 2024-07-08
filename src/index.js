@@ -38,6 +38,8 @@ import ContactsList from './model/ContactsList';
 import DeliveryOptimizationType from './model/DeliveryOptimizationType';
 import EmailContent from './model/EmailContent';
 import EmailData from './model/EmailData';
+import EmailJobFailedStatus from './model/EmailJobFailedStatus';
+import EmailJobStatus from './model/EmailJobStatus';
 import EmailMessageData from './model/EmailMessageData';
 import EmailPredictedValidationStatus from './model/EmailPredictedValidationStatus';
 import EmailRecipient from './model/EmailRecipient';
@@ -141,7 +143,7 @@ import VerificationsApi from './api/VerificationsApi';
 * </pre>
 * </p>
 * @module index
-* @version 4.0.22
+* @version 4.0.23
 */
 export {
     /**
@@ -299,6 +301,18 @@ export {
      * @property {module:model/EmailData}
      */
     EmailData,
+
+    /**
+     * The EmailJobFailedStatus model constructor.
+     * @property {module:model/EmailJobFailedStatus}
+     */
+    EmailJobFailedStatus,
+
+    /**
+     * The EmailJobStatus model constructor.
+     * @property {module:model/EmailJobStatus}
+     */
+    EmailJobStatus,
 
     /**
      * The EmailMessageData model constructor.

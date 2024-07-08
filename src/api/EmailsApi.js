@@ -14,6 +14,7 @@
 
 import ApiClient from "../ApiClient";
 import EmailData from '../model/EmailData';
+import EmailJobStatus from '../model/EmailJobStatus';
 import EmailMessageData from '../model/EmailMessageData';
 import EmailSend from '../model/EmailSend';
 import EmailTransactionalMessageData from '../model/EmailTransactionalMessageData';
@@ -22,7 +23,7 @@ import MergeEmailPayload from '../model/MergeEmailPayload';
 /**
 * Emails service.
 * @module api/EmailsApi
-* @version 4.0.22
+* @version 4.0.23
 */
 export default class EmailsApi {
 
@@ -76,6 +77,71 @@ export default class EmailsApi {
       let returnType = EmailData;
       return this.apiClient.callApi(
         '/emails/{msgid}/view', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the emailsByTransactionidStatusGet operation.
+     * @callback module:api/EmailsApi~emailsByTransactionidStatusGetCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/EmailJobStatus} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get Status
+     * Get status details of an email transaction. Required Access Level: ViewReports
+     * @param {String} transactionid Transaction identifier
+     * @param {Object} opts Optional parameters
+     * @param {Boolean} [showFailed = false)] Include Bounced email addresses.
+     * @param {Boolean} [showSent = false)] Include Sent email addresses.
+     * @param {Boolean} [showDelivered = false)] Include all delivered email addresses.
+     * @param {Boolean} [showPending = false)] Include Ready to send email addresses.
+     * @param {Boolean} [showOpened = false)] Include Opened email addresses.
+     * @param {Boolean} [showClicked = false)] Include Clicked email addresses.
+     * @param {Boolean} [showAbuse = false)] Include Reported as abuse email addresses.
+     * @param {Boolean} [showUnsubscribed = false)] Include Unsubscribed email addresses.
+     * @param {Boolean} [showErrors = false)] Include error messages for bounced emails.
+     * @param {Boolean} [showMessageIDs = false)] Include all MessageIDs for this transaction
+     * @param {module:api/EmailsApi~emailsByTransactionidStatusGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/EmailJobStatus}
+     */
+    emailsByTransactionidStatusGet(transactionid, opts, callback) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'transactionid' is set
+      if (transactionid === undefined || transactionid === null) {
+        throw new Error("Missing the required parameter 'transactionid' when calling emailsByTransactionidStatusGet");
+      }
+
+      let pathParams = {
+        'transactionid': transactionid
+      };
+      let queryParams = {
+        'showFailed': opts['showFailed'],
+        'showSent': opts['showSent'],
+        'showDelivered': opts['showDelivered'],
+        'showPending': opts['showPending'],
+        'showOpened': opts['showOpened'],
+        'showClicked': opts['showClicked'],
+        'showAbuse': opts['showAbuse'],
+        'showUnsubscribed': opts['showUnsubscribed'],
+        'showErrors': opts['showErrors'],
+        'showMessageIDs': opts['showMessageIDs']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apikey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = EmailJobStatus;
+      return this.apiClient.callApi(
+        '/emails/{transactionid}/status', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

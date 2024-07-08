@@ -84,7 +84,7 @@ apikey.apiKey = 'YOUR API KEY';
 //apikey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ElasticEmail.InboundRouteApi();
-let id = 123456; // String | ID number of your attachment
+let id = "123456"; // String | ID number of your attachment
 apiInstance.inboundrouteByIdGet(id, (error, data, response) => {
   if (error) {
     console.error(error);

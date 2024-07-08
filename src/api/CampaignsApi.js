@@ -18,7 +18,7 @@ import Campaign from '../model/Campaign';
 /**
 * Campaigns service.
 * @module api/CampaignsApi
-* @version 4.0.22
+* @version 4.0.23
 */
 export default class CampaignsApi {
 
@@ -179,9 +179,9 @@ export default class CampaignsApi {
      * Load Campaigns
      * Returns a list all of your campaigns. Limited to 1000 results. Required Access Level: ViewCampaigns
      * @param {Object} opts Optional parameters
-     * @param {String} opts.search Text fragment used for searching in Campaign name (using the 'contains' rule)
-     * @param {Number} opts.offset How many items should be returned ahead.
-     * @param {Number} opts.limit Maximum number of returned items.
+     * @param {String} [search] Text fragment used for searching in Campaign name (using the 'contains' rule)
+     * @param {Number} [offset] How many items should be returned ahead.
+     * @param {Number} [limit] Maximum number of returned items.
      * @param {module:api/CampaignsApi~campaignsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Campaign>}
      */

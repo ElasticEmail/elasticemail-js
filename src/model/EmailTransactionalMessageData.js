@@ -19,7 +19,7 @@ import TransactionalRecipient from './TransactionalRecipient';
 /**
  * The EmailTransactionalMessageData model module.
  * @module model/EmailTransactionalMessageData
- * @version 4.0.22
+ * @version 4.0.23
  */
 class EmailTransactionalMessageData {
     /**
@@ -27,10 +27,11 @@ class EmailTransactionalMessageData {
      * Email data
      * @alias module:model/EmailTransactionalMessageData
      * @param recipients {module:model/TransactionalRecipient} 
+     * @param content {module:model/EmailContent} 
      */
-    constructor(recipients) { 
+    constructor(recipients, content) { 
         
-        EmailTransactionalMessageData.initialize(this, recipients);
+        EmailTransactionalMessageData.initialize(this, recipients, content);
     }
 
     /**
@@ -38,8 +39,9 @@ class EmailTransactionalMessageData {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, recipients) { 
+    static initialize(obj, recipients, content) { 
         obj['Recipients'] = recipients;
+        obj['Content'] = content;
     }
 
     /**
@@ -74,7 +76,7 @@ class EmailTransactionalMessageData {
     static validateJSON(data) {
         // check to make sure all required properties are present in the JSON string
         for (const property of EmailTransactionalMessageData.RequiredProperties) {
-            if (!data[property]) {
+            if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
@@ -97,7 +99,7 @@ class EmailTransactionalMessageData {
 
 }
 
-EmailTransactionalMessageData.RequiredProperties = ["Recipients"];
+EmailTransactionalMessageData.RequiredProperties = ["Recipients", "Content"];
 
 /**
  * @member {module:model/TransactionalRecipient} Recipients

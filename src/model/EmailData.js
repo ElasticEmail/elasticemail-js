@@ -19,7 +19,7 @@ import FileInfo from './FileInfo';
 /**
  * The EmailData model module.
  * @module model/EmailData
- * @version 4.0.22
+ * @version 4.0.23
  */
 class EmailData {
     /**
@@ -80,7 +80,7 @@ class EmailData {
             }
             // validate the optional field `Attachments` (array)
             for (const item of data['Attachments']) {
-                FileInfo.validateJsonObject(item);
+                FileInfo.validateJSON(item);
             };
         }
         // validate the optional field `Status`

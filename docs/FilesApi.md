@@ -32,7 +32,7 @@ apikey.apiKey = 'YOUR API KEY';
 //apikey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ElasticEmail.FilesApi();
-let name = filename.txt; // String | Name of your file including extension.
+let name = "filename.txt"; // String | Name of your file including extension.
 apiInstance.filesByNameDelete(name, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -83,7 +83,7 @@ apikey.apiKey = 'YOUR API KEY';
 //apikey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ElasticEmail.FilesApi();
-let name = filename.txt; // String | Name of your file including extension.
+let name = "filename.txt"; // String | Name of your file including extension.
 apiInstance.filesByNameGet(name, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -134,7 +134,7 @@ apikey.apiKey = 'YOUR API KEY';
 //apikey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ElasticEmail.FilesApi();
-let name = filename.txt; // String | Name of your file including extension.
+let name = "filename.txt"; // String | Name of your file including extension.
 apiInstance.filesByNameInfoGet(name, (error, data, response) => {
   if (error) {
     console.error(error);

@@ -34,7 +34,7 @@ apikey.apiKey = 'YOUR API KEY';
 //apikey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ElasticEmail.EventsApi();
-let transactionid = TransactionID; // String | ID number of transaction
+let transactionid = "TransactionID"; // String | ID number of transaction
 let opts = {
   'from': new Date("2013-10-20T19:20:30+01:00"), // Date | Starting date for search in YYYY-MM-DDThh:mm:ss format.
   'to': new Date("2013-10-20T19:20:30+01:00"), // Date | Ending date for search in YYYY-MM-DDThh:mm:ss format.
@@ -97,14 +97,14 @@ apikey.apiKey = 'YOUR API KEY';
 //apikey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ElasticEmail.EventsApi();
-let name = Channel01; // String | Name of selected channel.
+let name = "Channel01"; // String | Name of selected channel.
 let opts = {
   'eventTypes': [new ElasticEmail.EventType()], // [EventType] | Types of Events to return
   'from': new Date("2013-10-20T19:20:30+01:00"), // Date | Starting date for search in YYYY-MM-DDThh:mm:ss format.
   'to': new Date("2013-10-20T19:20:30+01:00"), // Date | Ending date for search in YYYY-MM-DDThh:mm:ss format.
   'fileFormat': new ElasticEmail.ExportFileFormats(), // ExportFileFormats | Format of the exported file
   'compressionFormat': new ElasticEmail.CompressionFormat(), // CompressionFormat | FileResponse compression format. None or Zip.
-  'fileName': filename.txt // String | Name of your file including extension.
+  'fileName': "filename.txt" // String | Name of your file including extension.
 };
 apiInstance.eventsChannelsByNameExportPost(name, opts, (error, data, response) => {
   if (error) {
@@ -162,7 +162,7 @@ apikey.apiKey = 'YOUR API KEY';
 //apikey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ElasticEmail.EventsApi();
-let name = Channel01; // String | Name of selected channel.
+let name = "Channel01"; // String | Name of selected channel.
 let opts = {
   'eventTypes': [new ElasticEmail.EventType()], // [EventType] | Types of Events to return
   'from': new Date("2013-10-20T19:20:30+01:00"), // Date | Starting date for search in YYYY-MM-DDThh:mm:ss format.
@@ -227,7 +227,7 @@ apikey.apiKey = 'YOUR API KEY';
 //apikey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ElasticEmail.EventsApi();
-let id = E33EBA7A-C20D-4D3D-8F2F-5EEF42F58E6F; // String | ID of the exported file
+let id = "E33EBA7A-C20D-4D3D-8F2F-5EEF42F58E6F"; // String | ID of the exported file
 apiInstance.eventsChannelsExportByIdStatusGet(id, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -278,7 +278,7 @@ apikey.apiKey = 'YOUR API KEY';
 //apikey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ElasticEmail.EventsApi();
-let id = E33EBA7A-C20D-4D3D-8F2F-5EEF42F58E6F; // String | ID of the exported file
+let id = "E33EBA7A-C20D-4D3D-8F2F-5EEF42F58E6F"; // String | ID of the exported file
 apiInstance.eventsExportByIdStatusGet(id, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -335,7 +335,7 @@ let opts = {
   'to': new Date("2013-10-20T19:20:30+01:00"), // Date | Ending date for search in YYYY-MM-DDThh:mm:ss format.
   'fileFormat': new ElasticEmail.ExportFileFormats(), // ExportFileFormats | Format of the exported file
   'compressionFormat': new ElasticEmail.CompressionFormat(), // CompressionFormat | FileResponse compression format. None or Zip.
-  'fileName': filename.txt // String | Name of your file including extension.
+  'fileName': "filename.txt" // String | Name of your file including extension.
 };
 apiInstance.eventsExportPost(opts, (error, data, response) => {
   if (error) {

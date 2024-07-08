@@ -18,7 +18,7 @@ import SplitOptions from './SplitOptions';
 /**
  * The CampaignOptions model module.
  * @module model/CampaignOptions
- * @version 4.0.22
+ * @version 4.0.23
  */
 class CampaignOptions {
     /**
@@ -61,6 +61,12 @@ class CampaignOptions {
             }
             if (data.hasOwnProperty('ScheduleFor')) {
                 obj['ScheduleFor'] = ApiClient.convertToType(data['ScheduleFor'], 'Date');
+            }
+            if (data.hasOwnProperty('TriggerFrequency')) {
+                obj['TriggerFrequency'] = ApiClient.convertToType(data['TriggerFrequency'], 'Number');
+            }
+            if (data.hasOwnProperty('TriggerCount')) {
+                obj['TriggerCount'] = ApiClient.convertToType(data['TriggerCount'], 'Number');
             }
             if (data.hasOwnProperty('SplitOptions')) {
                 obj['SplitOptions'] = SplitOptions.constructFromObject(data['SplitOptions']);
@@ -110,6 +116,18 @@ CampaignOptions.prototype['TrackClicks'] = undefined;
  * @member {Date} ScheduleFor
  */
 CampaignOptions.prototype['ScheduleFor'] = undefined;
+
+/**
+ * How often (in minutes) to send the campaign
+ * @member {Number} TriggerFrequency
+ */
+CampaignOptions.prototype['TriggerFrequency'] = undefined;
+
+/**
+ * How many times send the campaign
+ * @member {Number} TriggerCount
+ */
+CampaignOptions.prototype['TriggerCount'] = undefined;
 
 /**
  * @member {module:model/SplitOptions} SplitOptions

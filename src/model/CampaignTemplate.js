@@ -17,17 +17,18 @@ import Utm from './Utm';
 /**
  * The CampaignTemplate model module.
  * @module model/CampaignTemplate
- * @version 4.0.22
+ * @version 4.0.23
  */
 class CampaignTemplate {
     /**
      * Constructs a new <code>CampaignTemplate</code>.
      * Content of a Campaign
      * @alias module:model/CampaignTemplate
+     * @param from {String} Your e-mail with an optional name (e.g.: John Doe <email@domain.com>)
      */
-    constructor() { 
+    constructor(from) { 
         
-        CampaignTemplate.initialize(this);
+        CampaignTemplate.initialize(this, from);
     }
 
     /**
@@ -35,7 +36,8 @@ class CampaignTemplate {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, from) { 
+        obj['From'] = from;
     }
 
     /**
@@ -80,6 +82,12 @@ class CampaignTemplate {
      * @return {boolean} to indicate whether the JSON data is valid with respect to <code>CampaignTemplate</code>.
      */
     static validateJSON(data) {
+        // check to make sure all required properties are present in the JSON string
+        for (const property of CampaignTemplate.RequiredProperties) {
+            if (!data.hasOwnProperty(property)) {
+                throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
+            }
+        }
         // ensure the json data is a string
         if (data['Poolname'] && !(typeof data['Poolname'] === 'string' || data['Poolname'] instanceof String)) {
             throw new Error("Expected the field `Poolname` to be a primitive type in the JSON string but got " + data['Poolname']);
@@ -115,7 +123,7 @@ class CampaignTemplate {
 
 }
 
-
+CampaignTemplate.RequiredProperties = ["From"];
 
 /**
  * Name of your custom IP Pool to be used in the sending process

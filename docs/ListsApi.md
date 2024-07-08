@@ -4,6 +4,7 @@ All URIs are relative to *https://api.elasticemail.com/v4*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**listsByListnameContactsGet**](ListsApi.md#listsByListnameContactsGet) | **GET** /lists/{listname}/contacts | Load Contacts in List
 [**listsByNameContactsPost**](ListsApi.md#listsByNameContactsPost) | **POST** /lists/{name}/contacts | Add Contacts to List
 [**listsByNameContactsRemovePost**](ListsApi.md#listsByNameContactsRemovePost) | **POST** /lists/{name}/contacts/remove | Remove Contacts from List
 [**listsByNameDelete**](ListsApi.md#listsByNameDelete) | **DELETE** /lists/{name} | Delete List
@@ -12,6 +13,63 @@ Method | HTTP request | Description
 [**listsGet**](ListsApi.md#listsGet) | **GET** /lists | Load Lists
 [**listsPost**](ListsApi.md#listsPost) | **POST** /lists | Add List
 
+
+
+## listsByListnameContactsGet
+
+> [Contact] listsByListnameContactsGet(listname, opts)
+
+Load Contacts in List
+
+Returns a list of contacts. Required Access Level: ViewContacts
+
+### Example
+
+```javascript
+import ElasticEmail from '@elasticemail/elasticemail-client';
+let defaultClient = ElasticEmail.ApiClient.instance;
+// Configure API key authorization: apikey
+let apikey = defaultClient.authentications['apikey'];
+apikey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apikey.apiKeyPrefix = 'Token';
+
+let apiInstance = new ElasticEmail.ListsApi();
+let listname = "My List 1"; // String | Name of your list.
+let opts = {
+  'limit': 100, // Number | Maximum number of returned items.
+  'offset': 20 // Number | How many items should be returned ahead.
+};
+apiInstance.listsByListnameContactsGet(listname, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **listname** | **String**| Name of your list. | 
+ **limit** | **Number**| Maximum number of returned items. | [optional] 
+ **offset** | **Number**| How many items should be returned ahead. | [optional] 
+
+### Return type
+
+[**[Contact]**](Contact.md)
+
+### Authorization
+
+[apikey](../README.md#apikey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
 ## listsByNameContactsPost
@@ -34,7 +92,7 @@ apikey.apiKey = 'YOUR API KEY';
 //apikey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ElasticEmail.ListsApi();
-let name = My List 1; // String | Name of your list.
+let name = "My List 1"; // String | Name of your list.
 let emailsPayload = new ElasticEmail.EmailsPayload(); // EmailsPayload | Provide either rule or a list of emails, not both.
 apiInstance.listsByNameContactsPost(name, emailsPayload, (error, data, response) => {
   if (error) {
@@ -87,7 +145,7 @@ apikey.apiKey = 'YOUR API KEY';
 //apikey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ElasticEmail.ListsApi();
-let name = My List 1; // String | Name of your list.
+let name = "My List 1"; // String | Name of your list.
 let emailsPayload = new ElasticEmail.EmailsPayload(); // EmailsPayload | Provide either rule or a list of emails, not both.
 apiInstance.listsByNameContactsRemovePost(name, emailsPayload, (error, data, response) => {
   if (error) {
@@ -140,7 +198,7 @@ apikey.apiKey = 'YOUR API KEY';
 //apikey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ElasticEmail.ListsApi();
-let name = My List 1; // String | Name of your list.
+let name = "My List 1"; // String | Name of your list.
 apiInstance.listsByNameDelete(name, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -191,7 +249,7 @@ apikey.apiKey = 'YOUR API KEY';
 //apikey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ElasticEmail.ListsApi();
-let name = My List 1; // String | Name of your list.
+let name = "My List 1"; // String | Name of your list.
 apiInstance.listsByNameGet(name, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -242,7 +300,7 @@ apikey.apiKey = 'YOUR API KEY';
 //apikey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ElasticEmail.ListsApi();
-let name = My List 1; // String | Name of your list.
+let name = "My List 1"; // String | Name of your list.
 let listUpdatePayload = new ElasticEmail.ListUpdatePayload(); // ListUpdatePayload | 
 apiInstance.listsByNamePut(name, listUpdatePayload, (error, data, response) => {
   if (error) {

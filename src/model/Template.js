@@ -19,7 +19,7 @@ import TemplateType from './TemplateType';
 /**
  * The Template model module.
  * @module model/Template
- * @version 4.0.22
+ * @version 4.0.23
  */
 class Template {
     /**
@@ -94,7 +94,7 @@ class Template {
             }
             // validate the optional field `Body` (array)
             for (const item of data['Body']) {
-                BodyPart.validateJsonObject(item);
+                BodyPart.validateJSON(item);
             };
         }
 

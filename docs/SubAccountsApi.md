@@ -33,7 +33,7 @@ apikey.apiKey = 'YOUR API KEY';
 //apikey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ElasticEmail.SubAccountsApi();
-let email = mail@example.com; // String | Email address of Sub-Account
+let email = "mail@example.com"; // String | Email address of Sub-Account
 let subaccountEmailCreditsPayload = new ElasticEmail.SubaccountEmailCreditsPayload(); // SubaccountEmailCreditsPayload | Amount of email credits to add or subtract from the current SubAccount email credits pool (positive or negative value)
 apiInstance.subaccountsByEmailCreditsPatch(email, subaccountEmailCreditsPayload, (error, data, response) => {
   if (error) {
@@ -86,7 +86,7 @@ apikey.apiKey = 'YOUR API KEY';
 //apikey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ElasticEmail.SubAccountsApi();
-let email = mail@example.com; // String | Email address of Sub-Account
+let email = "mail@example.com"; // String | Email address of Sub-Account
 apiInstance.subaccountsByEmailDelete(email, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -137,7 +137,7 @@ apikey.apiKey = 'YOUR API KEY';
 //apikey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ElasticEmail.SubAccountsApi();
-let email = mail@example.com; // String | Email address of Sub-Account
+let email = "mail@example.com"; // String | Email address of Sub-Account
 apiInstance.subaccountsByEmailGet(email, (error, data, response) => {
   if (error) {
     console.error(error);

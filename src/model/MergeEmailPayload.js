@@ -19,17 +19,18 @@ import Options from './Options';
 /**
  * The MergeEmailPayload model module.
  * @module model/MergeEmailPayload
- * @version 4.0.22
+ * @version 4.0.23
  */
 class MergeEmailPayload {
     /**
      * Constructs a new <code>MergeEmailPayload</code>.
      * @alias module:model/MergeEmailPayload
      * @param mergeFile {module:model/MessageAttachment} 
+     * @param content {module:model/EmailContent} 
      */
-    constructor(mergeFile) { 
+    constructor(mergeFile, content) { 
         
-        MergeEmailPayload.initialize(this, mergeFile);
+        MergeEmailPayload.initialize(this, mergeFile, content);
     }
 
     /**
@@ -37,8 +38,9 @@ class MergeEmailPayload {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, mergeFile) { 
+    static initialize(obj, mergeFile, content) { 
         obj['MergeFile'] = mergeFile;
+        obj['Content'] = content;
     }
 
     /**
@@ -73,7 +75,7 @@ class MergeEmailPayload {
     static validateJSON(data) {
         // check to make sure all required properties are present in the JSON string
         for (const property of MergeEmailPayload.RequiredProperties) {
-            if (!data[property]) {
+            if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
@@ -96,7 +98,7 @@ class MergeEmailPayload {
 
 }
 
-MergeEmailPayload.RequiredProperties = ["MergeFile"];
+MergeEmailPayload.RequiredProperties = ["MergeFile", "Content"];
 
 /**
  * @member {module:model/MessageAttachment} MergeFile

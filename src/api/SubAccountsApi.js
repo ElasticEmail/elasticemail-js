@@ -21,7 +21,7 @@ import SubaccountPayload from '../model/SubaccountPayload';
 /**
 * SubAccounts service.
 * @module api/SubAccountsApi
-* @version 4.0.22
+* @version 4.0.23
 */
 export default class SubAccountsApi {
 
@@ -229,8 +229,8 @@ export default class SubAccountsApi {
      * Load SubAccounts
      * Returns a list of all your SubAccounts. Required Access Level: ViewSubAccounts
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.limit Maximum number of returned items.
-     * @param {Number} opts.offset How many items should be returned ahead.
+     * @param {Number} [limit] Maximum number of returned items.
+     * @param {Number} [offset] How many items should be returned ahead.
      * @param {module:api/SubAccountsApi~subaccountsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/SubAccountInfo>}
      */

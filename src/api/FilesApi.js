@@ -19,7 +19,7 @@ import FilePayload from '../model/FilePayload';
 /**
 * Files service.
 * @module api/FilesApi
-* @version 4.0.22
+* @version 4.0.23
 */
 export default class FilesApi {
 
@@ -175,8 +175,8 @@ export default class FilesApi {
      * List Files
      * Returns a list of all your available files. Required Access Level: ViewFiles
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.limit Maximum number of returned items.
-     * @param {Number} opts.offset How many items should be returned ahead.
+     * @param {Number} [limit] Maximum number of returned items.
+     * @param {Number} [offset] How many items should be returned ahead.
      * @param {module:api/FilesApi~filesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/FileInfo>}
      */
@@ -219,7 +219,7 @@ export default class FilesApi {
      * Uploads selected file to the server. Required Access Level: ModifyFiles
      * @param {module:model/FilePayload} filePayload 
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.expiresAfterDays After how many days should the file be deleted.
+     * @param {Number} [expiresAfterDays] After how many days should the file be deleted.
      * @param {module:api/FilesApi~filesPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/FileInfo}
      */

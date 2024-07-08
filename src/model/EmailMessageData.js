@@ -19,7 +19,7 @@ import Options from './Options';
 /**
  * The EmailMessageData model module.
  * @module model/EmailMessageData
- * @version 4.0.22
+ * @version 4.0.23
  */
 class EmailMessageData {
     /**
@@ -27,10 +27,11 @@ class EmailMessageData {
      * Email data
      * @alias module:model/EmailMessageData
      * @param recipients {Array.<module:model/EmailRecipient>} List of recipients
+     * @param content {module:model/EmailContent} 
      */
-    constructor(recipients) { 
+    constructor(recipients, content) { 
         
-        EmailMessageData.initialize(this, recipients);
+        EmailMessageData.initialize(this, recipients, content);
     }
 
     /**
@@ -38,8 +39,9 @@ class EmailMessageData {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj, recipients) { 
+    static initialize(obj, recipients, content) { 
         obj['Recipients'] = recipients;
+        obj['Content'] = content;
     }
 
     /**
@@ -74,7 +76,7 @@ class EmailMessageData {
     static validateJSON(data) {
         // check to make sure all required properties are present in the JSON string
         for (const property of EmailMessageData.RequiredProperties) {
-            if (!data[property]) {
+            if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
@@ -85,7 +87,7 @@ class EmailMessageData {
             }
             // validate the optional field `Recipients` (array)
             for (const item of data['Recipients']) {
-                EmailRecipient.validateJsonObject(item);
+                EmailRecipient.validateJSON(item);
             };
         }
         // validate the optional field `Content`
@@ -103,7 +105,7 @@ class EmailMessageData {
 
 }
 
-EmailMessageData.RequiredProperties = ["Recipients"];
+EmailMessageData.RequiredProperties = ["Recipients", "Content"];
 
 /**
  * List of recipients

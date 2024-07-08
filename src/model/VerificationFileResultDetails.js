@@ -19,7 +19,7 @@ import VerificationStatus from './VerificationStatus';
 /**
  * The VerificationFileResultDetails model module.
  * @module model/VerificationFileResultDetails
- * @version 4.0.22
+ * @version 4.0.23
  */
 class VerificationFileResultDetails {
     /**
@@ -89,7 +89,7 @@ class VerificationFileResultDetails {
             }
             // validate the optional field `VerificationResult` (array)
             for (const item of data['VerificationResult']) {
-                EmailValidationResult.validateJsonObject(item);
+                EmailValidationResult.validateJSON(item);
             };
         }
         // ensure the json data is a string

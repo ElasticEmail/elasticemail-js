@@ -32,7 +32,7 @@ apikey.apiKey = 'YOUR API KEY';
 //apikey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ElasticEmail.SegmentsApi();
-let name = My Segment 1; // String | Name of your segment.
+let name = "My Segment 1"; // String | Name of your segment.
 apiInstance.segmentsByNameDelete(name, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -134,7 +134,7 @@ apikey.apiKey = 'YOUR API KEY';
 //apikey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ElasticEmail.SegmentsApi();
-let name = My Segment 1; // String | Name of your segment.
+let name = "My Segment 1"; // String | Name of your segment.
 let segmentPayload = new ElasticEmail.SegmentPayload(); // SegmentPayload | 
 apiInstance.segmentsByNamePut(name, segmentPayload, (error, data, response) => {
   if (error) {

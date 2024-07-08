@@ -20,7 +20,7 @@ import VerificationFileResultDetails from '../model/VerificationFileResultDetail
 /**
 * Verifications service.
 * @module api/VerificationsApi
-* @version 4.0.22
+* @version 4.0.23
 */
 export default class VerificationsApi {
 
@@ -262,8 +262,8 @@ export default class VerificationsApi {
      * Returns status and results (if verified) of file with given ID. Required Access Level: VerifyEmails
      * @param {String} id ID of the Verification to display status of
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.limit Maximum number of returned email verification results
-     * @param {Number} opts.offset How many result items should be returned ahead
+     * @param {Number} [limit] Maximum number of returned email verification results
+     * @param {Number} [offset] How many result items should be returned ahead
      * @param {module:api/VerificationsApi~verificationsFilesByIdResultGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/VerificationFileResultDetails}
      */
@@ -352,7 +352,7 @@ export default class VerificationsApi {
      * Upload File with Emails
      * Uploads a CSV file with list of emails that can then be triggered for verification. An 'email' column is required. Required Access Level: VerifyEmails
      * @param {Object} opts Optional parameters
-     * @param {File} opts.file 
+     * @param {File} [file] 
      * @param {module:api/VerificationsApi~verificationsFilesPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/VerificationFileResult}
      */
@@ -430,8 +430,8 @@ export default class VerificationsApi {
      * Get Emails Verification Results
      * Returns a results of all verified single emails. Required Access Level: VerifyEmails
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.limit Maximum number of returned items.
-     * @param {Number} opts.offset How many items should be returned ahead.
+     * @param {Number} [limit] Maximum number of returned items.
+     * @param {Number} [offset] How many items should be returned ahead.
      * @param {module:api/VerificationsApi~verificationsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/EmailValidationResult>}
      */

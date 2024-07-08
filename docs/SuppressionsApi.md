@@ -40,7 +40,7 @@ apikey.apiKey = 'YOUR API KEY';
 
 let apiInstance = new ElasticEmail.SuppressionsApi();
 let opts = {
-  'search': text, // String | Text fragment used for searching.
+  'search': "text", // String | Text fragment used for searching.
   'limit': 100, // Number | Maximum number of returned items.
   'offset': 20 // Number | How many items should be returned ahead.
 };
@@ -200,7 +200,7 @@ apikey.apiKey = 'YOUR API KEY';
 //apikey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ElasticEmail.SuppressionsApi();
-let email = mail@example.com; // String | Proper email address.
+let email = "mail@example.com"; // String | Proper email address.
 apiInstance.suppressionsByEmailDelete(email, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -251,7 +251,7 @@ apikey.apiKey = 'YOUR API KEY';
 //apikey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ElasticEmail.SuppressionsApi();
-let email = mail@example.com; // String | Proper email address.
+let email = "mail@example.com"; // String | Proper email address.
 apiInstance.suppressionsByEmailGet(email, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -303,7 +303,7 @@ apikey.apiKey = 'YOUR API KEY';
 
 let apiInstance = new ElasticEmail.SuppressionsApi();
 let opts = {
-  'search': text, // String | Text fragment used for searching.
+  'search': "text", // String | Text fragment used for searching.
   'limit': 100, // Number | Maximum number of returned items.
   'offset': 20 // Number | How many items should be returned ahead.
 };
@@ -519,7 +519,7 @@ apikey.apiKey = 'YOUR API KEY';
 
 let apiInstance = new ElasticEmail.SuppressionsApi();
 let opts = {
-  'search': text, // String | Text fragment used for searching.
+  'search': "text", // String | Text fragment used for searching.
   'limit': 100, // Number | Maximum number of returned items.
   'offset': 20 // Number | How many items should be returned ahead.
 };

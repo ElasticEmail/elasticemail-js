@@ -32,7 +32,7 @@ apikey.apiKey = 'YOUR API KEY';
 //apikey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ElasticEmail.TemplatesApi();
-let name = Template01; // String | Name of template.
+let name = "Template01"; // String | Name of template.
 apiInstance.templatesByNameDelete(name, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -83,7 +83,7 @@ apikey.apiKey = 'YOUR API KEY';
 //apikey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ElasticEmail.TemplatesApi();
-let name = Template01; // String | Name of template.
+let name = "Template01"; // String | Name of template.
 apiInstance.templatesByNameGet(name, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -134,7 +134,7 @@ apikey.apiKey = 'YOUR API KEY';
 //apikey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ElasticEmail.TemplatesApi();
-let name = Template01; // String | Name of template.
+let name = "Template01"; // String | Name of template.
 let templatePayload = new ElasticEmail.TemplatePayload(); // TemplatePayload | 
 apiInstance.templatesByNamePut(name, templatePayload, (error, data, response) => {
   if (error) {

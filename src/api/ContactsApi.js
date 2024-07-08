@@ -25,7 +25,7 @@ import ExportStatus from '../model/ExportStatus';
 /**
 * Contacts service.
 * @module api/ContactsApi
-* @version 4.0.22
+* @version 4.0.23
 */
 export default class ContactsApi {
 
@@ -270,11 +270,11 @@ export default class ContactsApi {
      * Export Contacts
      * Request an Export of specified Contacts. Required Access Level: Export
      * @param {Object} opts Optional parameters
-     * @param {module:model/ExportFileFormats} opts.fileFormat Format of the exported file
-     * @param {String} opts.rule Query used for filtering.
-     * @param {Array.<String>} opts.emails Comma delimited list of contact emails
-     * @param {module:model/CompressionFormat} opts.compressionFormat FileResponse compression format. None or Zip.
-     * @param {String} opts.fileName Name of your file including extension.
+     * @param {module:model/ExportFileFormats} [fileFormat] Format of the exported file
+     * @param {String} [rule] Query used for filtering.
+     * @param {Array.<String>} [emails] Comma delimited list of contact emails
+     * @param {module:model/CompressionFormat} [compressionFormat] FileResponse compression format. None or Zip.
+     * @param {String} [fileName] Name of your file including extension.
      * @param {module:api/ContactsApi~contactsExportPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ExportLink}
      */
@@ -319,8 +319,8 @@ export default class ContactsApi {
      * Load Contacts
      * Returns a list of contacts. Required Access Level: ViewContacts
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.limit Maximum number of returned items.
-     * @param {Number} opts.offset How many items should be returned ahead.
+     * @param {Number} [limit] Maximum number of returned items.
+     * @param {Number} [offset] How many items should be returned ahead.
      * @param {module:api/ContactsApi~contactsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Contact>}
      */
@@ -362,10 +362,10 @@ export default class ContactsApi {
      * Upload Contacts
      * Upload contacts from a file. Required Access Level: ModifyContacts
      * @param {Object} opts Optional parameters
-     * @param {String} opts.listName Name of an existing list to add these contacts to
-     * @param {String} opts.encodingName In what encoding the file is uploaded
-     * @param {String} opts.fileUrl Optional url of csv to import
-     * @param {File} opts.file 
+     * @param {String} [listName] Name of an existing list to add these contacts to
+     * @param {String} [encodingName] In what encoding the file is uploaded
+     * @param {String} [fileUrl] Optional url of csv to import
+     * @param {File} [file] 
      * @param {module:api/ContactsApi~contactsImportPostCallback} callback The callback function, accepting three arguments: error, data, response
      */
     contactsImportPost(opts, callback) {
@@ -409,7 +409,7 @@ export default class ContactsApi {
      * Add new Contacts to your Lists. Up to 1000 can be added (for more please refer to the import request). Required Access Level: ModifyContacts
      * @param {Array.<module:model/ContactPayload>} contactPayload 
      * @param {Object} opts Optional parameters
-     * @param {Array.<String>} opts.listnames Names of lists to which the uploaded contacts should be added to
+     * @param {Array.<String>} [listnames] Names of lists to which the uploaded contacts should be added to
      * @param {module:api/ContactsApi~contactsPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Contact>}
      */

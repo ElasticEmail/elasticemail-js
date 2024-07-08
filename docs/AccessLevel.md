@@ -91,8 +91,6 @@
 
 * `Modify2FASms` (value: `"Modify2FASms"`)
 
-* `DisableContactsStore` (value: `"DisableContactsStore"`)
-
 * `ModifyLandingPages` (value: `"ModifyLandingPages"`)
 
 * `ViewLandingPages` (value: `"ViewLandingPages"`)
@@ -104,5 +102,7 @@
 * `ViewDragDropEditor` (value: `"ViewDragDropEditor"`)
 
 * `ViewTemplateEditor` (value: `"ViewTemplateEditor"`)
+
+* `ViewAITools` (value: `"ViewAITools"`)
 
 

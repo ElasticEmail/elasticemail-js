@@ -21,7 +21,7 @@ import TemplateType from '../model/TemplateType';
 /**
 * Templates service.
 * @module api/TemplatesApi
-* @version 4.0.22
+* @version 4.0.23
 */
 export default class TemplatesApi {
 
@@ -183,9 +183,9 @@ export default class TemplatesApi {
      * Returns a list of templates for the specified type. Required Access Level: ViewTemplates
      * @param {Array.<module:model/TemplateScope>} scopeType Return templates with specified scope only
      * @param {Object} opts Optional parameters
-     * @param {Array.<module:model/TemplateType>} opts.templateTypes Return templates with specified type only
-     * @param {Number} opts.limit Maximum number of returned items.
-     * @param {Number} opts.offset How many items should be returned ahead.
+     * @param {Array.<module:model/TemplateType>} [templateTypes] Return templates with specified type only
+     * @param {Number} [limit] Maximum number of returned items.
+     * @param {Number} [offset] How many items should be returned ahead.
      * @param {module:api/TemplatesApi~templatesGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Template>}
      */

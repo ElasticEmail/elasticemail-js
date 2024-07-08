@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **mergeFile** | [**MessageAttachment**](MessageAttachment.md) |  | 
-**content** | [**EmailContent**](EmailContent.md) |  | [optional] 
+**content** | [**EmailContent**](EmailContent.md) |  | 
 **options** | [**Options**](Options.md) |  | [optional] 
 
 

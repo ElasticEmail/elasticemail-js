@@ -19,7 +19,7 @@ import LogStatusSummary from '../model/LogStatusSummary';
 /**
 * Statistics service.
 * @module api/StatisticsApi
-* @version 4.0.22
+* @version 4.0.23
 */
 export default class StatisticsApi {
 
@@ -90,8 +90,8 @@ export default class StatisticsApi {
      * Load Campaigns Stats
      * Returns a list of your Campaigns' stats. Required Access Level: ViewChannels
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.limit Maximum number of returned items.
-     * @param {Number} opts.offset How many items should be returned ahead.
+     * @param {Number} [limit] Maximum number of returned items.
+     * @param {Number} [offset] How many items should be returned ahead.
      * @param {module:api/StatisticsApi~statisticsCampaignsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/ChannelLogStatusSummary>}
      */
@@ -176,8 +176,8 @@ export default class StatisticsApi {
      * Load Channels Stats
      * Returns a list of your Channels' stats. Required Access Level: ViewChannels
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.limit Maximum number of returned items.
-     * @param {Number} opts.offset How many items should be returned ahead.
+     * @param {Number} [limit] Maximum number of returned items.
+     * @param {Number} [offset] How many items should be returned ahead.
      * @param {module:api/StatisticsApi~statisticsChannelsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/ChannelLogStatusSummary>}
      */
@@ -220,7 +220,7 @@ export default class StatisticsApi {
      * Returns basic statistics. Required Access Level: ViewReports
      * @param {Date} from Starting date for search in YYYY-MM-DDThh:mm:ss format.
      * @param {Object} opts Optional parameters
-     * @param {Date} opts.to Ending date for search in YYYY-MM-DDThh:mm:ss format.
+     * @param {Date} [to] Ending date for search in YYYY-MM-DDThh:mm:ss format.
      * @param {module:api/StatisticsApi~statisticsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/LogStatusSummary}
      */

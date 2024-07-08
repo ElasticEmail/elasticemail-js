@@ -11,4 +11,6 @@
 
 * `TemplateEditor` (value: `"TemplateEditor"`)
 
+* `FormTemplate` (value: `"FormTemplate"`)
+
 

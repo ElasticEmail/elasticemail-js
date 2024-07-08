@@ -19,7 +19,7 @@ import SegmentPayload from '../model/SegmentPayload';
 /**
 * Segments service.
 * @module api/SegmentsApi
-* @version 4.0.22
+* @version 4.0.23
 */
 export default class SegmentsApi {
 
@@ -180,8 +180,8 @@ export default class SegmentsApi {
      * Load Segments
      * Returns a list of all your available Segments. Required Access Level: ViewContacts
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.limit Maximum number of returned items.
-     * @param {Number} opts.offset How many items should be returned ahead.
+     * @param {Number} [limit] Maximum number of returned items.
+     * @param {Number} [offset] How many items should be returned ahead.
      * @param {module:api/SegmentsApi~segmentsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/Segment>}
      */

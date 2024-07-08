@@ -18,7 +18,7 @@ import TemplateScope from './TemplateScope';
 /**
  * The TemplatePayload model module.
  * @module model/TemplatePayload
- * @version 4.0.22
+ * @version 4.0.23
  */
 class TemplatePayload {
     /**
@@ -76,7 +76,7 @@ class TemplatePayload {
     static validateJSON(data) {
         // check to make sure all required properties are present in the JSON string
         for (const property of TemplatePayload.RequiredProperties) {
-            if (!data[property]) {
+            if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }
@@ -95,7 +95,7 @@ class TemplatePayload {
             }
             // validate the optional field `Body` (array)
             for (const item of data['Body']) {
-                BodyPart.validateJsonObject(item);
+                BodyPart.validateJSON(item);
             };
         }
 

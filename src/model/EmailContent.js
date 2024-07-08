@@ -19,17 +19,18 @@ import Utm from './Utm';
 /**
  * The EmailContent model module.
  * @module model/EmailContent
- * @version 4.0.22
+ * @version 4.0.23
  */
 class EmailContent {
     /**
      * Constructs a new <code>EmailContent</code>.
      * Proper e-mail content
      * @alias module:model/EmailContent
+     * @param from {String} Your e-mail with an optional name (e.g.: John Doe <email@domain.com>)
      */
-    constructor() { 
+    constructor(from) { 
         
-        EmailContent.initialize(this);
+        EmailContent.initialize(this, from);
     }
 
     /**
@@ -37,7 +38,8 @@ class EmailContent {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, from) { 
+        obj['From'] = from;
     }
 
     /**
@@ -97,6 +99,12 @@ class EmailContent {
      * @return {boolean} to indicate whether the JSON data is valid with respect to <code>EmailContent</code>.
      */
     static validateJSON(data) {
+        // check to make sure all required properties are present in the JSON string
+        for (const property of EmailContent.RequiredProperties) {
+            if (!data.hasOwnProperty(property)) {
+                throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
+            }
+        }
         if (data['Body']) { // data not null
             // ensure the json data is an array
             if (!Array.isArray(data['Body'])) {
@@ -104,7 +112,7 @@ class EmailContent {
             }
             // validate the optional field `Body` (array)
             for (const item of data['Body']) {
-                BodyPart.validateJsonObject(item);
+                BodyPart.validateJSON(item);
             };
         }
         if (data['Attachments']) { // data not null
@@ -114,7 +122,7 @@ class EmailContent {
             }
             // validate the optional field `Attachments` (array)
             for (const item of data['Attachments']) {
-                MessageAttachment.validateJsonObject(item);
+                MessageAttachment.validateJSON(item);
             };
         }
         // ensure the json data is a string
@@ -156,7 +164,7 @@ class EmailContent {
 
 }
 
-
+EmailContent.RequiredProperties = ["From"];
 
 /**
  * List of e-mail body parts, with user-provided MIME types (text/html, text/plain etc)

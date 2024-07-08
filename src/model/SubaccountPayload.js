@@ -17,7 +17,7 @@ import SubaccountSettingsInfoPayload from './SubaccountSettingsInfoPayload';
 /**
  * The SubaccountPayload model module.
  * @module model/SubaccountPayload
- * @version 4.0.22
+ * @version 4.0.23
  */
 class SubaccountPayload {
     /**
@@ -77,7 +77,7 @@ class SubaccountPayload {
     static validateJSON(data) {
         // check to make sure all required properties are present in the JSON string
         for (const property of SubaccountPayload.RequiredProperties) {
-            if (!data[property]) {
+            if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }

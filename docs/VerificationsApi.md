@@ -190,7 +190,7 @@ apikey.apiKey = 'YOUR API KEY';
 //apikey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ElasticEmail.VerificationsApi();
-let id = E33EBA7A-C20D-4D3D-8F2F-5EEF42F58E6F; // String | ID of the exported file
+let id = "E33EBA7A-C20D-4D3D-8F2F-5EEF42F58E6F"; // String | ID of the exported file
 apiInstance.verificationsFilesByIdDelete(id, (error, data, response) => {
   if (error) {
     console.error(error);

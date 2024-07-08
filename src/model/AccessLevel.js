@@ -328,13 +328,6 @@ export default class AccessLevel {
 
     
         /**
-         * value: "DisableContactsStore"
-         * @const
-         */
-        "DisableContactsStore" = "DisableContactsStore";
-
-    
-        /**
          * value: "ModifyLandingPages"
          * @const
          */
@@ -374,6 +367,13 @@ export default class AccessLevel {
          * @const
          */
         "ViewTemplateEditor" = "ViewTemplateEditor";
+
+    
+        /**
+         * value: "ViewAITools"
+         * @const
+         */
+        "ViewAITools" = "ViewAITools";
 
     
 

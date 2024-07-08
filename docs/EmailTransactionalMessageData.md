@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **recipients** | [**TransactionalRecipient**](TransactionalRecipient.md) |  | 
-**content** | [**EmailContent**](EmailContent.md) |  | [optional] 
+**content** | [**EmailContent**](EmailContent.md) |  | 
 **options** | [**Options**](Options.md) |  | [optional] 
 
 

@@ -13,6 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
+import Contact from '../model/Contact';
 import ContactsList from '../model/ContactsList';
 import EmailsPayload from '../model/EmailsPayload';
 import ListPayload from '../model/ListPayload';
@@ -21,7 +22,7 @@ import ListUpdatePayload from '../model/ListUpdatePayload';
 /**
 * Lists service.
 * @module api/ListsApi
-* @version 4.0.22
+* @version 4.0.23
 */
 export default class ListsApi {
 
@@ -36,6 +37,55 @@ export default class ListsApi {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
+
+    /**
+     * Callback function to receive the result of the listsByListnameContactsGet operation.
+     * @callback module:api/ListsApi~listsByListnameContactsGetCallback
+     * @param {String} error Error message, if any.
+     * @param {Array.<module:model/Contact>} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Load Contacts in List
+     * Returns a list of contacts. Required Access Level: ViewContacts
+     * @param {String} listname Name of your list.
+     * @param {Object} opts Optional parameters
+     * @param {Number} [limit] Maximum number of returned items.
+     * @param {Number} [offset] How many items should be returned ahead.
+     * @param {module:api/ListsApi~listsByListnameContactsGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link Array.<module:model/Contact>}
+     */
+    listsByListnameContactsGet(listname, opts, callback) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'listname' is set
+      if (listname === undefined || listname === null) {
+        throw new Error("Missing the required parameter 'listname' when calling listsByListnameContactsGet");
+      }
+
+      let pathParams = {
+        'listname': listname
+      };
+      let queryParams = {
+        'limit': opts['limit'],
+        'offset': opts['offset']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apikey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [Contact];
+      return this.apiClient.callApi(
+        '/lists/{listname}/contacts', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
 
     /**
      * Callback function to receive the result of the listsByNameContactsPost operation.
@@ -277,8 +327,8 @@ export default class ListsApi {
      * Load Lists
      * Returns all your existing lists. Required Access Level: ViewContacts
      * @param {Object} opts Optional parameters
-     * @param {Number} opts.limit Maximum number of returned items.
-     * @param {Number} opts.offset How many items should be returned ahead.
+     * @param {Number} [limit] Maximum number of returned items.
+     * @param {Number} [offset] How many items should be returned ahead.
      * @param {module:api/ListsApi~listsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/ContactsList>}
      */

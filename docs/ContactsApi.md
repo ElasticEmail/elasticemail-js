@@ -36,7 +36,7 @@ apikey.apiKey = 'YOUR API KEY';
 //apikey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ElasticEmail.ContactsApi();
-let email = mail@example.com; // String | Proper email address.
+let email = "mail@example.com"; // String | Proper email address.
 apiInstance.contactsByEmailDelete(email, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -87,7 +87,7 @@ apikey.apiKey = 'YOUR API KEY';
 //apikey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ElasticEmail.ContactsApi();
-let email = mail@example.com; // String | Proper email address.
+let email = "mail@example.com"; // String | Proper email address.
 apiInstance.contactsByEmailGet(email, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -138,7 +138,7 @@ apikey.apiKey = 'YOUR API KEY';
 //apikey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ElasticEmail.ContactsApi();
-let email = mail@example.com; // String | Proper email address.
+let email = "mail@example.com"; // String | Proper email address.
 let contactUpdatePayload = new ElasticEmail.ContactUpdatePayload(); // ContactUpdatePayload | 
 apiInstance.contactsByEmailPut(email, contactUpdatePayload, (error, data, response) => {
   if (error) {
@@ -242,7 +242,7 @@ apikey.apiKey = 'YOUR API KEY';
 //apikey.apiKeyPrefix = 'Token';
 
 let apiInstance = new ElasticEmail.ContactsApi();
-let id = E33EBA7A-C20D-4D3D-8F2F-5EEF42F58E6F; // String | ID of the exported file
+let id = "E33EBA7A-C20D-4D3D-8F2F-5EEF42F58E6F"; // String | ID of the exported file
 apiInstance.contactsExportByIdStatusGet(id, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -295,10 +295,10 @@ apikey.apiKey = 'YOUR API KEY';
 let apiInstance = new ElasticEmail.ContactsApi();
 let opts = {
   'fileFormat': new ElasticEmail.ExportFileFormats(), // ExportFileFormats | Format of the exported file
-  'rule': Status%20=%20Engaged, // String | Query used for filtering.
-  'emails': mail@contact.com,mail1@contact.com,mail2@contact.com, // [String] | Comma delimited list of contact emails
+  'rule': "Status%20=%20Engaged", // String | Query used for filtering.
+  'emails': ["null"], // [String] | Comma delimited list of contact emails
   'compressionFormat': new ElasticEmail.CompressionFormat(), // CompressionFormat | FileResponse compression format. None or Zip.
-  'fileName': filename.txt // String | Name of your file including extension.
+  'fileName': "filename.txt" // String | Name of your file including extension.
 };
 apiInstance.contactsExportPost(opts, (error, data, response) => {
   if (error) {

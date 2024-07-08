@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SortOrderItem model module.
  * @module model/SortOrderItem
- * @version 4.0.22
+ * @version 4.0.23
  */
 class SortOrderItem {
     /**
@@ -70,7 +70,7 @@ class SortOrderItem {
     static validateJSON(data) {
         // check to make sure all required properties are present in the JSON string
         for (const property of SortOrderItem.RequiredProperties) {
-            if (!data[property]) {
+            if (!data.hasOwnProperty(property)) {
                 throw new Error("The required field `" + property + "` is not found in the JSON data: " + JSON.stringify(data));
             }
         }

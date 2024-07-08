@@ -47,6 +47,13 @@ export default class TemplateType {
         "TemplateEditor" = "TemplateEditor";
 
     
+        /**
+         * value: "FormTemplate"
+         * @const
+         */
+        "FormTemplate" = "FormTemplate";
+
+    
 
     /**
     * Returns a <code>TemplateType</code> enum value from a Javascript object name.

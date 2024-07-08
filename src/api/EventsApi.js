@@ -24,7 +24,7 @@ import RecipientEvent from '../model/RecipientEvent';
 /**
 * Events service.
 * @module api/EventsApi
-* @version 4.0.22
+* @version 4.0.23
 */
 export default class EventsApi {
 
@@ -53,11 +53,11 @@ export default class EventsApi {
      * Returns a log of delivery events for the specific transaction ID. Required Access Level: ViewReports
      * @param {String} transactionid ID number of transaction
      * @param {Object} opts Optional parameters
-     * @param {Date} opts.from Starting date for search in YYYY-MM-DDThh:mm:ss format.
-     * @param {Date} opts.to Ending date for search in YYYY-MM-DDThh:mm:ss format.
-     * @param {module:model/EventsOrderBy} opts.orderBy 
-     * @param {Number} opts.limit Maximum number of returned items.
-     * @param {Number} opts.offset How many items should be returned ahead.
+     * @param {Date} [from] Starting date for search in YYYY-MM-DDThh:mm:ss format.
+     * @param {Date} [to] Ending date for search in YYYY-MM-DDThh:mm:ss format.
+     * @param {module:model/EventsOrderBy} [orderBy] 
+     * @param {Number} [limit] Maximum number of returned items.
+     * @param {Number} [offset] How many items should be returned ahead.
      * @param {module:api/EventsApi~eventsByTransactionidGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/RecipientEvent>}
      */
@@ -108,12 +108,12 @@ export default class EventsApi {
      * Export delivery events log information to the specified file format. Required Access Level: Export
      * @param {String} name Name of selected channel.
      * @param {Object} opts Optional parameters
-     * @param {Array.<module:model/EventType>} opts.eventTypes Types of Events to return
-     * @param {Date} opts.from Starting date for search in YYYY-MM-DDThh:mm:ss format.
-     * @param {Date} opts.to Ending date for search in YYYY-MM-DDThh:mm:ss format.
-     * @param {module:model/ExportFileFormats} opts.fileFormat Format of the exported file
-     * @param {module:model/CompressionFormat} opts.compressionFormat FileResponse compression format. None or Zip.
-     * @param {String} opts.fileName Name of your file including extension.
+     * @param {Array.<module:model/EventType>} [eventTypes] Types of Events to return
+     * @param {Date} [from] Starting date for search in YYYY-MM-DDThh:mm:ss format.
+     * @param {Date} [to] Ending date for search in YYYY-MM-DDThh:mm:ss format.
+     * @param {module:model/ExportFileFormats} [fileFormat] Format of the exported file
+     * @param {module:model/CompressionFormat} [compressionFormat] FileResponse compression format. None or Zip.
+     * @param {String} [fileName] Name of your file including extension.
      * @param {module:api/EventsApi~eventsChannelsByNameExportPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ExportLink}
      */
@@ -165,12 +165,12 @@ export default class EventsApi {
      * Returns a log of delivery events filtered by specified parameters. Required Access Level: ViewReports
      * @param {String} name Name of selected channel.
      * @param {Object} opts Optional parameters
-     * @param {Array.<module:model/EventType>} opts.eventTypes Types of Events to return
-     * @param {Date} opts.from Starting date for search in YYYY-MM-DDThh:mm:ss format.
-     * @param {Date} opts.to Ending date for search in YYYY-MM-DDThh:mm:ss format.
-     * @param {module:model/EventsOrderBy} opts.orderBy 
-     * @param {Number} opts.limit How many items to load. Maximum for this request is 1000 items
-     * @param {Number} opts.offset How many items should be returned ahead.
+     * @param {Array.<module:model/EventType>} [eventTypes] Types of Events to return
+     * @param {Date} [from] Starting date for search in YYYY-MM-DDThh:mm:ss format.
+     * @param {Date} [to] Ending date for search in YYYY-MM-DDThh:mm:ss format.
+     * @param {module:model/EventsOrderBy} [orderBy] 
+     * @param {Number} [limit] How many items to load. Maximum for this request is 1000 items
+     * @param {Number} [offset] How many items should be returned ahead.
      * @param {module:api/EventsApi~eventsChannelsByNameGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/RecipientEvent>}
      */
@@ -307,12 +307,12 @@ export default class EventsApi {
      * Export Events
      * Export delivery events log information to the specified file format. Required Access Level: Export
      * @param {Object} opts Optional parameters
-     * @param {Array.<module:model/EventType>} opts.eventTypes Types of Events to return
-     * @param {Date} opts.from Starting date for search in YYYY-MM-DDThh:mm:ss format.
-     * @param {Date} opts.to Ending date for search in YYYY-MM-DDThh:mm:ss format.
-     * @param {module:model/ExportFileFormats} opts.fileFormat Format of the exported file
-     * @param {module:model/CompressionFormat} opts.compressionFormat FileResponse compression format. None or Zip.
-     * @param {String} opts.fileName Name of your file including extension.
+     * @param {Array.<module:model/EventType>} [eventTypes] Types of Events to return
+     * @param {Date} [from] Starting date for search in YYYY-MM-DDThh:mm:ss format.
+     * @param {Date} [to] Ending date for search in YYYY-MM-DDThh:mm:ss format.
+     * @param {module:model/ExportFileFormats} [fileFormat] Format of the exported file
+     * @param {module:model/CompressionFormat} [compressionFormat] FileResponse compression format. None or Zip.
+     * @param {String} [fileName] Name of your file including extension.
      * @param {module:api/EventsApi~eventsExportPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ExportLink}
      */
@@ -358,12 +358,12 @@ export default class EventsApi {
      * Load Events
      * Returns a log of delivery events filtered by specified parameters. Required Access Level: ViewReports
      * @param {Object} opts Optional parameters
-     * @param {Array.<module:model/EventType>} opts.eventTypes Types of Events to return
-     * @param {Date} opts.from Starting date for search in YYYY-MM-DDThh:mm:ss format.
-     * @param {Date} opts.to Ending date for search in YYYY-MM-DDThh:mm:ss format.
-     * @param {module:model/EventsOrderBy} opts.orderBy 
-     * @param {Number} opts.limit How many items to load. Maximum for this request is 1000 items
-     * @param {Number} opts.offset How many items should be returned ahead.
+     * @param {Array.<module:model/EventType>} [eventTypes] Types of Events to return
+     * @param {Date} [from] Starting date for search in YYYY-MM-DDThh:mm:ss format.
+     * @param {Date} [to] Ending date for search in YYYY-MM-DDThh:mm:ss format.
+     * @param {module:model/EventsOrderBy} [orderBy] 
+     * @param {Number} [limit] How many items to load. Maximum for this request is 1000 items
+     * @param {Number} [offset] How many items should be returned ahead.
      * @param {module:api/EventsApi~eventsGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/RecipientEvent>}
      */

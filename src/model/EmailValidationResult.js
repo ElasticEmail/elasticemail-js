@@ -18,7 +18,7 @@ import EmailValidationStatus from './EmailValidationStatus';
 /**
  * The EmailValidationResult model module.
  * @module model/EmailValidationResult
- * @version 4.0.22
+ * @version 4.0.23
  */
 class EmailValidationResult {
     /**
@@ -164,7 +164,7 @@ EmailValidationResult.prototype['Role'] = undefined;
 EmailValidationResult.prototype['Reason'] = undefined;
 
 /**
- * Date of creation in YYYY-MM-DDThh:ii:ss format
+ * Added date
  * @member {Date} DateAdded
  */
 EmailValidationResult.prototype['DateAdded'] = undefined;
@@ -175,6 +175,7 @@ EmailValidationResult.prototype['DateAdded'] = undefined;
 EmailValidationResult.prototype['Result'] = undefined;
 
 /**
+ * Predicted score
  * @member {Number} PredictedScore
  */
 EmailValidationResult.prototype['PredictedScore'] = undefined;
