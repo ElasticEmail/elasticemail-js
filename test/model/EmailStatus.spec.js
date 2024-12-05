@@ -126,6 +126,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property errorCategory (base name: "ErrorCategory")', function() {
+      // uncomment below and update the code to test the property errorCategory
+      //var instance = new ElasticEmail.EmailStatus();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

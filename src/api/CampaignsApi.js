@@ -18,7 +18,7 @@ import Campaign from '../model/Campaign';
 /**
 * Campaigns service.
 * @module api/CampaignsApi
-* @version 4.0.24
+* @version 4.0.25
 */
 export default class CampaignsApi {
 
@@ -114,6 +114,48 @@ export default class CampaignsApi {
       let returnType = Campaign;
       return this.apiClient.callApi(
         '/campaigns/{name}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the campaignsByNamePausePut operation.
+     * @callback module:api/CampaignsApi~campaignsByNamePausePutCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Pause Campaign
+     * Pauses the specific campaign, cancelling emails that are waiting to be sent. Required Access Level: ModifyCampaigns
+     * @param {String} name Name of Campaign to pause
+     * @param {module:api/CampaignsApi~campaignsByNamePausePutCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    campaignsByNamePausePut(name, callback) {
+      let postBody = null;
+      // verify the required parameter 'name' is set
+      if (name === undefined || name === null) {
+        throw new Error("Missing the required parameter 'name' when calling campaignsByNamePausePut");
+      }
+
+      let pathParams = {
+        'name': name
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apikey'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/campaigns/{name}/pause', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

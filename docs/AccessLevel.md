@@ -105,4 +105,6 @@
 
 * `ViewAITools` (value: `"ViewAITools"`)
 
+* `ModifySubscriptionAntiSpam` (value: `"ModifySubscriptionAntiSpam"`)
+
 

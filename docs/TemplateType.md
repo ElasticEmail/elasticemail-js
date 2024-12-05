@@ -13,4 +13,6 @@
 
 * `FormTemplate` (value: `"FormTemplate"`)
 
+* `LandingPageTemplate` (value: `"LandingPageTemplate"`)
+
 

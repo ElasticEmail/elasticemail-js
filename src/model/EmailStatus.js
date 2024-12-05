@@ -13,11 +13,12 @@
 
 import ApiClient from '../ApiClient';
 import LogJobStatus from './LogJobStatus';
+import MessageCategoryEnum from './MessageCategoryEnum';
 
 /**
  * The EmailStatus model module.
  * @module model/EmailStatus
- * @version 4.0.24
+ * @version 4.0.25
  */
 class EmailStatus {
     /**
@@ -84,6 +85,9 @@ class EmailStatus {
             }
             if (data.hasOwnProperty('EnvelopeFrom')) {
                 obj['EnvelopeFrom'] = ApiClient.convertToType(data['EnvelopeFrom'], 'String');
+            }
+            if (data.hasOwnProperty('ErrorCategory')) {
+                obj['ErrorCategory'] = MessageCategoryEnum.constructFromObject(data['ErrorCategory']);
             }
         }
         return obj;
@@ -198,6 +202,11 @@ EmailStatus.prototype['TransactionID'] = undefined;
  * @member {String} EnvelopeFrom
  */
 EmailStatus.prototype['EnvelopeFrom'] = undefined;
+
+/**
+ * @member {module:model/MessageCategoryEnum} ErrorCategory
+ */
+EmailStatus.prototype['ErrorCategory'] = undefined;
 
 
 

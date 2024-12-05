@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The FilePayload model module.
  * @module model/FilePayload
- * @version 4.0.24
+ * @version 4.0.25
  */
 class FilePayload {
     /**

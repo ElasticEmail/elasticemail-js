@@ -24,6 +24,7 @@ import CampaignOptions from './model/CampaignOptions';
 import CampaignRecipient from './model/CampaignRecipient';
 import CampaignStatus from './model/CampaignStatus';
 import CampaignTemplate from './model/CampaignTemplate';
+import CertificateValidationStatus from './model/CertificateValidationStatus';
 import ChannelLogStatusSummary from './model/ChannelLogStatusSummary';
 import CompressionFormat from './model/CompressionFormat';
 import ConsentData from './model/ConsentData';
@@ -36,6 +37,11 @@ import ContactStatus from './model/ContactStatus';
 import ContactUpdatePayload from './model/ContactUpdatePayload';
 import ContactsList from './model/ContactsList';
 import DeliveryOptimizationType from './model/DeliveryOptimizationType';
+import DomainData from './model/DomainData';
+import DomainDetail from './model/DomainDetail';
+import DomainOwner from './model/DomainOwner';
+import DomainPayload from './model/DomainPayload';
+import DomainUpdatePayload from './model/DomainUpdatePayload';
 import EmailContent from './model/EmailContent';
 import EmailData from './model/EmailData';
 import EmailJobFailedStatus from './model/EmailJobFailedStatus';
@@ -70,6 +76,7 @@ import LogStatusSummary from './model/LogStatusSummary';
 import MergeEmailPayload from './model/MergeEmailPayload';
 import MessageAttachment from './model/MessageAttachment';
 import MessageCategory from './model/MessageCategory';
+import MessageCategoryEnum from './model/MessageCategoryEnum';
 import NewApiKey from './model/NewApiKey';
 import NewSmtpCredentials from './model/NewSmtpCredentials';
 import Options from './model/Options';
@@ -93,6 +100,8 @@ import Template from './model/Template';
 import TemplatePayload from './model/TemplatePayload';
 import TemplateScope from './model/TemplateScope';
 import TemplateType from './model/TemplateType';
+import TrackingType from './model/TrackingType';
+import TrackingValidationStatus from './model/TrackingValidationStatus';
 import TransactionalRecipient from './model/TransactionalRecipient';
 import Utm from './model/Utm';
 import VerificationFileResult from './model/VerificationFileResult';
@@ -100,6 +109,7 @@ import VerificationFileResultDetails from './model/VerificationFileResultDetails
 import VerificationStatus from './model/VerificationStatus';
 import CampaignsApi from './api/CampaignsApi';
 import ContactsApi from './api/ContactsApi';
+import DomainsApi from './api/DomainsApi';
 import EmailsApi from './api/EmailsApi';
 import EventsApi from './api/EventsApi';
 import FilesApi from './api/FilesApi';
@@ -143,7 +153,7 @@ import VerificationsApi from './api/VerificationsApi';
 * </pre>
 * </p>
 * @module index
-* @version 4.0.24
+* @version 4.0.25
 */
 export {
     /**
@@ -219,6 +229,12 @@ export {
     CampaignTemplate,
 
     /**
+     * The CertificateValidationStatus model constructor.
+     * @property {module:model/CertificateValidationStatus}
+     */
+    CertificateValidationStatus,
+
+    /**
      * The ChannelLogStatusSummary model constructor.
      * @property {module:model/ChannelLogStatusSummary}
      */
@@ -289,6 +305,36 @@ export {
      * @property {module:model/DeliveryOptimizationType}
      */
     DeliveryOptimizationType,
+
+    /**
+     * The DomainData model constructor.
+     * @property {module:model/DomainData}
+     */
+    DomainData,
+
+    /**
+     * The DomainDetail model constructor.
+     * @property {module:model/DomainDetail}
+     */
+    DomainDetail,
+
+    /**
+     * The DomainOwner model constructor.
+     * @property {module:model/DomainOwner}
+     */
+    DomainOwner,
+
+    /**
+     * The DomainPayload model constructor.
+     * @property {module:model/DomainPayload}
+     */
+    DomainPayload,
+
+    /**
+     * The DomainUpdatePayload model constructor.
+     * @property {module:model/DomainUpdatePayload}
+     */
+    DomainUpdatePayload,
 
     /**
      * The EmailContent model constructor.
@@ -495,6 +541,12 @@ export {
     MessageCategory,
 
     /**
+     * The MessageCategoryEnum model constructor.
+     * @property {module:model/MessageCategoryEnum}
+     */
+    MessageCategoryEnum,
+
+    /**
      * The NewApiKey model constructor.
      * @property {module:model/NewApiKey}
      */
@@ -633,6 +685,18 @@ export {
     TemplateType,
 
     /**
+     * The TrackingType model constructor.
+     * @property {module:model/TrackingType}
+     */
+    TrackingType,
+
+    /**
+     * The TrackingValidationStatus model constructor.
+     * @property {module:model/TrackingValidationStatus}
+     */
+    TrackingValidationStatus,
+
+    /**
      * The TransactionalRecipient model constructor.
      * @property {module:model/TransactionalRecipient}
      */
@@ -673,6 +737,12 @@ export {
     * @property {module:api/ContactsApi}
     */
     ContactsApi,
+
+    /**
+    * The DomainsApi service constructor.
+    * @property {module:api/DomainsApi}
+    */
+    DomainsApi,
 
     /**
     * The EmailsApi service constructor.

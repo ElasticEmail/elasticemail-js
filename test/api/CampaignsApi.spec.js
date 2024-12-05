@@ -68,6 +68,16 @@
         done();
       });
     });
+    describe('campaignsByNamePausePut', function() {
+      it('should call campaignsByNamePausePut successfully', function(done) {
+        //uncomment below and update the code to test campaignsByNamePausePut
+        //instance.campaignsByNamePausePut(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('campaignsByNamePut', function() {
       it('should call campaignsByNamePut successfully', function(done) {
         //uncomment below and update the code to test campaignsByNamePut

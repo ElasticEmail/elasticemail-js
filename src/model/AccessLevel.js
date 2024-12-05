@@ -376,6 +376,13 @@ export default class AccessLevel {
         "ViewAITools" = "ViewAITools";
 
     
+        /**
+         * value: "ModifySubscriptionAntiSpam"
+         * @const
+         */
+        "ModifySubscriptionAntiSpam" = "ModifySubscriptionAntiSpam";
+
+    
 
     /**
     * Returns a <code>AccessLevel</code> enum value from a Javascript object name.
