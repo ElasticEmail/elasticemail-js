@@ -15,4 +15,12 @@
 
 * `LandingPageTemplate` (value: `"LandingPageTemplate"`)
 
+* `PaymentConfirmationTemplate` (value: `"PaymentConfirmationTemplate"`)
+
+* `LandingPageProductTemplate` (value: `"LandingPageProductTemplate"`)
+
+* `LandingPageCheckoutTemplate` (value: `"LandingPageCheckoutTemplate"`)
+
+* `LandingPagePaymentConfirmationTemplate` (value: `"LandingPagePaymentConfirmationTemplate"`)
+
 

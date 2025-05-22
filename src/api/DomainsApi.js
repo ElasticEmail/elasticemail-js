@@ -21,7 +21,7 @@ import DomainUpdatePayload from '../model/DomainUpdatePayload';
 /**
 * Domains service.
 * @module api/DomainsApi
-* @version 4.0.25
+* @version 4.0.26
 */
 export default class DomainsApi {
 

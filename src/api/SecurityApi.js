@@ -23,7 +23,7 @@ import SmtpCredentialsPayload from '../model/SmtpCredentialsPayload';
 /**
 * Security service.
 * @module api/SecurityApi
-* @version 4.0.25
+* @version 4.0.26
 */
 export default class SecurityApi {
 
@@ -49,7 +49,7 @@ export default class SecurityApi {
 
     /**
      * Delete ApiKey
-     * Delete your existing ApiKey. Required Access Level: Security
+     * Delete your existing ApiKey. Required Access Level: ModifyAccessTokens
      * @param {String} name Name of the ApiKey
      * @param {Object} opts Optional parameters
      * @param {String} [subaccount] Email of the subaccount of which ApiKey should be deleted
@@ -142,7 +142,7 @@ export default class SecurityApi {
 
     /**
      * Update ApiKey
-     * Update your existing ApiKey. Required Access Level: Security
+     * Update your existing ApiKey. Required Access Level: ModifyAccessTokens
      * @param {String} name Name of the ApiKey
      * @param {module:model/ApiKeyPayload} apiKeyPayload 
      * @param {module:api/SecurityApi~securityApikeysByNamePutCallback} callback The callback function, accepting three arguments: error, data, response
@@ -231,7 +231,7 @@ export default class SecurityApi {
 
     /**
      * Add ApiKey
-     * Add a new ApiKey. Required Access Level: Security
+     * Add a new ApiKey. Required Access Level: ModifyAccessTokens
      * @param {module:model/ApiKeyPayload} apiKeyPayload 
      * @param {module:api/SecurityApi~securityApikeysPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/NewApiKey}
@@ -273,7 +273,7 @@ export default class SecurityApi {
 
     /**
      * Delete SMTP Credential
-     * Delete your existing SMTP Credentials. Required Access Level: Security
+     * Delete your existing SMTP Credentials. Required Access Level: ModifyAccessTokens
      * @param {String} name Name of the SMTP Credential
      * @param {Object} opts Optional parameters
      * @param {String} [subaccount] Email of the subaccount of which credential should be deleted
@@ -366,7 +366,7 @@ export default class SecurityApi {
 
     /**
      * Update SMTP Credential
-     * Update your existing SMTP Credentials. Required Access Level: Security
+     * Update your existing SMTP Credentials. Required Access Level: ModifyAccessTokens
      * @param {String} name Name of the SMTP Credential
      * @param {module:model/SmtpCredentialsPayload} smtpCredentialsPayload 
      * @param {module:api/SecurityApi~securitySmtpByNamePutCallback} callback The callback function, accepting three arguments: error, data, response
@@ -455,7 +455,7 @@ export default class SecurityApi {
 
     /**
      * Add SMTP Credential
-     * Add new SMTP Credential. Required Access Level: Security
+     * Add new SMTP Credential. Required Access Level: ModifyAccessTokens
      * @param {module:model/SmtpCredentialsPayload} smtpCredentialsPayload 
      * @param {module:api/SecurityApi~securitySmtpPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/NewSmtpCredentials}

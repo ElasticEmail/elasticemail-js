@@ -61,6 +61,34 @@ export default class TemplateType {
         "LandingPageTemplate" = "LandingPageTemplate";
 
     
+        /**
+         * value: "PaymentConfirmationTemplate"
+         * @const
+         */
+        "PaymentConfirmationTemplate" = "PaymentConfirmationTemplate";
+
+    
+        /**
+         * value: "LandingPageProductTemplate"
+         * @const
+         */
+        "LandingPageProductTemplate" = "LandingPageProductTemplate";
+
+    
+        /**
+         * value: "LandingPageCheckoutTemplate"
+         * @const
+         */
+        "LandingPageCheckoutTemplate" = "LandingPageCheckoutTemplate";
+
+    
+        /**
+         * value: "LandingPagePaymentConfirmationTemplate"
+         * @const
+         */
+        "LandingPagePaymentConfirmationTemplate" = "LandingPagePaymentConfirmationTemplate";
+
+    
 
     /**
     * Returns a <code>TemplateType</code> enum value from a Javascript object name.

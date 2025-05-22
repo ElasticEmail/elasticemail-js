@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CampaignRecipient model module.
  * @module model/CampaignRecipient
- * @version 4.0.25
+ * @version 4.0.26
  */
 class CampaignRecipient {
     /**

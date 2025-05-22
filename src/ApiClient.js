@@ -17,7 +17,7 @@ import querystring from "querystring";
 
 /**
 * @module ApiClient
-* @version 4.0.25
+* @version 4.0.26
 */
 
 /**
@@ -46,7 +46,8 @@ class ApiClient {
          * @type {Array.<String>}
          */
         this.authentications = {
-            'apikey': {type: 'apiKey', 'in': 'header', name: 'X-ElasticEmail-ApiKey'}
+            'apikey': {type: 'apiKey', 'in': 'header', name: 'X-ElasticEmail-ApiKey'},
+            'ApiKeyAuthCustomBranding': {type: 'apiKey', 'in': 'header', name: 'X-Auth-Token'}
         }
 
         /**
@@ -55,7 +56,7 @@ class ApiClient {
          * @default {}
          */
         this.defaultHeaders = {
-            'User-Agent': 'OpenAPI-Generator/4.0.25/Javascript'
+            'User-Agent': 'OpenAPI-Generator/4.0.26/Javascript'
         };
 
         /**

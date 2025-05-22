@@ -20,7 +20,7 @@ import CampaignTemplate from './CampaignTemplate';
 /**
  * The Campaign model module.
  * @module model/Campaign
- * @version 4.0.25
+ * @version 4.0.26
  */
 class Campaign {
     /**

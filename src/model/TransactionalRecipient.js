@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TransactionalRecipient model module.
  * @module model/TransactionalRecipient
- * @version 4.0.25
+ * @version 4.0.26
  */
 class TransactionalRecipient {
     /**

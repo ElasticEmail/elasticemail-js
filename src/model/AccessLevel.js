@@ -383,6 +383,48 @@ export default class AccessLevel {
         "ModifySubscriptionAntiSpam" = "ModifySubscriptionAntiSpam";
 
     
+        /**
+         * value: "ViewLandingPagesCheckout"
+         * @const
+         */
+        "ViewLandingPagesCheckout" = "ViewLandingPagesCheckout";
+
+    
+        /**
+         * value: "ModifyLandingPagesCheckout"
+         * @const
+         */
+        "ModifyLandingPagesCheckout" = "ModifyLandingPagesCheckout";
+
+    
+        /**
+         * value: "ViewHTMLEditor"
+         * @const
+         */
+        "ViewHTMLEditor" = "ViewHTMLEditor";
+
+    
+        /**
+         * value: "ModifyAccessTokens"
+         * @const
+         */
+        "ModifyAccessTokens" = "ModifyAccessTokens";
+
+    
+        /**
+         * value: "ViewPaidNewsletters"
+         * @const
+         */
+        "ViewPaidNewsletters" = "ViewPaidNewsletters";
+
+    
+        /**
+         * value: "ModifyPaidNewsletters"
+         * @const
+         */
+        "ModifyPaidNewsletters" = "ModifyPaidNewsletters";
+
+    
 
     /**
     * Returns a <code>AccessLevel</code> enum value from a Javascript object name.

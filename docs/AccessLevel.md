@@ -107,4 +107,16 @@
 
 * `ModifySubscriptionAntiSpam` (value: `"ModifySubscriptionAntiSpam"`)
 
+* `ViewLandingPagesCheckout` (value: `"ViewLandingPagesCheckout"`)
+
+* `ModifyLandingPagesCheckout` (value: `"ModifyLandingPagesCheckout"`)
+
+* `ViewHTMLEditor` (value: `"ViewHTMLEditor"`)
+
+* `ModifyAccessTokens` (value: `"ModifyAccessTokens"`)
+
+* `ViewPaidNewsletters` (value: `"ViewPaidNewsletters"`)
+
+* `ModifyPaidNewsletters` (value: `"ModifyPaidNewsletters"`)
+
 
