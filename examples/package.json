@@ -1,0 +1,8 @@
+{
+  "name": "snippet-js",
+  "version": "1.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "@elasticemail/elasticemail-client": "^4.0.17"
+  }
+}
