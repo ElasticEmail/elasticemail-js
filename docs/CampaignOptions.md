@@ -11,5 +11,6 @@ Name | Type | Description | Notes
 **triggerFrequency** | **Number** | How often (in minutes) to send the campaign | [optional] 
 **triggerCount** | **Number** | How many times send the campaign | [optional] 
 **splitOptions** | [**SplitOptions**](SplitOptions.md) |  | [optional] 
+**sendAtLocalTime** | **Boolean** | Send email at local time of contact. | [optional] 
 
 

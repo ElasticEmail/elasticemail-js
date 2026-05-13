@@ -138,7 +138,7 @@ CampaignTemplate.prototype['Poolname'] = undefined;
 CampaignTemplate.prototype['From'] = undefined;
 
 /**
- * To what address should the recipients reply to (e.g. John Doe <email@domain.com>)
+ * To what addresses should the recipients reply to (e.g. John Doe <email@domain.com>)
  * @member {String} ReplyTo
  */
 CampaignTemplate.prototype['ReplyTo'] = undefined;

@@ -115,7 +115,7 @@ MessageAttachment.prototype['Name'] = undefined;
 MessageAttachment.prototype['ContentType'] = undefined;
 
 /**
- * Size of your attachment (in bytes).
+ * Size of the attachement in B
  * @member {Number} Size
  */
 MessageAttachment.prototype['Size'] = undefined;

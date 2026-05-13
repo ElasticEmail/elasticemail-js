@@ -96,6 +96,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property sendAtLocalTime (base name: "SendAtLocalTime")', function() {
+      // uncomment below and update the code to test the property sendAtLocalTime
+      //var instance = new ElasticEmail.CampaignOptions();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));

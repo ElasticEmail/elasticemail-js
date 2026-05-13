@@ -267,6 +267,11 @@ Class | Method | HTTP request | Description
 *ElasticEmail.VerificationsApi* | [**verificationsFilesPost**](docs/VerificationsApi.md#verificationsFilesPost) | **POST** /verifications/files | Upload File with Emails
 *ElasticEmail.VerificationsApi* | [**verificationsFilesResultGet**](docs/VerificationsApi.md#verificationsFilesResultGet) | **GET** /verifications/files/result | Get Files Verification Results
 *ElasticEmail.VerificationsApi* | [**verificationsGet**](docs/VerificationsApi.md#verificationsGet) | **GET** /verifications | Get Emails Verification Results
+*ElasticEmail.WebhookApi* | [**webhookByPublicidDelete**](docs/WebhookApi.md#webhookByPublicidDelete) | **DELETE** /webhook/{publicid} | Delete Webhook
+*ElasticEmail.WebhookApi* | [**webhookByPublicidGet**](docs/WebhookApi.md#webhookByPublicidGet) | **GET** /webhook/{publicid} | Load Webhook
+*ElasticEmail.WebhookApi* | [**webhookByPublicidPut**](docs/WebhookApi.md#webhookByPublicidPut) | **PUT** /webhook/{publicid} | Update Webhook
+*ElasticEmail.WebhookApi* | [**webhookGet**](docs/WebhookApi.md#webhookGet) | **GET** /webhook | Load Webhooks
+*ElasticEmail.WebhookApi* | [**webhookPost**](docs/WebhookApi.md#webhookPost) | **POST** /webhook | Add Webhook
 
 
 ## Documentation for Models
@@ -365,6 +370,9 @@ Class | Method | HTTP request | Description
  - [ElasticEmail.VerificationFileResult](docs/VerificationFileResult.md)
  - [ElasticEmail.VerificationFileResultDetails](docs/VerificationFileResultDetails.md)
  - [ElasticEmail.VerificationStatus](docs/VerificationStatus.md)
+ - [ElasticEmail.Webhook](docs/Webhook.md)
+ - [ElasticEmail.WebhookCreatePayload](docs/WebhookCreatePayload.md)
+ - [ElasticEmail.WebhookUpdatePayload](docs/WebhookUpdatePayload.md)
 
 
 ## Documentation for Authorization

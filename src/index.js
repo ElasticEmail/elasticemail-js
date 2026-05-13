@@ -107,6 +107,9 @@ import Utm from './model/Utm';
 import VerificationFileResult from './model/VerificationFileResult';
 import VerificationFileResultDetails from './model/VerificationFileResultDetails';
 import VerificationStatus from './model/VerificationStatus';
+import Webhook from './model/Webhook';
+import WebhookCreatePayload from './model/WebhookCreatePayload';
+import WebhookUpdatePayload from './model/WebhookUpdatePayload';
 import CampaignsApi from './api/CampaignsApi';
 import ContactsApi from './api/ContactsApi';
 import DomainsApi from './api/DomainsApi';
@@ -122,6 +125,7 @@ import SubAccountsApi from './api/SubAccountsApi';
 import SuppressionsApi from './api/SuppressionsApi';
 import TemplatesApi from './api/TemplatesApi';
 import VerificationsApi from './api/VerificationsApi';
+import WebhookApi from './api/WebhookApi';
 
 
 /**
@@ -727,6 +731,24 @@ export {
     VerificationStatus,
 
     /**
+     * The Webhook model constructor.
+     * @property {module:model/Webhook}
+     */
+    Webhook,
+
+    /**
+     * The WebhookCreatePayload model constructor.
+     * @property {module:model/WebhookCreatePayload}
+     */
+    WebhookCreatePayload,
+
+    /**
+     * The WebhookUpdatePayload model constructor.
+     * @property {module:model/WebhookUpdatePayload}
+     */
+    WebhookUpdatePayload,
+
+    /**
     * The CampaignsApi service constructor.
     * @property {module:api/CampaignsApi}
     */
@@ -814,5 +836,11 @@ export {
     * The VerificationsApi service constructor.
     * @property {module:api/VerificationsApi}
     */
-    VerificationsApi
+    VerificationsApi,
+
+    /**
+    * The WebhookApi service constructor.
+    * @property {module:api/WebhookApi}
+    */
+    WebhookApi
 };

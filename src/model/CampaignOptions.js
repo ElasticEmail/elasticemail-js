@@ -71,6 +71,9 @@ class CampaignOptions {
             if (data.hasOwnProperty('SplitOptions')) {
                 obj['SplitOptions'] = SplitOptions.constructFromObject(data['SplitOptions']);
             }
+            if (data.hasOwnProperty('SendAtLocalTime')) {
+                obj['SendAtLocalTime'] = ApiClient.convertToType(data['SendAtLocalTime'], 'Boolean');
+            }
         }
         return obj;
     }
@@ -133,6 +136,12 @@ CampaignOptions.prototype['TriggerCount'] = undefined;
  * @member {module:model/SplitOptions} SplitOptions
  */
 CampaignOptions.prototype['SplitOptions'] = undefined;
+
+/**
+ * Send email at local time of contact.
+ * @member {Boolean} SendAtLocalTime
+ */
+CampaignOptions.prototype['SendAtLocalTime'] = undefined;
 
 
 
