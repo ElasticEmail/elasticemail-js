@@ -19,7 +19,7 @@ import FileInfo from './FileInfo';
 /**
  * The EmailData model module.
  * @module model/EmailData
- * @version 4.0.29
+ * @version 4.0.30
  */
 class EmailData {
     /**

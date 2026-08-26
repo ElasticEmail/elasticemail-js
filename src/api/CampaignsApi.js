@@ -18,7 +18,7 @@ import Campaign from '../model/Campaign';
 /**
 * Campaigns service.
 * @module api/CampaignsApi
-* @version 4.0.29
+* @version 4.0.30
 */
 export default class CampaignsApi {
 

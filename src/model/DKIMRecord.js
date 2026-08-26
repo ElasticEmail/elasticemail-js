@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DKIMRecord model module.
  * @module model/DKIMRecord
- * @version 4.0.29
+ * @version 4.0.30
  */
 class DKIMRecord {
     /**

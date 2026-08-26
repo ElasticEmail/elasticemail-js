@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ListUpdatePayload model module.
  * @module model/ListUpdatePayload
- * @version 4.0.29
+ * @version 4.0.30
  */
 class ListUpdatePayload {
     /**
