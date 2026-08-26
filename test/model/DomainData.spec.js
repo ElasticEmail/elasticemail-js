@@ -126,6 +126,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property certificateExpiryDate (base name: "CertificateExpiryDate")', function() {
+      // uncomment below and update the code to test the property certificateExpiryDate
+      //var instance = new ElasticEmail.DomainData();
+      //expect(instance).to.be();
+    });
+
     it('should have the property certificateValidationError (base name: "CertificateValidationError")', function() {
       // uncomment below and update the code to test the property certificateValidationError
       //var instance = new ElasticEmail.DomainData();
@@ -156,6 +162,12 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property wasEverVerified (base name: "WasEverVerified")', function() {
+      // uncomment below and update the code to test the property wasEverVerified
+      //var instance = new ElasticEmail.DomainData();
+      //expect(instance).to.be();
+    });
+
     it('should have the property isMarkedForDeletion (base name: "IsMarkedForDeletion")', function() {
       // uncomment below and update the code to test the property isMarkedForDeletion
       //var instance = new ElasticEmail.DomainData();
@@ -164,6 +176,12 @@
 
     it('should have the property ownership (base name: "Ownership")', function() {
       // uncomment below and update the code to test the property ownership
+      //var instance = new ElasticEmail.DomainData();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property dKIMRecord (base name: "DKIMRecord")', function() {
+      // uncomment below and update the code to test the property dKIMRecord
       //var instance = new ElasticEmail.DomainData();
       //expect(instance).to.be();
     });

@@ -21,7 +21,7 @@ import SubaccountPayload from '../model/SubaccountPayload';
 /**
 * SubAccounts service.
 * @module api/SubAccountsApi
-* @version 4.0.28
+* @version 4.0.29
 */
 export default class SubAccountsApi {
 
@@ -36,6 +36,49 @@ export default class SubAccountsApi {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
+
+    /**
+     * Callback function to receive the result of the subaccountsByEmailApikeyGet operation.
+     * @callback module:api/SubAccountsApi~subaccountsByEmailApikeyGetCallback
+     * @param {String} error Error message, if any.
+     * @param {String} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get SubAccount ApiKey
+     * Returns API key token for the specified SubAccount.             The default API key created for the subaccount has a 48-hour expiration period. Required Access Level: ModifySubAccounts
+     * @param {String} email Email address of Sub-Account
+     * @param {module:api/SubAccountsApi~subaccountsByEmailApikeyGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link String}
+     */
+    subaccountsByEmailApikeyGet(email, callback) {
+      let postBody = null;
+      // verify the required parameter 'email' is set
+      if (email === undefined || email === null) {
+        throw new Error("Missing the required parameter 'email' when calling subaccountsByEmailApikeyGet");
+      }
+
+      let pathParams = {
+        'email': email
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apikey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = 'String';
+      return this.apiClient.callApi(
+        '/subaccounts/{email}/apikey', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
 
     /**
      * Callback function to receive the result of the subaccountsByEmailCreditsPatch operation.
@@ -270,7 +313,7 @@ export default class SubAccountsApi {
 
     /**
      * Add SubAccount
-     * Add a new SubAccount to your Account. To receive an access token for this SubAccount, make a POST security/apikeys request using the 'subaccount' parameter. Required Access Level: ModifySubAccounts
+     * Add a new SubAccount to your Account. To receive an access token for this SubAccount, make a POST security/apikeys request using the 'subaccount' parameter.             The default API key created for the subaccount has a 48-hour expiration period. Required Access Level: ModifySubAccounts
      * @param {module:model/SubaccountPayload} subaccountPayload 
      * @param {module:api/SubAccountsApi~subaccountsPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/SubAccountInfo}

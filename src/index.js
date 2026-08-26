@@ -36,6 +36,7 @@ import ContactSource from './model/ContactSource';
 import ContactStatus from './model/ContactStatus';
 import ContactUpdatePayload from './model/ContactUpdatePayload';
 import ContactsList from './model/ContactsList';
+import DKIMRecord from './model/DKIMRecord';
 import DeliveryOptimizationType from './model/DeliveryOptimizationType';
 import DomainData from './model/DomainData';
 import DomainDetail from './model/DomainDetail';
@@ -157,7 +158,7 @@ import WebhookApi from './api/WebhookApi';
 * </pre>
 * </p>
 * @module index
-* @version 4.0.28
+* @version 4.0.29
 */
 export {
     /**
@@ -303,6 +304,12 @@ export {
      * @property {module:model/ContactsList}
      */
     ContactsList,
+
+    /**
+     * The DKIMRecord model constructor.
+     * @property {module:model/DKIMRecord}
+     */
+    DKIMRecord,
 
     /**
      * The DeliveryOptimizationType model constructor.

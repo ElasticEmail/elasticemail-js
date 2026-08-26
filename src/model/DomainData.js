@@ -13,6 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import CertificateValidationStatus from './CertificateValidationStatus';
+import DKIMRecord from './DKIMRecord';
 import DomainOwner from './DomainOwner';
 import TrackingType from './TrackingType';
 import TrackingValidationStatus from './TrackingValidationStatus';
@@ -20,7 +21,7 @@ import TrackingValidationStatus from './TrackingValidationStatus';
 /**
  * The DomainData model module.
  * @module model/DomainData
- * @version 4.0.28
+ * @version 4.0.29
  */
 class DomainData {
     /**
@@ -88,6 +89,9 @@ class DomainData {
             if (data.hasOwnProperty('CertificateStatus')) {
                 obj['CertificateStatus'] = CertificateValidationStatus.constructFromObject(data['CertificateStatus']);
             }
+            if (data.hasOwnProperty('CertificateExpiryDate')) {
+                obj['CertificateExpiryDate'] = ApiClient.convertToType(data['CertificateExpiryDate'], 'Date');
+            }
             if (data.hasOwnProperty('CertificateValidationError')) {
                 obj['CertificateValidationError'] = ApiClient.convertToType(data['CertificateValidationError'], 'String');
             }
@@ -103,11 +107,17 @@ class DomainData {
             if (data.hasOwnProperty('IsCustomBouncesDomainDefault')) {
                 obj['IsCustomBouncesDomainDefault'] = ApiClient.convertToType(data['IsCustomBouncesDomainDefault'], 'Boolean');
             }
+            if (data.hasOwnProperty('WasEverVerified')) {
+                obj['WasEverVerified'] = ApiClient.convertToType(data['WasEverVerified'], 'Boolean');
+            }
             if (data.hasOwnProperty('IsMarkedForDeletion')) {
                 obj['IsMarkedForDeletion'] = ApiClient.convertToType(data['IsMarkedForDeletion'], 'Boolean');
             }
             if (data.hasOwnProperty('Ownership')) {
                 obj['Ownership'] = DomainOwner.constructFromObject(data['Ownership']);
+            }
+            if (data.hasOwnProperty('DKIMRecord')) {
+                obj['DKIMRecord'] = DKIMRecord.constructFromObject(data['DKIMRecord']);
             }
         }
         return obj;
@@ -134,6 +144,10 @@ class DomainData {
         // ensure the json data is a string
         if (data['CustomBouncesDomain'] && !(typeof data['CustomBouncesDomain'] === 'string' || data['CustomBouncesDomain'] instanceof String)) {
             throw new Error("Expected the field `CustomBouncesDomain` to be a primitive type in the JSON string but got " + data['CustomBouncesDomain']);
+        }
+        // validate the optional field `DKIMRecord`
+        if (data['DKIMRecord']) { // data not null
+          DKIMRecord.validateJSON(data['DKIMRecord']);
         }
 
         return true;
@@ -213,6 +227,11 @@ DomainData.prototype['TrackingStatus'] = undefined;
 DomainData.prototype['CertificateStatus'] = undefined;
 
 /**
+ * @member {Date} CertificateExpiryDate
+ */
+DomainData.prototype['CertificateExpiryDate'] = undefined;
+
+/**
  * @member {String} CertificateValidationError
  */
 DomainData.prototype['CertificateValidationError'] = undefined;
@@ -238,6 +257,11 @@ DomainData.prototype['CustomBouncesDomain'] = undefined;
 DomainData.prototype['IsCustomBouncesDomainDefault'] = undefined;
 
 /**
+ * @member {Boolean} WasEverVerified
+ */
+DomainData.prototype['WasEverVerified'] = undefined;
+
+/**
  * @member {Boolean} IsMarkedForDeletion
  */
 DomainData.prototype['IsMarkedForDeletion'] = undefined;
@@ -246,6 +270,11 @@ DomainData.prototype['IsMarkedForDeletion'] = undefined;
  * @member {module:model/DomainOwner} Ownership
  */
 DomainData.prototype['Ownership'] = undefined;
+
+/**
+ * @member {module:model/DKIMRecord} DKIMRecord
+ */
+DomainData.prototype['DKIMRecord'] = undefined;
 
 
 

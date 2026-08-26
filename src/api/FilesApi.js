@@ -19,7 +19,7 @@ import FilePayload from '../model/FilePayload';
 /**
 * Files service.
 * @module api/FilesApi
-* @version 4.0.28
+* @version 4.0.29
 */
 export default class FilesApi {
 

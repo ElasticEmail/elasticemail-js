@@ -23,7 +23,7 @@ import SmtpCredentialsPayload from '../model/SmtpCredentialsPayload';
 /**
 * Security service.
 * @module api/SecurityApi
-* @version 4.0.28
+* @version 4.0.29
 */
 export default class SecurityApi {
 
@@ -98,7 +98,7 @@ export default class SecurityApi {
      * Load your existing ApiKey info. Required Access Level: ViewAccessTokens
      * @param {String} name Name of the ApiKey
      * @param {Object} opts Optional parameters
-     * @param {String} [subaccount] Email of the subaccount of which ApiKey should be loaded
+     * @param {String} [subaccount] Email of the subaccount of which ApiKey should be loaded. The default API key created for the subaccount has a 48-hour expiration period.
      * @param {module:api/SecurityApi~securityApikeysByNameGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ApiKey}
      */
@@ -192,7 +192,7 @@ export default class SecurityApi {
      * List ApiKeys
      * List all your existing ApiKeys. Required Access Level: ViewAccessTokens
      * @param {Object} opts Optional parameters
-     * @param {String} [subaccount] Email of the subaccount of which ApiKeys should be loaded
+     * @param {String} [subaccount] Email of the subaccount of which ApiKeys should be loaded. The default API key created for the subaccount has a 48-hour expiration period.
      * @param {module:api/SecurityApi~securityApikeysGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<module:model/ApiKey>}
      */

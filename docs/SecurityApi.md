@@ -94,7 +94,7 @@ apikey.apiKey = 'YOUR API KEY';
 let apiInstance = new ElasticEmail.SecurityApi();
 let name = "name_example"; // String | Name of the ApiKey
 let opts = {
-  'subaccount': "subaccount_example" // String | Email of the subaccount of which ApiKey should be loaded
+  'subaccount': "subaccount_example" // String | Email of the subaccount of which ApiKey should be loaded. The default API key created for the subaccount has a 48-hour expiration period.
 };
 apiInstance.securityApikeysByNameGet(name, opts, (error, data, response) => {
   if (error) {
@@ -111,7 +111,7 @@ apiInstance.securityApikeysByNameGet(name, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**| Name of the ApiKey | 
- **subaccount** | **String**| Email of the subaccount of which ApiKey should be loaded | [optional] 
+ **subaccount** | **String**| Email of the subaccount of which ApiKey should be loaded. The default API key created for the subaccount has a 48-hour expiration period. | [optional] 
 
 ### Return type
 
@@ -201,7 +201,7 @@ apikey.apiKey = 'YOUR API KEY';
 
 let apiInstance = new ElasticEmail.SecurityApi();
 let opts = {
-  'subaccount': "subaccount_example" // String | Email of the subaccount of which ApiKeys should be loaded
+  'subaccount': "subaccount_example" // String | Email of the subaccount of which ApiKeys should be loaded. The default API key created for the subaccount has a 48-hour expiration period.
 };
 apiInstance.securityApikeysGet(opts, (error, data, response) => {
   if (error) {
@@ -217,7 +217,7 @@ apiInstance.securityApikeysGet(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **subaccount** | **String**| Email of the subaccount of which ApiKeys should be loaded | [optional] 
+ **subaccount** | **String**| Email of the subaccount of which ApiKeys should be loaded. The default API key created for the subaccount has a 48-hour expiration period. | [optional] 
 
 ### Return type
 

@@ -18,7 +18,7 @@ import Campaign from '../model/Campaign';
 /**
 * Campaigns service.
 * @module api/CampaignsApi
-* @version 4.0.28
+* @version 4.0.29
 */
 export default class CampaignsApi {
 
@@ -33,6 +33,54 @@ export default class CampaignsApi {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
+
+    /**
+     * Callback function to receive the result of the campaignsAutomationByNameTriggerPost operation.
+     * @callback module:api/CampaignsApi~campaignsAutomationByNameTriggerPostCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Trigger Automation for Contact
+     * Manually trigger an Automation for a contact. Required Access Level: ModifyAutomations
+     * @param {String} name 
+     * @param {String} contactEmail 
+     * @param {module:api/CampaignsApi~campaignsAutomationByNameTriggerPostCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    campaignsAutomationByNameTriggerPost(name, contactEmail, callback) {
+      let postBody = null;
+      // verify the required parameter 'name' is set
+      if (name === undefined || name === null) {
+        throw new Error("Missing the required parameter 'name' when calling campaignsAutomationByNameTriggerPost");
+      }
+      // verify the required parameter 'contactEmail' is set
+      if (contactEmail === undefined || contactEmail === null) {
+        throw new Error("Missing the required parameter 'contactEmail' when calling campaignsAutomationByNameTriggerPost");
+      }
+
+      let pathParams = {
+        'name': name
+      };
+      let queryParams = {
+        'contactEmail': contactEmail
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apikey'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/campaigns/automation/{name}/trigger', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
 
     /**
      * Callback function to receive the result of the campaignsByNameDelete operation.

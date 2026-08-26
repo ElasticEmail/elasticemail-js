@@ -34,10 +34,10 @@ export default class EventType {
 
     
         /**
-         * value: "Bounce"
+         * value: "Error"
          * @const
          */
-        "Bounce" = "Bounce";
+        "Error" = "Error";
 
     
         /**
@@ -73,6 +73,27 @@ export default class EventType {
          * @const
          */
         "Complaint" = "Complaint";
+
+    
+        /**
+         * value: "Bounce"
+         * @const
+         */
+        "Bounce" = "Bounce";
+
+    
+        /**
+         * value: "TransactionalUnsubscribe"
+         * @const
+         */
+        "TransactionalUnsubscribe" = "TransactionalUnsubscribe";
+
+    
+        /**
+         * value: "Suppress"
+         * @const
+         */
+        "Suppress" = "Suppress";
 
     
 

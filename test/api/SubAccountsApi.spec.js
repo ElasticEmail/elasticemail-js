@@ -48,6 +48,16 @@
   }
 
   describe('SubAccountsApi', function() {
+    describe('subaccountsByEmailApikeyGet', function() {
+      it('should call subaccountsByEmailApikeyGet successfully', function(done) {
+        //uncomment below and update the code to test subaccountsByEmailApikeyGet
+        //instance.subaccountsByEmailApikeyGet(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('subaccountsByEmailCreditsPatch', function() {
       it('should call subaccountsByEmailCreditsPatch successfully', function(done) {
         //uncomment below and update the code to test subaccountsByEmailCreditsPatch

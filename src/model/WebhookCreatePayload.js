@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The WebhookCreatePayload model module.
  * @module model/WebhookCreatePayload
- * @version 4.0.28
+ * @version 4.0.29
  */
 class WebhookCreatePayload {
     /**

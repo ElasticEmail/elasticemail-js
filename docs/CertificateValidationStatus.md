@@ -11,4 +11,6 @@
 
 * `NotValid` (value: `"NotValid"`)
 
+* `InProgress` (value: `"InProgress"`)
+
 

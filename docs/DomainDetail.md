@@ -15,12 +15,15 @@ Name | Type | Description | Notes
 **type** | [**TrackingType**](TrackingType.md) |  | [optional] 
 **trackingStatus** | [**TrackingValidationStatus**](TrackingValidationStatus.md) |  | [optional] 
 **certificateStatus** | [**CertificateValidationStatus**](CertificateValidationStatus.md) |  | [optional] 
+**certificateExpiryDate** | **Date** |  | [optional] 
 **certificateValidationError** | **String** |  | [optional] 
 **trackingTypeUserRequest** | [**TrackingType**](TrackingType.md) |  | [optional] 
 **VERP** | **Boolean** |  | [optional] 
 **customBouncesDomain** | **String** |  | [optional] 
 **isCustomBouncesDomainDefault** | **Boolean** |  | [optional] 
+**wasEverVerified** | **Boolean** |  | [optional] 
 **isMarkedForDeletion** | **Boolean** |  | [optional] 
 **ownership** | [**DomainOwner**](DomainOwner.md) |  | [optional] 
+**dKIMRecord** | [**DKIMRecord**](DKIMRecord.md) |  | [optional] 
 
 

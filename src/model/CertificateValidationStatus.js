@@ -47,6 +47,13 @@ export default class CertificateValidationStatus {
         "NotValid" = "NotValid";
 
     
+        /**
+         * value: "InProgress"
+         * @const
+         */
+        "InProgress" = "InProgress";
+
+    
 
     /**
     * Returns a <code>CertificateValidationStatus</code> enum value from a Javascript object name.

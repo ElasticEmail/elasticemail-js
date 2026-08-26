@@ -48,6 +48,16 @@
   }
 
   describe('CampaignsApi', function() {
+    describe('campaignsAutomationByNameTriggerPost', function() {
+      it('should call campaignsAutomationByNameTriggerPost successfully', function(done) {
+        //uncomment below and update the code to test campaignsAutomationByNameTriggerPost
+        //instance.campaignsAutomationByNameTriggerPost(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('campaignsByNameDelete', function() {
       it('should call campaignsByNameDelete successfully', function(done) {
         //uncomment below and update the code to test campaignsByNameDelete

@@ -7,7 +7,7 @@
 
 * `FailedAttempt` (value: `"FailedAttempt"`)
 
-* `Bounce` (value: `"Bounce"`)
+* `Error` (value: `"Error"`)
 
 * `Sent` (value: `"Sent"`)
 
@@ -18,5 +18,11 @@
 * `Unsubscribe` (value: `"Unsubscribe"`)
 
 * `Complaint` (value: `"Complaint"`)
+
+* `Bounce` (value: `"Bounce"`)
+
+* `TransactionalUnsubscribe` (value: `"TransactionalUnsubscribe"`)
+
+* `Suppress` (value: `"Suppress"`)
 
 

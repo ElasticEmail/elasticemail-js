@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ContactUpdatePayload model module.
  * @module model/ContactUpdatePayload
- * @version 4.0.28
+ * @version 4.0.29
  */
 class ContactUpdatePayload {
     /**
