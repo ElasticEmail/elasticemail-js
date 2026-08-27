@@ -1,8 +1,9 @@
 {
   "name": "@elasticemail/elasticemail-client",
-  "version": "4.0.30",
+  "version": "4.2.0",
   "description": "Official ElasticEmail SDK. This API is based on the REST API architecture, allowing the user to easily manage their data with this resource-based approach.",
   "license": "MIT",
+  "keywords": ["elasticemail","mailing","marketing","transactional","api","newsletter","email","smtp","verification"],
   "main": "dist/index.js",
   "scripts": {
     "build": "babel src -d dist",

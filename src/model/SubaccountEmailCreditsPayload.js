@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SubaccountEmailCreditsPayload model module.
  * @module model/SubaccountEmailCreditsPayload
- * @version 4.0.30
+ * @version 4.2.0
  */
 class SubaccountEmailCreditsPayload {
     /**

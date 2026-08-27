@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The FileUploadResult model module.
  * @module model/FileUploadResult
- * @version 4.0.30
+ * @version 4.2.0
  */
 class FileUploadResult {
     /**

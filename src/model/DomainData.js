@@ -21,7 +21,7 @@ import TrackingValidationStatus from './TrackingValidationStatus';
 /**
  * The DomainData model module.
  * @module model/DomainData
- * @version 4.0.30
+ * @version 4.2.0
  */
 class DomainData {
     /**

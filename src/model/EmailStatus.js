@@ -18,7 +18,7 @@ import MessageCategoryEnum from './MessageCategoryEnum';
 /**
  * The EmailStatus model module.
  * @module model/EmailStatus
- * @version 4.0.30
+ * @version 4.2.0
  */
 class EmailStatus {
     /**

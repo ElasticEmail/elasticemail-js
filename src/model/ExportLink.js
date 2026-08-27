@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ExportLink model module.
  * @module model/ExportLink
- * @version 4.0.30
+ * @version 4.2.0
  */
 class ExportLink {
     /**

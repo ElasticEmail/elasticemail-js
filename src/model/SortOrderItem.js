@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SortOrderItem model module.
  * @module model/SortOrderItem
- * @version 4.0.30
+ * @version 4.2.0
  */
 class SortOrderItem {
     /**
