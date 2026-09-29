@@ -23,7 +23,7 @@ import MergeEmailPayload from '../model/MergeEmailPayload';
 /**
 * Emails service.
 * @module api/EmailsApi
-* @version 4.2.0
+* @version 4.2.1
 */
 export default class EmailsApi {
 

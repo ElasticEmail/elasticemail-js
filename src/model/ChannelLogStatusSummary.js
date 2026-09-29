@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ChannelLogStatusSummary model module.
  * @module model/ChannelLogStatusSummary
- * @version 4.2.0
+ * @version 4.2.1
  */
 class ChannelLogStatusSummary {
     /**

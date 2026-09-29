@@ -17,7 +17,7 @@ import EmailJobFailedStatus from './EmailJobFailedStatus';
 /**
  * The EmailJobStatus model module.
  * @module model/EmailJobStatus
- * @version 4.2.0
+ * @version 4.2.1
  */
 class EmailJobStatus {
     /**

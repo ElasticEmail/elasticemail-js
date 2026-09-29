@@ -21,7 +21,7 @@ import TemplateType from '../model/TemplateType';
 /**
 * Templates service.
 * @module api/TemplatesApi
-* @version 4.2.0
+* @version 4.2.1
 */
 export default class TemplatesApi {
 

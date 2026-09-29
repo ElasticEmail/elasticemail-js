@@ -18,7 +18,7 @@ import TemplateScope from './TemplateScope';
 /**
  * The TemplatePayload model module.
  * @module model/TemplatePayload
- * @version 4.2.0
+ * @version 4.2.1
  */
 class TemplatePayload {
     /**

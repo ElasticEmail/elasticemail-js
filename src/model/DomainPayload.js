@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DomainPayload model module.
  * @module model/DomainPayload
- * @version 4.2.0
+ * @version 4.2.1
  */
 class DomainPayload {
     /**
