@@ -69,6 +69,9 @@ npm installs the runtime dependency ([superagent](https://www.npmjs.com/package/
 
 ## Quick start
 
+> [!IMPORTANT]
+> Elastic Email only sends from verified domains. Before your first send, [verify your sending domain](https://help.elasticemail.com/en/articles/4934400-how-to-verify-your-domain) and use an address on that domain as the sender.
+
 ### Configure the client
 
 ```javascript
@@ -109,7 +112,7 @@ emails.emailsTransactionalPost(message, (error, data, response) => {
 });
 ```
 
-The `from` address must use a domain you've verified in your Elastic Email account.
+The `from` address must use a domain you've [verified in your Elastic Email account](https://help.elasticemail.com/en/articles/4934400-how-to-verify-your-domain).
 
 > [!NOTE]
 > Request bodies are sent as JSON exactly as you pass them, so use the API's PascalCase field names (`Recipients`, `Content`, `From`…). Response objects use the same names (`data.TransactionID`).
