@@ -19,7 +19,7 @@ import SegmentPayload from '../model/SegmentPayload';
 /**
 * Segments service.
 * @module api/SegmentsApi
-* @version 4.3.0
+* @version 4.4.0
 */
 export default class SegmentsApi {
 

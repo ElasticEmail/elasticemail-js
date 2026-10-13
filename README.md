@@ -32,6 +32,7 @@ The official JavaScript / Node.js client library for the [Elastic Email](https:/
 ## Features
 
 - **Transactional and bulk email.** Send single messages, bulk campaigns or CSV merge-file sends.
+- **Safe retries.** Add an optional `Idempotency-Key` to a send so a retried request never delivers the same email twice.
 - **Contacts, lists and segments.** Add, update, import, export and bulk-delete contacts.
 - **Campaigns and automations.** Create, update, pause and trigger automations for a contact.
 - **Templates, files and attachments.** Manage templates and uploaded files.
@@ -116,6 +117,28 @@ The `from` address must use a domain you've [verified in your Elastic Email acco
 
 > [!NOTE]
 > Request bodies are sent as JSON exactly as you pass them, so use the API's PascalCase field names (`Recipients`, `Content`, `From`…). Response objects use the same names (`data.TransactionID`).
+
+### Retry a send safely (Idempotency-Key)
+
+Pass an idempotency key with a send so that retrying after a timeout or a dropped connection can't deliver the email twice. If the same key comes back with the same body within 24 hours, the API returns the stored response (same `TransactionID`, plus an `Idempotency-Replayed: true` header) instead of sending again. Generate a new key for every send and reuse it only to retry that send with an identical body: a different body gets `422`, a retry while the first request is still running gets `409`, and `503` means the key couldn't be checked, so retry later with the same key. Sends without a key work as before.
+
+```javascript
+const { randomUUID } = require('crypto');
+
+const opts = { idempotencyKey: randomUUID() }; // one key per send, reused only for its retries
+
+emails.emailsTransactionalPost(message, opts, (error, data, response) => {
+  if (error) {
+    // Timeout, network error or 503: retry with the same message and the same opts.
+    console.error('Elastic Email API error', error.status);
+    return;
+  }
+  const replayed = response.headers['idempotency-replayed'] === 'true';
+  console.log(`TransactionID: ${data.TransactionID}${replayed ? ' (replayed)' : ''}`);
+});
+```
+
+The same `opts` argument works for `emailsPost` and `emailsMergefilePost`.
 
 ### Use promises and `async`/`await`
 
@@ -505,7 +528,7 @@ The SDK follows the Elastic Email API v4. Package versions are listed on [npm](h
 <summary>Build details</summary>
 
 - API version: 4.0.0
-- SDK version: 4.3.0
+- SDK version: 4.4.0
 - Generator version: 7.11.0
 - Build package: `org.openapitools.codegen.languages.JavascriptClientCodegen`
 

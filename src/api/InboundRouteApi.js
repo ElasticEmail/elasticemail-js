@@ -20,7 +20,7 @@ import SortOrderItem from '../model/SortOrderItem';
 /**
 * InboundRoute service.
 * @module api/InboundRouteApi
-* @version 4.3.0
+* @version 4.4.0
 */
 export default class InboundRouteApi {
 

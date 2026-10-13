@@ -17,7 +17,7 @@ import WebhookDeliveryMethod from './WebhookDeliveryMethod';
 /**
  * The Webhook model module.
  * @module model/Webhook
- * @version 4.3.0
+ * @version 4.4.0
  */
 class Webhook {
     /**

@@ -17,7 +17,7 @@ import SubaccountEmailSettingsPayload from './SubaccountEmailSettingsPayload';
 /**
  * The SubaccountSettingsInfoPayload model module.
  * @module model/SubaccountSettingsInfoPayload
- * @version 4.3.0
+ * @version 4.4.0
  */
 class SubaccountSettingsInfoPayload {
     /**

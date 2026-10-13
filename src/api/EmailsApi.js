@@ -23,7 +23,7 @@ import MergeEmailPayload from '../model/MergeEmailPayload';
 /**
 * Emails service.
 * @module api/EmailsApi
-* @version 4.3.0
+* @version 4.4.0
 */
 export default class EmailsApi {
 
@@ -159,10 +159,19 @@ export default class EmailsApi {
      * Send Bulk Emails CSV
      * Send to a list of contacts submitted in a CSV data file. The first column in the CSV must be the email address and the CSV must contain a header row. Additional fields can be included with a named header row and can be merged with the template using {merge} tags in the content.                           Example CSV:                           email, firstname, lastname              test1@gmail.com, michael, smith              test2@gmail.com, janet, smith                           Merge file must not be empty. Required Access Level: SendHttp
      * @param {module:model/MergeEmailPayload} mergeEmailPayload Email data
+     * @param {Object} opts Optional parameters
+     * @param {String} [idempotencyKey] Makes a retry of this request safe. A repeated request with the same key and the same body gets the stored response of the first one and is not executed again. Generate a new key, e.g. a UUID v4, for each request and reuse it only to retry that request. Keys are scoped to the account and kept for 24 hours after the first request.
      * @param {module:api/EmailsApi~emailsMergefilePostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EmailSend}
      */
-    emailsMergefilePost(mergeEmailPayload, callback) {
+    emailsMergefilePost(mergeEmailPayload, opts, callback) {
+      // HAND-WRITTEN (4.4.0 back-compat, keep on regeneration): accept the pre-4.4.0
+      // call shape (payload, callback), where the callback came right after the payload.
+      if (typeof opts === 'function') {
+        callback = opts;
+        opts = {};
+      }
+      opts = opts || {};
       let postBody = mergeEmailPayload;
       // verify the required parameter 'mergeEmailPayload' is set
       if (mergeEmailPayload === undefined || mergeEmailPayload === null) {
@@ -174,6 +183,7 @@ export default class EmailsApi {
       let queryParams = {
       };
       let headerParams = {
+        'Idempotency-Key': opts['idempotencyKey']
       };
       let formParams = {
       };
@@ -201,10 +211,19 @@ export default class EmailsApi {
      * Send Bulk Emails
      * Send bulk merge email. Required Access Level: SendHttp
      * @param {module:model/EmailMessageData} emailMessageData Email data
+     * @param {Object} opts Optional parameters
+     * @param {String} [idempotencyKey] Makes a retry of this request safe. A repeated request with the same key and the same body gets the stored response of the first one and is not executed again. Generate a new key, e.g. a UUID v4, for each request and reuse it only to retry that request. Keys are scoped to the account and kept for 24 hours after the first request.
      * @param {module:api/EmailsApi~emailsPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EmailSend}
      */
-    emailsPost(emailMessageData, callback) {
+    emailsPost(emailMessageData, opts, callback) {
+      // HAND-WRITTEN (4.4.0 back-compat, keep on regeneration): accept the pre-4.4.0
+      // call shape (payload, callback), where the callback came right after the payload.
+      if (typeof opts === 'function') {
+        callback = opts;
+        opts = {};
+      }
+      opts = opts || {};
       let postBody = emailMessageData;
       // verify the required parameter 'emailMessageData' is set
       if (emailMessageData === undefined || emailMessageData === null) {
@@ -216,6 +235,7 @@ export default class EmailsApi {
       let queryParams = {
       };
       let headerParams = {
+        'Idempotency-Key': opts['idempotencyKey']
       };
       let formParams = {
       };
@@ -243,10 +263,19 @@ export default class EmailsApi {
      * Send Transactional Email
      * Send transactional emails (recipients will be known to each other). Required Access Level: SendHttp
      * @param {module:model/EmailTransactionalMessageData} emailTransactionalMessageData Email data
+     * @param {Object} opts Optional parameters
+     * @param {String} [idempotencyKey] Makes a retry of this request safe. A repeated request with the same key and the same body gets the stored response of the first one and is not executed again. Generate a new key, e.g. a UUID v4, for each request and reuse it only to retry that request. Keys are scoped to the account and kept for 24 hours after the first request.
      * @param {module:api/EmailsApi~emailsTransactionalPostCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/EmailSend}
      */
-    emailsTransactionalPost(emailTransactionalMessageData, callback) {
+    emailsTransactionalPost(emailTransactionalMessageData, opts, callback) {
+      // HAND-WRITTEN (4.4.0 back-compat, keep on regeneration): accept the pre-4.4.0
+      // call shape (payload, callback), where the callback came right after the payload.
+      if (typeof opts === 'function') {
+        callback = opts;
+        opts = {};
+      }
+      opts = opts || {};
       let postBody = emailTransactionalMessageData;
       // verify the required parameter 'emailTransactionalMessageData' is set
       if (emailTransactionalMessageData === undefined || emailTransactionalMessageData === null) {
@@ -258,6 +287,7 @@ export default class EmailsApi {
       let queryParams = {
       };
       let headerParams = {
+        'Idempotency-Key': opts['idempotencyKey']
       };
       let formParams = {
       };

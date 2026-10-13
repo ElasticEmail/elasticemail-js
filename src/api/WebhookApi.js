@@ -20,7 +20,7 @@ import WebhookUpdatePayload from '../model/WebhookUpdatePayload';
 /**
 * Webhook service.
 * @module api/WebhookApi
-* @version 4.3.0
+* @version 4.4.0
 */
 export default class WebhookApi {
 

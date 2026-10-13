@@ -17,7 +17,7 @@ import CertificateValidationStatus from './CertificateValidationStatus';
 /**
  * The DomainUpdatePayload model module.
  * @module model/DomainUpdatePayload
- * @version 4.3.0
+ * @version 4.4.0
  */
 class DomainUpdatePayload {
     /**

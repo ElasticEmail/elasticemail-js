@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 ## emailsMergefilePost
 
-> EmailSend emailsMergefilePost(mergeEmailPayload)
+> EmailSend emailsMergefilePost(mergeEmailPayload, opts)
 
 Send Bulk Emails CSV
 
@@ -157,7 +157,10 @@ apikey.apiKey = 'YOUR API KEY';
 
 let apiInstance = new ElasticEmail.EmailsApi();
 let mergeEmailPayload = new ElasticEmail.MergeEmailPayload(); // MergeEmailPayload | Email data
-apiInstance.emailsMergefilePost(mergeEmailPayload, (error, data, response) => {
+let opts = {
+  'idempotencyKey': "6f1c2a7e-3b4d-4e8f-9a1b-2c3d4e5f6a7b" // String | Makes a retry of this request safe. A repeated request with the same key and the same body gets the stored response of the first one and is not executed again. Generate a new key, e.g. a UUID v4, for each request and reuse it only to retry that request. Keys are scoped to the account and kept for 24 hours after the first request.
+};
+apiInstance.emailsMergefilePost(mergeEmailPayload, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -172,6 +175,7 @@ apiInstance.emailsMergefilePost(mergeEmailPayload, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **mergeEmailPayload** | [**MergeEmailPayload**](MergeEmailPayload.md)| Email data | 
+ **idempotencyKey** | **String**| Makes a retry of this request safe. A repeated request with the same key and the same body gets the stored response of the first one and is not executed again. Generate a new key, e.g. a UUID v4, for each request and reuse it only to retry that request. Keys are scoped to the account and kept for 24 hours after the first request. | [optional] 
 
 ### Return type
 
@@ -189,7 +193,7 @@ Name | Type | Description  | Notes
 
 ## emailsPost
 
-> EmailSend emailsPost(emailMessageData)
+> EmailSend emailsPost(emailMessageData, opts)
 
 Send Bulk Emails
 
@@ -208,7 +212,10 @@ apikey.apiKey = 'YOUR API KEY';
 
 let apiInstance = new ElasticEmail.EmailsApi();
 let emailMessageData = new ElasticEmail.EmailMessageData(); // EmailMessageData | Email data
-apiInstance.emailsPost(emailMessageData, (error, data, response) => {
+let opts = {
+  'idempotencyKey': "6f1c2a7e-3b4d-4e8f-9a1b-2c3d4e5f6a7b" // String | Makes a retry of this request safe. A repeated request with the same key and the same body gets the stored response of the first one and is not executed again. Generate a new key, e.g. a UUID v4, for each request and reuse it only to retry that request. Keys are scoped to the account and kept for 24 hours after the first request.
+};
+apiInstance.emailsPost(emailMessageData, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -223,6 +230,7 @@ apiInstance.emailsPost(emailMessageData, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **emailMessageData** | [**EmailMessageData**](EmailMessageData.md)| Email data | 
+ **idempotencyKey** | **String**| Makes a retry of this request safe. A repeated request with the same key and the same body gets the stored response of the first one and is not executed again. Generate a new key, e.g. a UUID v4, for each request and reuse it only to retry that request. Keys are scoped to the account and kept for 24 hours after the first request. | [optional] 
 
 ### Return type
 
@@ -240,7 +248,7 @@ Name | Type | Description  | Notes
 
 ## emailsTransactionalPost
 
-> EmailSend emailsTransactionalPost(emailTransactionalMessageData)
+> EmailSend emailsTransactionalPost(emailTransactionalMessageData, opts)
 
 Send Transactional Email
 
@@ -259,7 +267,10 @@ apikey.apiKey = 'YOUR API KEY';
 
 let apiInstance = new ElasticEmail.EmailsApi();
 let emailTransactionalMessageData = new ElasticEmail.EmailTransactionalMessageData(); // EmailTransactionalMessageData | Email data
-apiInstance.emailsTransactionalPost(emailTransactionalMessageData, (error, data, response) => {
+let opts = {
+  'idempotencyKey': "6f1c2a7e-3b4d-4e8f-9a1b-2c3d4e5f6a7b" // String | Makes a retry of this request safe. A repeated request with the same key and the same body gets the stored response of the first one and is not executed again. Generate a new key, e.g. a UUID v4, for each request and reuse it only to retry that request. Keys are scoped to the account and kept for 24 hours after the first request.
+};
+apiInstance.emailsTransactionalPost(emailTransactionalMessageData, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -274,6 +285,7 @@ apiInstance.emailsTransactionalPost(emailTransactionalMessageData, (error, data,
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **emailTransactionalMessageData** | [**EmailTransactionalMessageData**](EmailTransactionalMessageData.md)| Email data | 
+ **idempotencyKey** | **String**| Makes a retry of this request safe. A repeated request with the same key and the same body gets the stored response of the first one and is not executed again. Generate a new key, e.g. a UUID v4, for each request and reuse it only to retry that request. Keys are scoped to the account and kept for 24 hours after the first request. | [optional] 
 
 ### Return type
 
