@@ -78,6 +78,16 @@
         done();
       });
     });
+    describe('webhookByPublicidSecretRotatePost', function() {
+      it('should call webhookByPublicidSecretRotatePost successfully', function(done) {
+        //uncomment below and update the code to test webhookByPublicidSecretRotatePost
+        //instance.webhookByPublicidSecretRotatePost(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('webhookGet', function() {
       it('should call webhookGet successfully', function(done) {
         //uncomment below and update the code to test webhookGet

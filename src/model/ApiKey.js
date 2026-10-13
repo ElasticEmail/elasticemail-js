@@ -17,7 +17,7 @@ import AccessLevel from './AccessLevel';
 /**
  * The ApiKey model module.
  * @module model/ApiKey
- * @version 4.2.1
+ * @version 4.3.0
  */
 class ApiKey {
     /**

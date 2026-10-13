@@ -19,7 +19,7 @@ import Utm from './Utm';
 /**
  * The EmailContent model module.
  * @module model/EmailContent
- * @version 4.2.1
+ * @version 4.3.0
  */
 class EmailContent {
     /**

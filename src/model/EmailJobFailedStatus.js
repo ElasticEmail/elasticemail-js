@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EmailJobFailedStatus model module.
  * @module model/EmailJobFailedStatus
- * @version 4.2.1
+ * @version 4.3.0
  */
 class EmailJobFailedStatus {
     /**

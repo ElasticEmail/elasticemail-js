@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import WebhookDeliveryMethod from './WebhookDeliveryMethod';
 
 /**
  * The Webhook model module.
  * @module model/Webhook
- * @version 4.2.1
+ * @version 4.3.0
  */
 class Webhook {
     /**
@@ -87,6 +88,15 @@ class Webhook {
             if (data.hasOwnProperty('IsEnabled')) {
                 obj['IsEnabled'] = ApiClient.convertToType(data['IsEnabled'], 'Boolean');
             }
+            if (data.hasOwnProperty('SigningEnabled')) {
+                obj['SigningEnabled'] = ApiClient.convertToType(data['SigningEnabled'], 'Boolean');
+            }
+            if (data.hasOwnProperty('DeliveryMethod')) {
+                obj['DeliveryMethod'] = WebhookDeliveryMethod.constructFromObject(data['DeliveryMethod']);
+            }
+            if (data.hasOwnProperty('SigningSecret')) {
+                obj['SigningSecret'] = ApiClient.convertToType(data['SigningSecret'], 'String');
+            }
         }
         return obj;
     }
@@ -108,6 +118,10 @@ class Webhook {
         // ensure the json data is a string
         if (data['URL'] && !(typeof data['URL'] === 'string' || data['URL'] instanceof String)) {
             throw new Error("Expected the field `URL` to be a primitive type in the JSON string but got " + data['URL']);
+        }
+        // ensure the json data is a string
+        if (data['SigningSecret'] && !(typeof data['SigningSecret'] === 'string' || data['SigningSecret'] instanceof String)) {
+            throw new Error("Expected the field `SigningSecret` to be a primitive type in the JSON string but got " + data['SigningSecret']);
         }
 
         return true;
@@ -187,6 +201,23 @@ Webhook.prototype['NotificationForError'] = undefined;
  * @member {Boolean} IsEnabled
  */
 Webhook.prototype['IsEnabled'] = undefined;
+
+/**
+ * Requests carry an HMAC-SHA256 signature. Chosen when the webhook is created and can't be changed.
+ * @member {Boolean} SigningEnabled
+ */
+Webhook.prototype['SigningEnabled'] = undefined;
+
+/**
+ * @member {module:model/WebhookDeliveryMethod} DeliveryMethod
+ */
+Webhook.prototype['DeliveryMethod'] = undefined;
+
+/**
+ * Signing secret - returned only once, when a webhook is created with signing or its secret is rotated. Store it safely.
+ * @member {String} SigningSecret
+ */
+Webhook.prototype['SigningSecret'] = undefined;
 
 
 

@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import WebhookDeliveryMethod from './WebhookDeliveryMethod';
 
 /**
  * The WebhookCreatePayload model module.
  * @module model/WebhookCreatePayload
- * @version 4.2.1
+ * @version 4.3.0
  */
 class WebhookCreatePayload {
     /**
@@ -78,6 +79,12 @@ class WebhookCreatePayload {
             }
             if (data.hasOwnProperty('NotificationForError')) {
                 obj['NotificationForError'] = ApiClient.convertToType(data['NotificationForError'], 'Boolean');
+            }
+            if (data.hasOwnProperty('EnableSigning')) {
+                obj['EnableSigning'] = ApiClient.convertToType(data['EnableSigning'], 'Boolean');
+            }
+            if (data.hasOwnProperty('DeliveryMethod')) {
+                obj['DeliveryMethod'] = WebhookDeliveryMethod.constructFromObject(data['DeliveryMethod']);
             }
         }
         return obj;
@@ -158,6 +165,17 @@ WebhookCreatePayload.prototype['NotificationForAbuseReport'] = undefined;
  * @member {Boolean} NotificationForError
  */
 WebhookCreatePayload.prototype['NotificationForError'] = undefined;
+
+/**
+ * Sign every request with HMAC-SHA256. Can be set only when the webhook is created. Default: false.
+ * @member {Boolean} EnableSigning
+ */
+WebhookCreatePayload.prototype['EnableSigning'] = undefined;
+
+/**
+ * @member {module:model/WebhookDeliveryMethod} DeliveryMethod
+ */
+WebhookCreatePayload.prototype['DeliveryMethod'] = undefined;
 
 
 

@@ -22,7 +22,7 @@ import ListUpdatePayload from '../model/ListUpdatePayload';
 /**
 * Lists service.
 * @module api/ListsApi
-* @version 4.2.1
+* @version 4.3.0
 */
 export default class ListsApi {
 

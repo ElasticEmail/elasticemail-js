@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**webhookByPublicidDelete**](WebhookApi.md#webhookByPublicidDelete) | **DELETE** /webhook/{publicid} | Delete Webhook
 [**webhookByPublicidGet**](WebhookApi.md#webhookByPublicidGet) | **GET** /webhook/{publicid} | Load Webhook
 [**webhookByPublicidPut**](WebhookApi.md#webhookByPublicidPut) | **PUT** /webhook/{publicid} | Update Webhook
+[**webhookByPublicidSecretRotatePost**](WebhookApi.md#webhookByPublicidSecretRotatePost) | **POST** /webhook/{publicid}/secret/rotate | Rotate Webhook Secret
 [**webhookGet**](WebhookApi.md#webhookGet) | **GET** /webhook | Load Webhooks
 [**webhookPost**](WebhookApi.md#webhookPost) | **POST** /webhook | Add Webhook
 
@@ -164,6 +165,57 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## webhookByPublicidSecretRotatePost
+
+> Webhook webhookByPublicidSecretRotatePost(publicid)
+
+Rotate Webhook Secret
+
+Replace the signing secret of a webhook created with signing. The old secret stops being used at once - there is no grace period.             The new secret is returned only in this response. Notifications your endpoint rejects while it still has the old secret are retried and signed with the new one. Required Access Level: ModifyWebNotifications
+
+### Example
+
+```javascript
+import ElasticEmail from '@elasticemail/elasticemail-client';
+let defaultClient = ElasticEmail.ApiClient.instance;
+// Configure API key authorization: apikey
+let apikey = defaultClient.authentications['apikey'];
+apikey.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//apikey.apiKeyPrefix = 'Token';
+
+let apiInstance = new ElasticEmail.WebhookApi();
+let publicid = "publicid_example"; // String | 
+apiInstance.webhookByPublicidSecretRotatePost(publicid, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **publicid** | **String**|  | 
+
+### Return type
+
+[**Webhook**](Webhook.md)
+
+### Authorization
+
+[apikey](../README.md#apikey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 

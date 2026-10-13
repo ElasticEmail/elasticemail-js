@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ContactsList model module.
  * @module model/ContactsList
- * @version 4.2.1
+ * @version 4.3.0
  */
 class ContactsList {
     /**

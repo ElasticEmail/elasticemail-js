@@ -110,6 +110,7 @@ import VerificationFileResultDetails from './model/VerificationFileResultDetails
 import VerificationStatus from './model/VerificationStatus';
 import Webhook from './model/Webhook';
 import WebhookCreatePayload from './model/WebhookCreatePayload';
+import WebhookDeliveryMethod from './model/WebhookDeliveryMethod';
 import WebhookUpdatePayload from './model/WebhookUpdatePayload';
 import CampaignsApi from './api/CampaignsApi';
 import ContactsApi from './api/ContactsApi';
@@ -158,7 +159,7 @@ import WebhookApi from './api/WebhookApi';
 * </pre>
 * </p>
 * @module index
-* @version 4.2.1
+* @version 4.3.0
 */
 export {
     /**
@@ -748,6 +749,12 @@ export {
      * @property {module:model/WebhookCreatePayload}
      */
     WebhookCreatePayload,
+
+    /**
+     * The WebhookDeliveryMethod model constructor.
+     * @property {module:model/WebhookDeliveryMethod}
+     */
+    WebhookDeliveryMethod,
 
     /**
      * The WebhookUpdatePayload model constructor.

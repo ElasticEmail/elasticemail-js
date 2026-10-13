@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MessageAttachment model module.
  * @module model/MessageAttachment
- * @version 4.2.1
+ * @version 4.3.0
  */
 class MessageAttachment {
     /**

@@ -19,7 +19,7 @@ import TransactionalRecipient from './TransactionalRecipient';
 /**
  * The EmailTransactionalMessageData model module.
  * @module model/EmailTransactionalMessageData
- * @version 4.2.1
+ * @version 4.3.0
  */
 class EmailTransactionalMessageData {
     /**

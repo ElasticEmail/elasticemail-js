@@ -18,7 +18,7 @@ import SubaccountSettingsInfo from './SubaccountSettingsInfo';
 /**
  * The SubAccountInfo model module.
  * @module model/SubAccountInfo
- * @version 4.2.1
+ * @version 4.3.0
  */
 class SubAccountInfo {
     /**

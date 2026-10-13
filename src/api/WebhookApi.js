@@ -20,7 +20,7 @@ import WebhookUpdatePayload from '../model/WebhookUpdatePayload';
 /**
 * Webhook service.
 * @module api/WebhookApi
-* @version 4.2.1
+* @version 4.3.0
 */
 export default class WebhookApi {
 
@@ -164,6 +164,49 @@ export default class WebhookApi {
       let returnType = Webhook;
       return this.apiClient.callApi(
         '/webhook/{publicid}', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the webhookByPublicidSecretRotatePost operation.
+     * @callback module:api/WebhookApi~webhookByPublicidSecretRotatePostCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Webhook} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Rotate Webhook Secret
+     * Replace the signing secret of a webhook created with signing. The old secret stops being used at once - there is no grace period.             The new secret is returned only in this response. Notifications your endpoint rejects while it still has the old secret are retried and signed with the new one. Required Access Level: ModifyWebNotifications
+     * @param {String} publicid 
+     * @param {module:api/WebhookApi~webhookByPublicidSecretRotatePostCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Webhook}
+     */
+    webhookByPublicidSecretRotatePost(publicid, callback) {
+      let postBody = null;
+      // verify the required parameter 'publicid' is set
+      if (publicid === undefined || publicid === null) {
+        throw new Error("Missing the required parameter 'publicid' when calling webhookByPublicidSecretRotatePost");
+      }
+
+      let pathParams = {
+        'publicid': publicid
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['apikey'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = Webhook;
+      return this.apiClient.callApi(
+        '/webhook/{publicid}/secret/rotate', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

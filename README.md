@@ -229,7 +229,7 @@ Function ||
 
 ## API reference
 
-All URIs are relative to `https://api.elasticemail.com/v4`. The SDK covers **114 endpoints** across 16 API classes: `CampaignsApi`, `ContactsApi`, `DomainsApi`, `EmailsApi`, `EventsApi`, `FilesApi`, `InboundRouteApi`, `ListsApi`, `SecurityApi`, `SegmentsApi`, `StatisticsApi`, `SubAccountsApi`, `SuppressionsApi`, `TemplatesApi`, `VerificationsApi` and `WebhookApi`.
+All URIs are relative to `https://api.elasticemail.com/v4`. The SDK covers **115 endpoints** across 16 API classes: `CampaignsApi`, `ContactsApi`, `DomainsApi`, `EmailsApi`, `EventsApi`, `FilesApi`, `InboundRouteApi`, `ListsApi`, `SecurityApi`, `SegmentsApi`, `StatisticsApi`, `SubAccountsApi`, `SuppressionsApi`, `TemplatesApi`, `VerificationsApi` and `WebhookApi`.
 
 <details>
 <summary><strong>Show all endpoints</strong></summary>
@@ -348,6 +348,7 @@ Class | Method | HTTP request | Description
 *ElasticEmail.WebhookApi* | [**webhookByPublicidDelete**](docs/WebhookApi.md#webhookByPublicidDelete) | **DELETE** /webhook/{publicid} | Delete Webhook
 *ElasticEmail.WebhookApi* | [**webhookByPublicidGet**](docs/WebhookApi.md#webhookByPublicidGet) | **GET** /webhook/{publicid} | Load Webhook
 *ElasticEmail.WebhookApi* | [**webhookByPublicidPut**](docs/WebhookApi.md#webhookByPublicidPut) | **PUT** /webhook/{publicid} | Update Webhook
+*ElasticEmail.WebhookApi* | [**webhookByPublicidSecretRotatePost**](docs/WebhookApi.md#webhookByPublicidSecretRotatePost) | **POST** /webhook/{publicid}/secret/rotate | Rotate Webhook Secret
 *ElasticEmail.WebhookApi* | [**webhookGet**](docs/WebhookApi.md#webhookGet) | **GET** /webhook | Load Webhooks
 *ElasticEmail.WebhookApi* | [**webhookPost**](docs/WebhookApi.md#webhookPost) | **POST** /webhook | Add Webhook
 
@@ -357,7 +358,7 @@ Class | Method | HTTP request | Description
 ## Models
 
 <details>
-<summary><strong>Show all 98 models</strong></summary>
+<summary><strong>Show all 99 models</strong></summary>
 
  - [ElasticEmail.AccessLevel](docs/AccessLevel.md)
  - [ElasticEmail.AccountStatusEnum](docs/AccountStatusEnum.md)
@@ -456,6 +457,7 @@ Class | Method | HTTP request | Description
  - [ElasticEmail.VerificationStatus](docs/VerificationStatus.md)
  - [ElasticEmail.Webhook](docs/Webhook.md)
  - [ElasticEmail.WebhookCreatePayload](docs/WebhookCreatePayload.md)
+ - [ElasticEmail.WebhookDeliveryMethod](docs/WebhookDeliveryMethod.md)
  - [ElasticEmail.WebhookUpdatePayload](docs/WebhookUpdatePayload.md)
 
 </details>
@@ -477,7 +479,7 @@ The SDK follows the Elastic Email API v4. Package versions are listed on [npm](h
 <summary>Build details</summary>
 
 - API version: 4.0.0
-- SDK version: 4.2.1
+- SDK version: 4.3.0
 - Generator version: 7.11.0
 - Build package: `org.openapitools.codegen.languages.JavascriptClientCodegen`
 

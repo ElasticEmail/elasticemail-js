@@ -132,6 +132,24 @@
       //expect(instance).to.be();
     });
 
+    it('should have the property signingEnabled (base name: "SigningEnabled")', function() {
+      // uncomment below and update the code to test the property signingEnabled
+      //var instance = new ElasticEmail.Webhook();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property deliveryMethod (base name: "DeliveryMethod")', function() {
+      // uncomment below and update the code to test the property deliveryMethod
+      //var instance = new ElasticEmail.Webhook();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property signingSecret (base name: "SigningSecret")', function() {
+      // uncomment below and update the code to test the property signingSecret
+      //var instance = new ElasticEmail.Webhook();
+      //expect(instance).to.be();
+    });
+
   });
 
 }));
