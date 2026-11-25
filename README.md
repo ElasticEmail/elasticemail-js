@@ -248,6 +248,7 @@ Function ||
 [addTemplate](examples/functions/addTemplate.js) | [readme](examples/functions/addTemplate.md)
 [deleteCampaign](examples/functions/deleteCampaign.js) | [readme](examples/functions/deleteCampaign.md)
 [deleteContact](examples/functions/deleteContact.js) | [readme](examples/functions/deleteContact.md)
+[deleteContacts](examples/functions/deleteContacts.js) | [readme](examples/functions/deleteContacts.md)
 [deleteList](examples/functions/deleteList.js) | [readme](examples/functions/deleteList.md)
 [deleteTemplate](examples/functions/deleteTemplate.js) | [readme](examples/functions/deleteTemplate.md)
 [exportContacts](examples/functions/exportContacts.js) | [readme](examples/functions/exportContacts.md)
@@ -259,6 +260,7 @@ Function ||
 [loadTemplate](examples/functions/loadTemplate.js) | [readme](examples/functions/loadTemplate.md)
 [sendBulkEmails](examples/functions/sendBulkEmails.js) | [readme](examples/functions/sendBulkEmails.md)
 [sendTransactionalEmails](examples/functions/sendTransactionalEmails.js) | [readme](examples/functions/sendTransactionalEmails.md)
+[sendTransactionalEmailsWithAttachment](examples/functions/sendTransactionalEmailsWithAttachment.js) | [readme](examples/functions/sendTransactionalEmailsWithAttachment.md)
 [updateCampaign](examples/functions/updateCampaign.js) | [readme](examples/functions/updateCampaign.md)
 [uploadContacts](examples/functions/uploadContacts.js) | [readme](examples/functions/uploadContacts.md)
 

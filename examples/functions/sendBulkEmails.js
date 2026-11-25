@@ -1,11 +1,16 @@
 /* Initialization */
 const ElasticEmail = require('@elasticemail/elasticemail-client');
+const { randomUUID } = require('crypto');
 
 const client = ElasticEmail.ApiClient.instance;
 
-/* Generate and use your API key */
+/* Read your API key from the ELASTICEMAIL_API_KEY environment variable */
+if (!process.env.ELASTICEMAIL_API_KEY) {
+    console.error('Set the ELASTICEMAIL_API_KEY environment variable to your Elastic Email API key.');
+    process.exit(1);
+}
 const apikey = client.authentications['apikey'];
-apikey.apiKey = "YOUR_API_KEY";
+apikey.apiKey = process.env.ELASTICEMAIL_API_KEY;
 
 /**
  * Send bulk emails
@@ -39,12 +44,15 @@ const emailData = {
     }
 };
 
+/* One key per send. Reuse it only to retry this send with the same emailData. */
+const idempotencyKey = randomUUID();
+
 const callback = (error, data, response) => {
     if (error) {
         console.error(error);
     } else {
         console.log('API called successfully.');
-        console.log('Email sent.');
+        console.log(`Email sent. TransactionID: ${data.TransactionID}, Idempotency-Key: ${idempotencyKey}`);
     }
 };
-emailsApi.emailsPost(emailData, callback);
+emailsApi.emailsPost(emailData, { idempotencyKey }, callback);

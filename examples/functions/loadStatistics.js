@@ -3,9 +3,13 @@ const ElasticEmail = require('@elasticemail/elasticemail-client');
 
 const client = ElasticEmail.ApiClient.instance;
 
-/* Generate and use your API key */
+/* Read your API key from the ELASTICEMAIL_API_KEY environment variable */
+if (!process.env.ELASTICEMAIL_API_KEY) {
+    console.error('Set the ELASTICEMAIL_API_KEY environment variable to your Elastic Email API key.');
+    process.exit(1);
+}
 const apikey = client.authentications['apikey'];
-apikey.apiKey = "YOUR_API_KEY";
+apikey.apiKey = process.env.ELASTICEMAIL_API_KEY;
 
 /**
  * Load statistics

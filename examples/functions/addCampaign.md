@@ -30,11 +30,15 @@ Get client instance:
 const client = ElasticEmail.ApiClient.instance;
 ```
 
-Generate and use your API key (remember to check a required access level): 
+Read your API key from the `ELASTICEMAIL_API_KEY` environment variable and stop with a clear message if it isn't set (remember to check a required access level):
 
 ```javascript
+if (!process.env.ELASTICEMAIL_API_KEY) {
+    console.error('Set the ELASTICEMAIL_API_KEY environment variable to your Elastic Email API key.');
+    process.exit(1);
+}
 const apikey = client.authentications['apikey'];
-apikey.apiKey = "YOUR_API_KEY";
+apikey.apiKey = process.env.ELASTICEMAIL_API_KEY;
 ```
 
 Create an instance of CampaignsApi that will be used to create a campaign.
@@ -104,9 +108,13 @@ const ElasticEmail = require('@elasticemail/elasticemail-client');
 
 const client = ElasticEmail.ApiClient.instance;
 
-/* Generate and use your API key */
+/* Read your API key from the ELASTICEMAIL_API_KEY environment variable */
+if (!process.env.ELASTICEMAIL_API_KEY) {
+    console.error('Set the ELASTICEMAIL_API_KEY environment variable to your Elastic Email API key.');
+    process.exit(1);
+}
 const apikey = client.authentications['apikey'];
-apikey.apiKey = "YOUR_API_KEY";
+apikey.apiKey = process.env.ELASTICEMAIL_API_KEY;
 
 const campaignsApi = new ElasticEmail.CampaignsApi()
 
@@ -138,6 +146,8 @@ campaignsApi.campaignsPost(campaign, callback);
 ```
 
 ## Run the code
+Set your API key in the environment, then run the file:
 ```
+export ELASTICEMAIL_API_KEY=...
 node snippet.js
 ```
