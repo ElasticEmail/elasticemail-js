@@ -18,6 +18,7 @@ apikey.apiKey = process.env.ELASTICEMAIL_API_KEY;
  * Limit of 50 maximum recipients.
  */
 
+// README:BEGIN quickstart
 const emailsApi = new ElasticEmail.EmailsApi();
 const emailData = {
     Recipients: {
@@ -53,3 +54,4 @@ const callback = (error, data, response) => {
     }
 };
 emailsApi.emailsTransactionalPost(emailData, { idempotencyKey }, callback);
+// README:END quickstart
